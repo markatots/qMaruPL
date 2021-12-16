@@ -4,7 +4,6 @@
 Author
 Katsuaki Maruno
 
-
 # Copyright
 Copyright ©2021 OTSUKA CORPORATION
 
