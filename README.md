@@ -78,6 +78,18 @@ Add dimension "Dim1" to maruPL. You could imagine departments or a years.
 Go to the "Table Overall" accordion property again.  
 Set "On" as "Repeat Measure Name in dimension cols" switch.  
 ![image_tutrial2_5](https://user-images.githubusercontent.com/95951577/146525124-31a431bf-8828-4502-b0f9-769b72341887.png)  
+Actually when "Repeat Measure Name in dimension cols" is "On", the table become very wide. But for now, I just wanted to explain the function.  
+Turn the switch off.  
+I don't want to use the measure labels.  
+Go to "Header for Measure text, width, color" accordion property again.  
+Find "Width(px) if 0 then hidden", and enter 0.   
+![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/146531048-6175f467-3c7a-4cf5-aaa5-f4548c3b26ce.png)  
+Find "Header Text Total 1st", and enter "Budget".  
+Find "Header Text Total 2nd", and enter "Actual".  
+Find "Header Text Total 3rd", and enter "Ratio".  
+![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/146531535-2f3d6efe-6b87-408d-be87-77835b30472a.png)  
+
+
 
 I'll continue this document when I have time.  
 
