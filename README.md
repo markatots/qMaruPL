@@ -29,24 +29,24 @@ Let's make this.
 Add 10 measures, M01-M10 to maruPL.  
 ![image_tutrial_2_simple](https://user-images.githubusercontent.com/95951577/146490833-ba9266c8-df75-43a9-adf4-a90e4ce092b5.png)  
 Go to "Lv-1 Groups" accordion panel.
-In "Lv-1 Groups", you can designate each rowspan. So this propaty is sparated into 17 sections by "===★".   
-Find "===★row span1=======" field. Then Enter "3" instead of default value 99. Then "Lv1" column's top 3 cells are merged.  
-Similarly find "===★row span2=======" field. Then Enter "2".   
-Find "===★row span3=======" field. Then Enter "1". 
+In "Lv-1 Groups", you can designate each rowspan. This property is sparated into 17 sections by "===★".   
+Find "===★row span1=======" field. Enter "3" instead of default value 99. Then "Lv1" column's top 3 cells are merged.  
+Similarly find "===★row span2=======" field. Enter "2".   
+Find "===★row span3=======" field. Enter "1". 
 Set "right" as "align" radio button in this "===★row span3" section.   
 Set "On" as "has horizontal line" switch in this "===★row span3" section.   
 Set "On" as "Stand Out Band" switch in this "===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
 ![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146493323-7c9d0c46-1835-43df-90a3-7ff22a267a97.png)
 
-Find "===★row span4=======" field. Then Enter "3". 
-Find "===★row span5=======" field. Then Enter "1". 
+Find "===★row span4=======" field. Enter "3". 
+Find "===★row span5=======" field. Enter "1". 
 Set "right" as "align" radio button in this "===★row span5" section.   
 Set "On" as "has horizontal line" switch in this "===★row span5" section.   
 Set "On" as "Stand Out Band" switch in this "===★row span5" section.   
 ![image_tutrial_4_simple](https://user-images.githubusercontent.com/95951577/146491640-9dc4f26e-7547-48ef-8efc-50eb20ea372e.png)   
 
 Good. You might want to fold "Lv-1 Groups" accordion panel. Or you would be confused as there're a lot of properties.  
-Go to "Lv-2 Groups" accordion panel.  
+Go to "Lv-2 Groups" accordion panel. In "Lv-2 Groups", the property is sparated into 5 sections by "===★Lv2 ".  
 Find "===★Lv2 row span1=======" field. And Enter "6" instead of default value 99. Then "Lv2" column's top 6 cells are merged.  
 ![image_tutrial_5_simple](https://user-images.githubusercontent.com/95951577/146494043-fe6a10a2-2360-4934-999c-ea90a90912d1.png)  
 
