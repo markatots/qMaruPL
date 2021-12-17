@@ -17,7 +17,7 @@ You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app.
 Upload the zip file via QMC. Then "maruPL" qlik extenstion will be installed.  
 
 
-## Overall Explanation
+## Overall 
 Property names are subject to change because I'm not satisfied with the names.   
 ![image_description1](https://user-images.githubusercontent.com/95951577/146485052-cfa4bdc5-6bcb-4072-9f01-e05c0d9a528d.png)  
 
