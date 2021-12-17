@@ -12,17 +12,44 @@ Small and medium-sized businesses in Japanese really love such complicated table
 
 
 # Get started
-
-Get the zip file of the extension: "maruPL.YYYY.MM.dd.zip"   
+Get the zip file: "maruPL.YYYY.MM.dd.zip"   
 You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app.  
-Upload the zip file that you got via QMC.  
+Upload the zip file via QMC. Then "maruPL" qlik extenstion will be installed.  
+
 
 ## Overall Explanation
-
-![image_description1](https://user-images.githubusercontent.com/95951577/146485052-cfa4bdc5-6bcb-4072-9f01-e05c0d9a528d.png)
+Property names are subject to change because I'm not satisfied with the names.   
+![image_description1](https://user-images.githubusercontent.com/95951577/146485052-cfa4bdc5-6bcb-4072-9f01-e05c0d9a528d.png)  
 
 
 ## Tutrial 1
+Let's make this.
+![image_tutrial_1_simple](https://user-images.githubusercontent.com/95951577/146487971-3fa654ff-8c1a-4a97-b171-c29d7fdb85ad.png)  
+
+Add 10 measures, M01-M10 to maruPL.  
+![image_tutrial_2_simple](https://user-images.githubusercontent.com/95951577/146490833-ba9266c8-df75-43a9-adf4-a90e4ce092b5.png)  
+Go to "Lv-1 Groups" accordion panel.
+In "Lv-1 Groups", you can designate each rowspan. So this propaty is sparated into 17 sections by "===★".   
+Find "===★row span1=======" field. Then Enter "3". Then "Lv1" column's top 3 cells are merged.  
+Similarly find "===★row span2=======" field. Then Enter "2".   
+Find "===★row span3=======" field. Then Enter "1". 
+Set "right" as "align" radio button in this "===★row span3" section.   
+Set "On" as "has horizontal line" switch in this "===★row span3" section.   
+Set "On" as "Stand Out Band" switch in this "===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
+![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146491141-6b82f650-4c30-46ee-a099-6afb8074831c.png)  
+![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146493323-7c9d0c46-1835-43df-90a3-7ff22a267a97.png)
+
+Find "===★row span4=======" field. Then Enter "3". 
+Find "===★row span5=======" field. Then Enter "1". 
+Set "right" as "align" radio button in this "===★row span5" section.   
+Set "On" as "has horizontal line" switch in this "===★row span5" section.   
+Set "On" as "Stand Out Band" switch in this "===★row span5" section.   
+![image_tutrial_4_simple](https://user-images.githubusercontent.com/95951577/146491640-9dc4f26e-7547-48ef-8efc-50eb20ea372e.png)  
+Go to "Lv-2 Groups" accordion panel. You might want to fold "Lv-1 Groups" accordion panel". As there're a lot of properties, you would be confused.  
+
+
+
+
 
  Please wait.
  
