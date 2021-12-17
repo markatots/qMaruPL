@@ -55,8 +55,22 @@ Add dimention "Dim1" to the extension.
 Completed!  
 
 ## Tutrial 2
- Under construction.
- 
+Create a new sheet and put a maruPL on it.  
+Add measures, M01, M02, M02/M01, M03, M04, M04/M03 to maruPL. You could image two sets of a budget, an actual, and the ratio.   
+ ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
+Go to the "Table Overall" accordion property.  
+Find the "Row Break Col(From 1-5)". And enter "3".  
+![image_tutrial2_2](https://user-images.githubusercontent.com/95951577/146521789-f3b082e8-62fa-4506-927a-4f17de939682.png)  
+Measures get in 3 rows. The width is too long. Let's shorten.  
+Go to the "Header for Measure text, width, color" accordion property.  
+Find the "Width(px) if 0 then hidden", and enter 80. 
+Find the "Total Col Width(px)" and enter 60. 
+Go to the "Lv-1 Groups" accordion property.  
+Find the "Col Width(px) if 0 then hidden", and enter 80. 
+Go to the "Lv-2 Groups" accordion property.  
+Find the "Col Width(px) if 0 then hidden", and enter 0. It means the very left column become inbisible.  
+![image_tutrial2_3](https://user-images.githubusercontent.com/95951577/146523743-3aef5097-58c9-47ef-9c48-3c15e3ce925e.png)  
+
 
 
 # Copyright
