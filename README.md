@@ -18,8 +18,9 @@ Upload the zip file via QMC. Then "maruPL" qlik extenstion will be installed.
 
 
 ## Overall 
-Property names are subject to change because I'm not satisfied with the names.   
-![image_description1](https://user-images.githubusercontent.com/95951577/146485052-cfa4bdc5-6bcb-4072-9f01-e05c0d9a528d.png)  
+Property names are subject to change because I'm not satisfied with the names.  
+But for now, I call the parts of the extension properties as follows.  
+![image_description1](https://user-images.githubusercontent.com/95951577/146526354-6970e88a-0934-4ca5-9b3e-7f71ea69a646.png)  
 
 
 ## Tutrial 1
