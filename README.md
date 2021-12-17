@@ -85,17 +85,17 @@ Turn the switch off.
 I don't want to use the measure labels.  
 Go to "Header for Measure text, width, color" accordion property again.  
 Find "Width(px) if 0 then hidden", and enter 0.   
-![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/146531048-6175f467-3c7a-4cf5-aaa5-f4548c3b26ce.png)  
+![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/146531048-6175f467-3c7a-4cf5-aaa5-f4548c3b26ce.png)   
 Find "Header Text Total 1st", and enter "Budget".  
 Find "Header Text Total 2nd", and enter "Actual".  
 Find "Header Text Total 3rd", and enter "Ratio".  
-![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/146531535-2f3d6efe-6b87-408d-be87-77835b30472a.png)  
-Go to "Lv-1 Groups" accordion property.  
-Find "===★rowspan1★" field, and enter "1" instead of the default value 99.
-Find "Lv1 caption 1st row", and enter "Sales" instead of the default value "Lv1 1st".
-Find "Stand Out Band" switch, and set it on.
-Find "===★rowspan2★" field, and enter "1" instead of the default value 99.
-Find "Lv1 caption 2nd row" field, and enter "Profit" instead of the default value "Lv1 2nd".
+![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/146531535-2f3d6efe-6b87-408d-be87-77835b30472a.png)   
+Go to "Lv-1 Groups" accordion property.    
+Find "===★rowspan1★" field, and enter "1" instead of the default value 99.  
+Find "Lv1 caption 1st row", and enter "Sales" instead of the default value "Lv1 1st".  
+Find "Stand Out Band" switch, and set it on.  
+Find "===★rowspan2★" field, and enter "1" instead of the default value 99.  
+Find "Lv1 caption 2nd row" field, and enter "Profit" instead of the default value "Lv1 2nd".  
 ![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/146532628-8003d1cc-c235-4a91-b619-9c9f6f691e79.png)  
 If you want to see the original names of the measures, remember setting "Repeat Measure Name in dimension cols" switch on.   
 
