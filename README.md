@@ -6,7 +6,7 @@ How to edit readme: https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8c
 # Hello
 I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now. I'm afraid you would get good instructioins in years.   
 This qlik extension allows you to show custom tables.  
-You can make a sheet as below.
+You can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146482600-010bf953-3b80-4056-b259-f1762804cda2.png)  
 Small and medium-sized businesses in Japan really love such complicated tables.  
 
@@ -64,22 +64,22 @@ Add measures, M01, M02, M02/M01, M03, M04, M04/M03 to maruPL. You could imagine 
 Go to "Table Overall" accordion property.  
 Find "Row Break Col(From 1-5)". And enter "3".  
 ![image_tutrial2_2](https://user-images.githubusercontent.com/95951577/146521789-f3b082e8-62fa-4506-927a-4f17de939682.png)  
-Measures get in 3 rows. The width is too long. Let's shorten.  
-Go to the "Header for Measure text, width, color" accordion property.  
+Measures get in 3 rows. The width is too wide. Let's reduce the width and narrow it down.  
+Go to "Header for Measure text, width, color" accordion property.  
 Find "Width(px) if 0 then hidden", and enter 80.   
 Find "Total Col Width(px)" and enter 60.  
 Go to "Lv-1 Groups" accordion property.  
 Find "Col Width(px) if 0 then hidden", and enter 80.  
 Go to "Lv-2 Groups" accordion property.  
-Find "Col Width(px) if 0 then hidden", and enter 0. It means the very left column become invisible.  
+Find "Col Width(px) if 0 then hidden", and enter 0. It means the very left column becomes invisible. This function is useful. Also the other columns can be deleted by using width=0.  
 ![image_tutrial2_3](https://user-images.githubusercontent.com/95951577/146523743-3aef5097-58c9-47ef-9c48-3c15e3ce925e.png)  
 Add dimension "Dim1" to maruPL. You could imagine departments or a years.  
 ![image_tutrial2_4](https://user-images.githubusercontent.com/95951577/146524735-a3ecc835-5b51-4d79-8daa-b378cfc1c172.png)  
 Go to the "Table Overall" accordion property again.  
-Set "On" as the "Repeat Measure Name in dimension cols".  
+Set "On" as "Repeat Measure Name in dimension cols" switch.  
 ![image_tutrial2_5](https://user-images.githubusercontent.com/95951577/146525124-31a431bf-8828-4502-b0f9-769b72341887.png)  
 
-I'll continue when I have time.
+I'll continue this document when I have time.  
 
 
 # Copyright
