@@ -32,7 +32,8 @@ Add 10 measures, M01-M10, to maruPL.
 ![image_tutrial_2_simple](https://user-images.githubusercontent.com/95951577/146490833-ba9266c8-df75-43a9-adf4-a90e4ce092b5.png)  
 Go to "Lv-1 Groups" accordion panel.  
 In "Lv-1 Groups", you can designate each rowspan. This property is sparated into 17 sections by "===★".   
-Find "===★row span1=======" field. Enter "3" instead of default value 99. Then "Lv1" column's top 3 cells are merged.  
+You might not be familiar with HTML. The rowspan means several rows are merged in a row.
+Find "===★row span1=======" field. Enter "3" instead of the default value 99. Then "Lv1" column's top 3 cells are merged.  
 Similarly find "===★row span2=======" field. Enter "2".    
 Find the "===★row span3=======" field. Enter "1".  
 Set "right" as "align" radio button in this "===★row span3" section.   
@@ -61,12 +62,12 @@ Completed!
 Let's make this.  
 ![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/146532628-8003d1cc-c235-4a91-b619-9c9f6f691e79.png)   
 Create a new sheet and put a maruPL on it.  
-Add measures, M01, M02, M02/M01, M03, M04, M04/M03 to maruPL. You could imagine two sets of a budget, an actual, and the ratio.   
+Add measures, M01, M02, M02/M01, M03, M04, and M04/M03 to maruPL. You could imagine two sets of a budget, an actual, and the ratio.   
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
 Go to "Table Overall" accordion property.  
 Find "Row Break Col(From 1-5)". And enter "3".  
 ![image_tutrial2_2](https://user-images.githubusercontent.com/95951577/146521789-f3b082e8-62fa-4506-927a-4f17de939682.png)  
-Measures get in 3 rows. The width is too wide. Let's reduce the width and narrow it down.  
+Measures get in 3 colomns. The width is too wide. Let's reduce the width and narrow it down.  
 Go to "Header for Measure text, width, color" accordion property.  
 Find "Width(px) if 0 then hidden", and enter 80.   
 Find "Total Col Width(px)" and enter 60.  
