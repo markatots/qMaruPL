@@ -101,7 +101,7 @@ Find "Lv1 caption 2nd row" field, and enter "Profit" instead of the default valu
 If you want to see the original names of the measures, remember, even though you set "Repeat Measure Name in dimension cols" switch on, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at "Width(px) if 0 then hidden" field in "Header for Measure text, width, color" accordion property.      
 
 I'll continue to revise this document when I have time.  
-
+Plan: Colspan will be abailable. Conditional alerts for measures will be available. Text align for measures label will be available. 
 
 # Copyright
 Copyright ©2021 OTSUKA CORPORATION
