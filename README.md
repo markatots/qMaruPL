@@ -98,7 +98,7 @@ Find "Stand Out Band" switch, and set it on.
 Find "===★rowspan2★" field, and enter "1" instead of the default value 99.  
 Find "Lv1 caption 2nd row" field, and enter "Profit" instead of the default value "Lv1 2nd".  
 ![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/146532628-8003d1cc-c235-4a91-b619-9c9f6f691e79.png)  
-If you want to see the original names of the measures, remember the even though you set "Repeat Measure Name in dimension cols" switch on, when the width of measure labels is set 0, you can't see them. You need to set around 100px as the width at "Width(px) if 0 then hidden" field in "Header for Measure text, width, color" accordion property.      
+If you want to see the original names of the measures, remember, even though you set "Repeat Measure Name in dimension cols" switch on, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at "Width(px) if 0 then hidden" field in "Header for Measure text, width, color" accordion property.      
 
 I'll continue to revise this document when I have time.  
 
