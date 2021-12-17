@@ -45,7 +45,7 @@ Set "On" as "has horizontal line" switch in this "===★row span5" section.
 Set "On" as "Stand Out Band" switch in this "===★row span5" section.   
 ![image_tutrial_4_simple](https://user-images.githubusercontent.com/95951577/146491640-9dc4f26e-7547-48ef-8efc-50eb20ea372e.png)   
 
-Good. You might want to fold "Lv-1 Groups" accordion panel". As there're a lot of properties, you would be confused.  
+Good. You might want to fold "Lv-1 Groups" accordion panel. Or you would be confused as there're a lot of properties.  
 Go to "Lv-2 Groups" accordion panel.  
 Find "===★Lv2 row span1=======" field. And Enter "6" instead of default value 99. Then "Lv2" column's top 6 cells are merged.  
 ![image_tutrial_5_simple](https://user-images.githubusercontent.com/95951577/146494043-fe6a10a2-2360-4934-999c-ea90a90912d1.png)  
