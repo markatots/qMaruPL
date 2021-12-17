@@ -39,9 +39,9 @@ Set "On" as "has horizontal line" switch in this "===★row span3" section.
 Set "On" as "Stand Out Band" switch in this "===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
 ![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146493323-7c9d0c46-1835-43df-90a3-7ff22a267a97.png)
 
-Find "===★row span4=======" field. Enter "3". 
-Find "===★row span5=======" field. Enter "1". 
-Set "right" as "align" radio button in this "===★row span5" section.   
+Find "===★row span4=======" field, and Enter "3".   
+Find "===★row span5=======" field. Enter "1".  
+Set "right" as "align" radio button in this "===★row span5" section.     
 Set "On" as "has horizontal line" switch in this "===★row span5" section.   
 Set "On" as "Stand Out Band" switch in this "===★row span5" section.   
 ![image_tutrial_4_simple](https://user-images.githubusercontent.com/95951577/146491640-9dc4f26e-7547-48ef-8efc-50eb20ea372e.png)   
@@ -65,10 +65,10 @@ Find "Row Break Col(From 1-5)". And enter "3".
 ![image_tutrial2_2](https://user-images.githubusercontent.com/95951577/146521789-f3b082e8-62fa-4506-927a-4f17de939682.png)  
 Measures get in 3 rows. The width is too long. Let's shorten.  
 Go to the "Header for Measure text, width, color" accordion property.  
-Find "Width(px) if 0 then hidden", and enter 80. 
-Find "Total Col Width(px)" and enter 60. 
+Find "Width(px) if 0 then hidden", and enter 80.   
+Find "Total Col Width(px)" and enter 60.  
 Go to "Lv-1 Groups" accordion property.  
-Find "Col Width(px) if 0 then hidden", and enter 80. 
+Find "Col Width(px) if 0 then hidden", and enter 80.  
 Go to "Lv-2 Groups" accordion property.  
 Find "Col Width(px) if 0 then hidden", and enter 0. It means the very left column become invisible.  
 ![image_tutrial2_3](https://user-images.githubusercontent.com/95951577/146523743-3aef5097-58c9-47ef-9c48-3c15e3ce925e.png)  
