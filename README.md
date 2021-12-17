@@ -32,7 +32,7 @@ Add 10 measures, M01-M10, to maruPL.
 ![image_tutrial_2_simple](https://user-images.githubusercontent.com/95951577/146490833-ba9266c8-df75-43a9-adf4-a90e4ce092b5.png)  
 Go to "Lv-1 Groups" accordion panel.  
 In "Lv-1 Groups", you can designate each rowspan. This property is sparated into 17 sections by "===★".   
-You might not be familiar with HTML. The rowspan means several rows are merged in a row.
+You might not be familiar with HTML. The rowspan means several rows are merged in a row.  
 Find "===★row span1=======" field. Enter "3" instead of the default value 99. Then "Lv1" column's top 3 cells are merged.  
 Similarly find "===★row span2=======" field. Enter "2".    
 Find the "===★row span3=======" field. Enter "1".  
