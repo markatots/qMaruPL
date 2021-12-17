@@ -76,7 +76,7 @@ Find "Col Width(px) if 0 then hidden", and enter 80.
 Go to "Lv-2 Groups" accordion property.  
 Find "Col Width(px) if 0 then hidden", and enter 0. It means the very left column becomes invisible. This function is useful. Also the other columns can be deleted by using width=0.  
 ![image_tutrial2_3](https://user-images.githubusercontent.com/95951577/146523743-3aef5097-58c9-47ef-9c48-3c15e3ce925e.png)  
-Add dimension "Dim1" to maruPL. You could imagine departments or a years.  
+Add dimension "Dim1" to maruPL. You could imagine departments or years.  
 ![image_tutrial2_4](https://user-images.githubusercontent.com/95951577/146524735-a3ecc835-5b51-4d79-8daa-b378cfc1c172.png)  
 Go to the "Table Overall" accordion property again.  
 Set "On" as "Repeat Measure Name in dimension cols" switch.  
