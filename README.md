@@ -8,7 +8,7 @@ I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now. I'm afraid yo
 This qlik extension allows you to show custom tables.  
 You can make a sheet as below.
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146482600-010bf953-3b80-4056-b259-f1762804cda2.png)  
-Small and medium-sized businesses in Japanese really love such complicated tables.  
+Small and medium-sized businesses in Japan really love such complicated tables.  
 
 
 # Get started
