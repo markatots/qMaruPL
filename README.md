@@ -58,6 +58,8 @@ Completed!
 
 
 ## Tutrial 2
+Let's make this.  
+![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/146532628-8003d1cc-c235-4a91-b619-9c9f6f691e79.png)   
 Create a new sheet and put a maruPL on it.  
 Add measures, M01, M02, M02/M01, M03, M04, M04/M03 to maruPL. You could imagine two sets of a budget, an actual, and the ratio.   
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
@@ -88,8 +90,14 @@ Find "Header Text Total 1st", and enter "Budget".
 Find "Header Text Total 2nd", and enter "Actual".  
 Find "Header Text Total 3rd", and enter "Ratio".  
 ![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/146531535-2f3d6efe-6b87-408d-be87-77835b30472a.png)  
-
-
+Go to "Lv-1 Groups" accordion property.  
+Find "===★rowspan1★" field, and enter "1" instead of the default value 99.
+Find "Lv1 caption 1st row", and enter "Sales" instead of the default value "Lv1 1st".
+Find "Stand Out Band" switch, and set it on.
+Find "===★rowspan2★" field, and enter "1" instead of the default value 99.
+Find "Lv1 caption 2nd row" field, and enter "Profit" instead of the default value "Lv1 2nd".
+![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/146532628-8003d1cc-c235-4a91-b619-9c9f6f691e79.png)  
+If you want to see the original names of the measures, remember setting "Repeat Measure Name in dimension cols" switch on.   
 
 I'll continue this document when I have time.  
 
