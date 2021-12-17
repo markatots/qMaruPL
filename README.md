@@ -14,7 +14,7 @@ Small and medium-sized businesses in Japan really love such complicated tables.
 # Get started
 Get the zip file: "maruPL.YYYY.MM.dd.zip"   
 You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app.  
-Upload the zip file via QMC. Then "maruPL" qlik extenstion will be installed.  
+Upload the zip file via your QMC. Then "maruPL" qlik extenstion will be installed.  
 
 
 ## Overall 
@@ -27,13 +27,14 @@ But for now, I call the parts of the extension properties as follows.
 Let's make this.  
 ![image_tutrial_1_simple](https://user-images.githubusercontent.com/95951577/146487971-3fa654ff-8c1a-4a97-b171-c29d7fdb85ad.png)  
 
-Add 10 measures, M01-M10 to maruPL.  
+Create a new sheet and put a maruPL extension on it.  
+Add 10 measures, M01-M10, to maruPL.  
 ![image_tutrial_2_simple](https://user-images.githubusercontent.com/95951577/146490833-ba9266c8-df75-43a9-adf4-a90e4ce092b5.png)  
-Go to "Lv-1 Groups" accordion panel.
+Go to "Lv-1 Groups" accordion panel.  
 In "Lv-1 Groups", you can designate each rowspan. This property is sparated into 17 sections by "===★".   
 Find "===★row span1=======" field. Enter "3" instead of default value 99. Then "Lv1" column's top 3 cells are merged.  
-Similarly find "===★row span2=======" field. Enter "2".   
-Find the "===★row span3=======" field. Enter "1". 
+Similarly find "===★row span2=======" field. Enter "2".    
+Find the "===★row span3=======" field. Enter "1".  
 Set "right" as "align" radio button in this "===★row span3" section.   
 Set "On" as "has horizontal line" switch in this "===★row span3" section.   
 Set "On" as "Stand Out Band" switch in this "===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
@@ -78,7 +79,7 @@ Go to the "Table Overall" accordion property again.
 Set "On" as the "Repeat Measure Name in dimension cols".  
 ![image_tutrial2_5](https://user-images.githubusercontent.com/95951577/146525124-31a431bf-8828-4502-b0f9-769b72341887.png)  
 
-
+I'll continue when I have time.
 
 
 # Copyright
