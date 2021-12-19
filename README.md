@@ -7,8 +7,8 @@ How to edit readme: https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8c
 I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now. I'm afraid you would take years to get good instructioins.    
 This qlik extension allows you to show custom tables.  
 You can make a sheet as below.  
-![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146482600-010bf953-3b80-4056-b259-f1762804cda2.png)  
-Small and medium-sized businesses in Japan really love such complicated tables.  
+![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146678970-581d55b9-7f17-455c-a187-4d13a2828422.png)  
+Small and medium-sized businesses in Japan really love such special tables.  
 
 
 # Get started
