@@ -40,7 +40,7 @@ Find the "3.===★row span3=======" field. Enter "1".
 Set "right" as "align" radio button in this "===★row span3" section.   
 Set "On" as "has horizontal line" switch in this "===★row span3" section.   
 Set "On" as "Stand Out Band" switch in this "===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
-![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146493323-7c9d0c46-1835-43df-90a3-7ff22a267a97.png)
+![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146493323-7c9d0c46-1835-43df-90a3-7ff22a267a97.png)  
 Find "4.===★row span4=======" field, and Enter "3".   
 Find "5.===★row span5=======" field. Enter "1".  
 Set "right" as "align" radio button in this "===★row span5" section.     
