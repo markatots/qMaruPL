@@ -120,7 +120,7 @@ Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead o
 Thus, you can draw lines.    
 
 I'll continue to revise this document when I have time.  
-Plan: Conditional alerts for measures will be available. Text align for measures label will be available. 
+Plan: Conditional alerts for measures will be available. Text align for measures label will be available. Arranging dimensions verticaly will be available. 
 
 # Copyright
 Copyright ©2021 OTSUKA CORPORATION
