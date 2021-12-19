@@ -38,22 +38,22 @@ You might not be familiar with HTML. The rowspan means several rows are merged i
 Find "1.===★row span1=======" field. Enter "3" instead of the default value 99. Then "Lv1" column's top 3 cells are merged.  
 Similarly find "2.===★row span2=======" field. Enter "2".    
 Find the "3.===★row span3=======" field. Enter "1".  
-Set "right" as "align" radio button in this "===★row span3" section.   
-Set "On" as "has horizontal line" switch in this "===★row span3" section.   
-Set "On" as "Stand Out Band" switch in this "===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
+Set "right" as "align" radio button in this "3.===★row span3" section.   
+Set "On" as "has horizontal line" switch in this "3.===★row span3" section.   
+Set "On" as "Stand Out Band" switch in this "3.===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
 ![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146493323-7c9d0c46-1835-43df-90a3-7ff22a267a97.png)  
   
 Find "4.===★row span4=======" field, and Enter "3".   
 Find "5.===★row span5=======" field. Enter "1".  
-Set "right" as "align" radio button in this "===★row span5" section.     
-Set "On" as "has horizontal line" switch in this "===★row span5" section.   
-Set "On" as "Stand Out Band" switch in this "===★row span5" section.   
+Set "right" as "align" radio button in this "5.===★row span5" section.     
+Set "On" as "has horizontal line" switch in this "5.===★row span5" section.   
+Set "On" as "Stand Out Band" switch in this "5.===★row span5" section.   
 ![image_tutrial_4_simple](https://user-images.githubusercontent.com/95951577/146491640-9dc4f26e-7547-48ef-8efc-50eb20ea372e.png)   
 
 Good. You might want to fold "Lv-1 Groups" accordion panel. Or you would be confused as there're a lot of properties.  
   
 Go to "Lv-2 Groups" accordion panel. In "Lv-2 Groups", the set of properties is separated into 5 sections by "===★Lv2 ".  
-Find "===★Lv2 row span1=======" field. And Enter "6" instead of default value 99. Then "Lv2" column's top 6 cells are merged.  
+Find "1.===★Lv2 row span1=======" field. And Enter "6" instead of default value 99. Then "Lv2" column's top 6 cells are merged.  
 ![image_tutrial_5_simple](https://user-images.githubusercontent.com/95951577/146494043-fe6a10a2-2360-4934-999c-ea90a90912d1.png)  
 
 Add dimention "Dim1" to the extension.  
@@ -104,10 +104,10 @@ Find "Header Text Total 3rd", and enter "Ratio".
 ![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/146531535-2f3d6efe-6b87-408d-be87-77835b30472a.png)   
   
 Go to "Lv-1 Groups" accordion property.    
-Find "===★rowspan1★" field, and enter "1" instead of the default value 99.  
+Find "1.===★rowspan1★" field, and enter "1" instead of the default value 99.  
 Find "Lv1 caption 1st row", and enter "Sales" instead of the default value "Lv1 1st".  
 Find "Stand Out Band" switch, and set it on.  
-Find "===★rowspan2★" field, and enter "1" instead of the default value 99.  
+Find "2.===★rowspan2★" field, and enter "1" instead of the default value 99.  
 Find "Lv1 caption 2nd row" field, and enter "Profit" instead of the default value "Lv1 2nd".  
 ![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/146532628-8003d1cc-c235-4a91-b619-9c9f6f691e79.png)  
 If you want to see the original names of the measures, remember, even though you set "Repeat Measure Name in dimension cols" switch on, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at "Width(px) if 0 then hidden" field in "Header for Measure text, width, color" accordion property.      
