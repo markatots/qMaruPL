@@ -4,22 +4,23 @@
 How to edit readme: https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa
 
 # Hello
-I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now. I'm afraid you would take years to get good instructioins.    
+I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.     
 This qlik extension allows you to show custom tables.  
-You can make a sheet as below.  
+For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146678970-581d55b9-7f17-455c-a187-4d13a2828422.png)  
 Small and medium-sized businesses in Japan really love such special tables.  
 
 
 # Get started
 Get the zip file: "maruPL.YYYY.MM.dd.zip"   
-You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app.  
+I recommend that you get the newest one.  
+You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app using maruPL.  
 Upload the zip file via your QMC. Then "maruPL" qlik extenstion will be installed.  
 
 
 ## Overall 
-Property names are subject to change because I'm not satisfied with the names.  
-But for now, I call the parts of the extension properties as follows.  
+Property names are subject to change because I'm not satisfied with the names. I try to avoid causing any effect to existing apps.    
+But for now, I named the parts of the extension properties as follows.  
 ![image_description1](https://user-images.githubusercontent.com/95951577/146526354-6970e88a-0934-4ca5-9b3e-7f71ea69a646.png)  
 
 
@@ -41,6 +42,7 @@ Set "right" as "align" radio button in this "===★row span3" section.
 Set "On" as "has horizontal line" switch in this "===★row span3" section.   
 Set "On" as "Stand Out Band" switch in this "===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
 ![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146493323-7c9d0c46-1835-43df-90a3-7ff22a267a97.png)  
+  
 Find "4.===★row span4=======" field, and Enter "3".   
 Find "5.===★row span5=======" field. Enter "1".  
 Set "right" as "align" radio button in this "===★row span5" section.     
@@ -57,11 +59,12 @@ Find "===★Lv2 row span1=======" field. And Enter "6" instead of default value 
 Add dimention "Dim1" to the extension.  
 ![image_tutrial_6_simple](https://user-images.githubusercontent.com/95951577/146494432-d05edfdf-fa25-441a-85fd-f16eb0c2667e.png)  
 Completed!  
-
-
+  
+  
 ## Tutorial 2
 Let's make this.  
-![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/146532628-8003d1cc-c235-4a91-b619-9c9f6f691e79.png)   
+![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/146678079-c172285a-acd4-4565-aa29-f568553026bc.png)    
+    
 Create a new sheet and put a maruPL on it.  
 Add measures, M01, M02, M02/M01, M03, M04, and M04/M03 to maruPL. You could imagine two sets of a budget, an actual, and the ratio.   
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
@@ -114,7 +117,7 @@ Turn "Use Measure Groups" switch on.
 ![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/146677952-0ebd22c0-f86c-4c84-af1b-7660b28c161c.png)  
 Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.  
 ![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/146678079-c172285a-acd4-4565-aa29-f568553026bc.png)  
-  
+Thus, you can draw lines.    
 
 I'll continue to revise this document when I have time.  
 Plan: Conditional alerts for measures will be available. Text align for measures label will be available. 
