@@ -2,22 +2,22 @@
 
 # Hello
 I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.     
-This qlik extension allows you to show custom tables.  
+This qlik extension enables you to make tables easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146678970-581d55b9-7f17-455c-a187-4d13a2828422.png)  
-Small and medium-sized businesses in Japan really love such special tables.  
+So to speak, maruPL helps you classify measures by some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables.  
 
 
 # Get started
 Get the zip file: "maruPL.YYYY.MM.dd.zip"   
-I recommend that you get the newest one.  
+I recommend that you get the latest one.  
 You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app using maruPL.  
 Upload the zip file via your QMC. Then "maruPL" qlik extenstion will be installed.  
 
 
 ## Overall 
-Property names are subject to change because I'm not satisfied with the names. I try to avoid causing any effect to existing apps.    
-But for now, I named the parts of the extension properties as follows.  
+Property names are subject to change because I'm not satisfied with the names. Of course, I try to avoid causing any unfaborable effect to existing apps, though.    
+Anyway, I named the parts of the extension properties as follows.  
 ![image_description1](https://user-images.githubusercontent.com/95951577/146526354-6970e88a-0934-4ca5-9b3e-7f71ea69a646.png)  
 
 
