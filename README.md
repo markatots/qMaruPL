@@ -9,7 +9,7 @@ This qlik extension enables you to make measures easier to see for non-bi-expert
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146678970-581d55b9-7f17-455c-a187-4d13a2828422.png)  
 So to speak, qMaruPL helps you classify measures by decorating some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines.  
-What's more, the display speed is very fast in spite of the number of measures. A hundred measures will appeare in a second on your dashboards. I'm sure the display speed is key for successful BI.  
+What's more, the display speed is very fast in spite of the number of measures. A hundred of measures will appeare in a second on your dashboards. I'm sure the display speed is key for successful BI.  
 
 # Get started
 Get the zip file: "qMaruPL.YYYY.MM.dd.zip"   
