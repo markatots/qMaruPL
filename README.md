@@ -18,7 +18,7 @@ You can take the advantage of maruPL on both Qlik Sense SaaS and Qlik Sense on-p
 Of course, maruPL can be used with 漢字.     
 
 ## Overall 
-Property names are subject to change because I'm not satisfied with the names already. Of course, I try to avoid causing any unfaborable effect to existing apps, though.    
+Property names are subject to change because I'm not satisfied with the names already. Of course, I try to avoid causing any unfavorable effect to existing apps, though.    
 Anyway, I named the parts of the extension properties as follows.  
 ![image_description1](https://user-images.githubusercontent.com/95951577/146526354-6970e88a-0934-4ca5-9b3e-7f71ea69a646.png)  
 I use these names to explain tutorials.  
