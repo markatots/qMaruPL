@@ -122,7 +122,7 @@ Instead, you need to prepare a good number of measures as master itmes.
 This approach is a bit similar to M-OLAP's cube. MDX is good at finacial reports thanks to preset measures.  
 
 I'll continue to revise this document when I have time.  
-Plan: Conditional alerts for measures will be available. Text align for measures label will be available. Arranging dimensions verticaly will be available.  
+Plan: Conditional alerts for measures will be available. Arranging dimensions verticaly will be available.  
 
 # Copyright
 Copyright ©2021 OTSUKA CORPORATION
