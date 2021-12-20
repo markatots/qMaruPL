@@ -71,7 +71,7 @@ Add measures, M01, M02, M02/M01, M03, M04, and M04/M03 to maruPL. You could imag
 Go to "Table Overall" accordion property.  
 Find "Row Break Col(From 1-5)". And enter "3".  
 ![image_tutrial2_2](https://user-images.githubusercontent.com/95951577/146521789-f3b082e8-62fa-4506-927a-4f17de939682.png)  
-Measures get in 3 colomns. The width is too wide. Let's reduce the width and narrow it down.  
+Measures get in 3 columns. The width is too wide. Let's reduce the width and narrow it down.  
   
 Go to "Header for Measure text, width, color" accordion property.  
 Find "Width(px) if 0 then hidden", and enter 80.   
@@ -117,8 +117,8 @@ Turn "Use Measure Groups" switch on.
 Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.  
 ![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/146678079-c172285a-acd4-4565-aa29-f568553026bc.png)  
 Thus, you can separate measures into some groups, by ruled lines.      
-Both of the top header and the left header are drawn regardless of dimensions. You can just input the string.    
-Instead, you need prepare a good number of measures as master itmes.  
+Both of the top header and the left header are drawn regardless of dimensions. You can input the string directly.    
+Instead, you need to prepare a good number of measures as master itmes.  
 This approach is a bit similar to M-OLAP's cube. MDX is good at finacial reports thanks to preset measures.  
 
 I'll continue to revise this document when I have time.  
