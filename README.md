@@ -117,6 +117,9 @@ Turn "Use Measure Groups" switch on.
 Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.  
 ![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/146678079-c172285a-acd4-4565-aa29-f568553026bc.png)  
 Thus, you can separate measures into some groups, by ruled lines.      
+Both of the top header and the left header are drawn regardless of dimensions. You can just input the string.    
+Instead, you need prepare a good number of measures as master itmes.  
+This approach is a bit similar to M-OLAP's cube. MDX is good at finacial reports thanks to preset measures.  
 
 I'll continue to revise this document when I have time.  
 Plan: Conditional alerts for measures will be available. Text align for measures label will be available. Arranging dimensions verticaly will be available. 
