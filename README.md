@@ -5,21 +5,23 @@ I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.
 This qlik extension enables you to make tables easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146678970-581d55b9-7f17-455c-a187-4d13a2828422.png)  
-So to speak, maruPL helps you classify measures by some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables.  
-
+So to speak, maruPL helps you classify measures by some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines.  
+What's more, the display speed is very fast in spite of the number of measures. A hundred measures will appeare in a second on your dashboards. I'm sure the display speed is key for a successful BI.  
 
 # Get started
 Get the zip file: "maruPL.YYYY.MM.dd.zip"   
 I recommend that you get the latest one.  
 You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app using maruPL.  
-Upload the zip file via your QMC. Then "maruPL" qlik extenstion will be installed.  
+Upload the zip file via your QMC. Then "maruPL" qlik extenstion will be installed in your Qlik Sense environment.  
+Note you don't need to unzip.  
+You can take advantage of maruPL on both Qlik Sense SaaS and Qlik Sense on-premise.  
 
 
 ## Overall 
-Property names are subject to change because I'm not satisfied with the names. Of course, I try to avoid causing any unfaborable effect to existing apps, though.    
+Property names are subject to change because I'm not satisfied with the names already. Of course, I try to avoid causing any unfaborable effect to existing apps, though.    
 Anyway, I named the parts of the extension properties as follows.  
 ![image_description1](https://user-images.githubusercontent.com/95951577/146526354-6970e88a-0934-4ca5-9b3e-7f71ea69a646.png)  
-
+I use these names to explain tutorials.  
 
 ## Tutorial 1
 Let's make this.  
@@ -42,7 +44,7 @@ Set "On" as "Stand Out Band" switch in this "3.===★row span3" section. Maybe t
   
 Find "4.===★row span4=======" field, and Enter "3".   
 Find "5.===★row span5=======" field. Enter "1".  
-Set "right" as "align" radio button in this "5.===★row span5" section.     
+Set "right" as "align" radio button in the same section "5.===★row span5".     
 Set "On" as "has horizontal line" switch in this "5.===★row span5" section.   
 Set "On" as "Stand Out Band" switch in this "5.===★row span5" section.   
 ![image_tutrial_4_simple](https://user-images.githubusercontent.com/95951577/146491640-9dc4f26e-7547-48ef-8efc-50eb20ea372e.png)   
@@ -114,7 +116,7 @@ Turn "Use Measure Groups" switch on.
 ![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/146677952-0ebd22c0-f86c-4c84-af1b-7660b28c161c.png)  
 Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.  
 ![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/146678079-c172285a-acd4-4565-aa29-f568553026bc.png)  
-Thus, you can draw lines.    
+Thus, you can separate measures into some groups, by ruled lines.      
 
 I'll continue to revise this document when I have time.  
 Plan: Conditional alerts for measures will be available. Text align for measures label will be available. Arranging dimensions verticaly will be available. 
