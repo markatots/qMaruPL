@@ -1,11 +1,11 @@
-# maruPL is a Qlik Sense Extension.
+# maruPL.
 
 # Hello
 I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.     
 This qlik extension enables you to make measures easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146678970-581d55b9-7f17-455c-a187-4d13a2828422.png)  
-So to speak, maruPL helps you classify measures by some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines.  
+So to speak, maruPL helps you classify measures by decorating some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines.  
 What's more, the display speed is very fast in spite of the number of measures. A hundred measures will appeare in a second on your dashboards. I'm sure the display speed is key for successful BI.  
 
 # Get started
