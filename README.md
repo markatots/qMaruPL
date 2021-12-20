@@ -1,8 +1,5 @@
 # maruPL is a Qlik Sense Extension.
 
-# Notes for me
-How to edit readme: https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa
-
 # Hello
 I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.     
 This qlik extension allows you to show custom tables.  
