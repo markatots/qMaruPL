@@ -14,8 +14,8 @@ I recommend that you get the latest one.
 You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app using maruPL.  
 Upload the zip file via your QMC. Then "maruPL" qlik extenstion will be installed in your Qlik Sense environment.  
 Note that you don't need to unzip when uploading to QMC.  
-You can take advantage of maruPL on both Qlik Sense SaaS and Qlik Sense on-premise.  
-
+You can take the advantage of maruPL on both Qlik Sense SaaS and Qlik Sense on-premise.   
+Of course, maruPL can be used with 漢字.     
 
 ## Overall 
 Property names are subject to change because I'm not satisfied with the names already. Of course, I try to avoid causing any unfaborable effect to existing apps, though.    
@@ -122,7 +122,7 @@ Instead, you need prepare a good number of measures as master itmes.
 This approach is a bit similar to M-OLAP's cube. MDX is good at finacial reports thanks to preset measures.  
 
 I'll continue to revise this document when I have time.  
-Plan: Conditional alerts for measures will be available. Text align for measures label will be available. Arranging dimensions verticaly will be available. 
+Plan: Conditional alerts for measures will be available. Text align for measures label will be available. Arranging dimensions verticaly will be available.  
 
 # Copyright
 Copyright ©2021 OTSUKA CORPORATION
