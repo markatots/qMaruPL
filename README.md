@@ -12,8 +12,8 @@ What's more, the display speed is very fast in spite of the number of measures. 
 Get the zip file: "maruPL.YYYY.MM.dd.zip"   
 I recommend that you get the latest one.  
 You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app using maruPL.  
-Upload the zip file via your QMC. Then "maruPL" qlik extenstion will be installed in your Qlik Sense environment.  
-Note that you don't need to unzip when uploading to QMC.  
+Import the zip file into Qlik Sense Server via your QMC. Then "maruPL" qlik extenstion will be installed in your Qlik Sense environment.  
+Note that you don't need to unzip.  
 You can take the advantage of maruPL on both Qlik Sense SaaS and Qlik Sense on-premise.   
 Of course, maruPL can be used with 漢字.     
 
