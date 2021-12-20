@@ -6,14 +6,14 @@ This qlik extension enables you to make tables easier to see for non-bi-expert u
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146678970-581d55b9-7f17-455c-a187-4d13a2828422.png)  
 So to speak, maruPL helps you classify measures by some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines.  
-What's more, the display speed is very fast in spite of the number of measures. A hundred measures will appeare in a second on your dashboards. I'm sure the display speed is key for a successful BI.  
+What's more, the display speed is very fast in spite of the number of measures. A hundred measures will appeare in a second on your dashboards. I'm sure the display speed is key for successful BI.  
 
 # Get started
 Get the zip file: "maruPL.YYYY.MM.dd.zip"   
 I recommend that you get the latest one.  
 You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app using maruPL.  
 Upload the zip file via your QMC. Then "maruPL" qlik extenstion will be installed in your Qlik Sense environment.  
-Note you don't need to unzip.  
+Note that you don't need to unzip when uploading to QMC.  
 You can take advantage of maruPL on both Qlik Sense SaaS and Qlik Sense on-premise.  
 
 
@@ -92,7 +92,7 @@ Set "On" as "Repeat Measure Name in dimension cols" switch.
 ![image_tutrial2_5](https://user-images.githubusercontent.com/95951577/146525124-31a431bf-8828-4502-b0f9-769b72341887.png)  
 Actually when "Repeat Measure Name in dimension cols" is "On", the table become very wide. But for now, I just wanted to explain the function.  
 Turn the switch off.  
-I don't want to use the measure labels.  
+Now, I don't want to use the measure labels in this tutorial.  
   
 Go to "Header for Measure text, width, color" accordion property again.  
 Find "Width(px) if 0 then hidden", and enter 0.   
