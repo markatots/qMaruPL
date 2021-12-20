@@ -1,21 +1,24 @@
-# maruPL.
+qMaruPL
+
+
+# qMaruPL.
 
 # Hello
 I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.     
 This qlik extension enables you to make measures easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/146678970-581d55b9-7f17-455c-a187-4d13a2828422.png)  
-So to speak, maruPL helps you classify measures by decorating some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines.  
+So to speak, qMaruPL helps you classify measures by decorating some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines.  
 What's more, the display speed is very fast in spite of the number of measures. A hundred measures will appeare in a second on your dashboards. I'm sure the display speed is key for successful BI.  
 
 # Get started
-Get the zip file: "maruPL.YYYY.MM.dd.zip"   
+Get the zip file: "qMaruPL.YYYY.MM.dd.zip"   
 I recommend that you get the latest one.  
-You can also get "maruPL extension_sample.qvf" that is a sample Qlik Sense app using maruPL.  
-Import the zip file into Qlik Sense Server via your QMC. Then "maruPL" qlik extenstion will be installed in your Qlik Sense environment.  
+You can also get "qMaruPL extension_sample.qvf" that is a sample Qlik Sense app using qMaruPL.  
+Import the zip file into Qlik Sense Server via your QMC. Then "qMaruPL" qlik extenstion will be installed in your Qlik Sense environment.  
 Note that you don't need to unzip.  
-You can take the advantage of maruPL on both Qlik Sense SaaS and Qlik Sense on-premise.   
-Of course, maruPL can be used with 漢字.     
+You can take the advantage of qMaruPL on both Qlik Sense SaaS and Qlik Sense on-premise.   
+Of course, qMaruPL can be used with 漢字.     
 
 ## Overall 
 Property names are subject to change because I'm not satisfied with the names already. Of course, I try to avoid causing any unfavorable effect to existing apps, though.    
@@ -27,8 +30,8 @@ I use these names to explain tutorials.
 Let's make this.  
 ![image_tutrial_1_simple](https://user-images.githubusercontent.com/95951577/146487971-3fa654ff-8c1a-4a97-b171-c29d7fdb85ad.png)  
 
-Create a new sheet and put a maruPL extension on it.  
-Add 10 measures, M01-M10, to maruPL.  
+Create a new sheet and put a qMaruPL extension on it.  
+Add 10 measures, M01-M10, to qMaruPL.  
 ![image_tutrial_2_simple](https://user-images.githubusercontent.com/95951577/146490833-ba9266c8-df75-43a9-adf4-a90e4ce092b5.png)  
   
 Go to "Lv-1 Groups" accordion panel.  
@@ -64,8 +67,8 @@ Completed!
 Let's make this.  
 ![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/146678079-c172285a-acd4-4565-aa29-f568553026bc.png)    
     
-Create a new sheet and put a maruPL on it.  
-Add measures, M01, M02, M02/M01, M03, M04, and M04/M03 to maruPL. You could imagine two sets of a budget, an actual, and the ratio.   
+Create a new sheet and put a qMaruPL on it.  
+Add measures, M01, M02, M02/M01, M03, M04, and M04/M03 to qMaruPL. You could imagine two sets of a budget, an actual, and the ratio.   
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
   
 Go to "Table Overall" accordion property.  
@@ -84,7 +87,7 @@ Go to "Lv-2 Groups" accordion property.
 Find "Col Width(px) if 0 then hidden", and enter 0. It means the very left column becomes invisible. This function is useful. Also the other columns can be deleted by using width=0.  
 ![image_tutrial2_3](https://user-images.githubusercontent.com/95951577/146523743-3aef5097-58c9-47ef-9c48-3c15e3ce925e.png)  
 
-  Add dimension "Dim1" to maruPL. You could imagine departments or years. You can also specify the dimension's sort order if you want to do so.  
+  Add dimension "Dim1" to qMaruPL. You could imagine departments or years. You can also specify the dimension's sort order if you want to do so.  
 ![image_tutrial2_4](https://user-images.githubusercontent.com/95951577/146524735-a3ecc835-5b51-4d79-8daa-b378cfc1c172.png)  
   
 Go to the "Table Overall" accordion property again.  
