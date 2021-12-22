@@ -72,7 +72,7 @@ Add measures, M01, M02, M02/M01, M03, M04, and M04/M03 to qMaruPL. You could ima
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
   
 Go to "Table Overall" accordion property.  
-Find "Row Break Col(From 1-5)". And enter "3".  
+Find "■Row Break Col(From 1-5)". And enter "3".  
 ![image_tutrial2_2](https://user-images.githubusercontent.com/95951577/146521789-f3b082e8-62fa-4506-927a-4f17de939682.png)  
 Measures get in 3 columns. The width is too wide. Let's reduce the width and narrow it down.  
   
