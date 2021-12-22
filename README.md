@@ -4,7 +4,7 @@ qMaruPL
 # qMaruPL.
 
 # Hello
-I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.     
+Hi. I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.     
 This qlik extension enables you to make measures easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/147097916-50d59211-ce0c-4f44-95fb-1450bec2ad2c.png)  
@@ -116,19 +116,19 @@ Find "Lv1 caption 2nd row" field, and enter "Profit" instead of the default valu
 If you want to see the original names of the measures, remember, even though you set "Repeat Measure Name in dimension cols" switch on, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at "Width(px) if 0 then hidden" field in "Header for Measure text, width, color" accordion property.      
   
 Go to "Table Overall" accordion property.    
-Turn "Use Measure Groups" switch on.  
-![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147091523-1a585ea8-05b5-407d-915c-57a3415c39b0.png)   
-  
-Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.  
-![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/147091687-173c2589-f056-41ae-bbfc-8e1740325f44.png)  
-
-Find "BackGroudColor1" in the "1.===★number(1-4) of measures1★=======" section.
-Enter "darkred" instead of the default value "mediumblue".  
-Find "BackGroudColor2" in the "2.===★number(1-3) of measures2★=======" section.
+Turn "Use Measure Groups" switch on.   
+![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147091523-1a585ea8-05b5-407d-915c-57a3415c39b0.png)    
+   
+Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.   
+![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/147091687-173c2589-f056-41ae-bbfc-8e1740325f44.png)   
+   
+Find "BackGroudColor1" in the "1.===★number(1-4) of measures1★=======" section.   
+Enter "darkred" instead of the default value "mediumblue".    
+Find "BackGroudColor2" in the "2.===★number(1-3) of measures2★=======" section.   
 Enter "darkgreen" instead of the default value "mediumblue".  
 ![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147092377-e27cf084-6082-476e-b011-0682df09bc2a.png)  
-
-
+I changed the specification with regard to color with measure group, December 22th, 2021, so that a header can takes over the color of the measure group header above.  
+  
 Thus, you can separate measures into some groups, by ruled lines.      
 Both of the top header and the left header are drawn regardless of dimensions. You can input the string directly.    
 Instead, you need to prepare a good number of measures as master itmes.  
@@ -143,7 +143,7 @@ Anyway, I beleave that we want to minimize that situation.
 
 I'll continue to revise this document when I have time.  
 Plan: Conditional alerts for measures will be available.  
-Arranging dimensions verticaly will be available. Although I've understand that dealing with the hypercube consisting of two dimensions is very very tough, I would try someday.     
+Arranging dimensions verticaly will be available. Although I've understood that dealing with a hypercube consisting of two dimensions is very very tough, I would try someday.     
 I'm going to write description in Japanese.     
 
 # Copyright
