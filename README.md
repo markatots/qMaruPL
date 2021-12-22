@@ -65,7 +65,7 @@ Completed!
   
 ## Tutorial 2
 Let's make this.  
-![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/146678079-c172285a-acd4-4565-aa29-f568553026bc.png)    
+![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147092377-e27cf084-6082-476e-b011-0682df09bc2a.png)  
     
 Create a new sheet and put a qMaruPL on it.  
 Add measures, M01, M02, M02/M01, M03, M04, and M04/M03 to qMaruPL. You could imagine two sets of a budget, an actual, and the ratio.   
