@@ -116,13 +116,23 @@ If you want to see the original names of the measures, remember, even though you
   
 Go to "Table Overall" accordion property.    
 Turn "Use Measure Groups" switch on.  
-![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/146677952-0ebd22c0-f86c-4c84-af1b-7660b28c161c.png)  
+![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147091523-1a585ea8-05b5-407d-915c-57a3415c39b0.png)   
+  
 Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.  
-![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/146678079-c172285a-acd4-4565-aa29-f568553026bc.png)  
+![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/147091687-173c2589-f056-41ae-bbfc-8e1740325f44.png)  
+
+Find "BackGroudColor1" in the "1.===★number(1-4) of measures1★=======" section.
+Enter "darkred" instead of the default value "mediumblue".  
+Find "BackGroudColor2" in the "2.===★number(1-3) of measures2★=======" section.
+Enter "darkgreen" instead of the default value "mediumblue".  
+![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147092377-e27cf084-6082-476e-b011-0682df09bc2a.png)  
+
+
 Thus, you can separate measures into some groups, by ruled lines.      
 Both of the top header and the left header are drawn regardless of dimensions. You can input the string directly.    
 Instead, you need to prepare a good number of measures as master itmes.  
 This approach is a bit similar to M-OLAP's cube. MDX is good at finacial reports thanks to preset measures.  
+
 
 I'll continue to revise this document when I have time.  
 Plan: Conditional alerts for measures will be available. Arranging dimensions verticaly will be available.  
