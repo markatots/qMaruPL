@@ -21,7 +21,7 @@ You can take the advantage of qMaruPL on both Qlik Sense SaaS and Qlik Sense on-
 Of course, qMaruPL can be used with 漢字.     
 
 ## Overall 
-Property names are subject to change because I'm not satisfied with the names already. Of course, I try to avoid causing any unfavorable effect to existing apps, though.    
+Property names are subject to change because I'm not satisfied with the names already due to my poor English. Of course, I try to avoid causing any unfavorable effect to existing apps, though.    
 Anyway, I named the parts of the extension properties as follows.  
 ![image_description1](https://user-images.githubusercontent.com/95951577/146526354-6970e88a-0934-4ca5-9b3e-7f71ea69a646.png)  
 I use these names to explain tutorials.  
@@ -141,7 +141,9 @@ So, usually, we also take advantage of Qlik NPrinting when we need to export to 
 Anyway, I beleave that we want to minimize that situation.  
 
 I'll continue to revise this document when I have time.  
-Plan: Conditional alerts for measures will be available. Arranging dimensions verticaly will be available.  
+Plan: Conditional alerts for measures will be available.  
+Arranging dimensions verticaly will be available. Although I've understand that dealing with the hypercube consisting of two dimensions is very very tough, I would try someday.     
+I'm going to write description in Japanese.     
 
 # Copyright
 Copyright ©2021 OTSUKA CORPORATION
