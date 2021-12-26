@@ -141,6 +141,12 @@ Even though qMaruPL supports Excel export, as you know, Qlik Sense API allows us
 So, usually, we also take advantage of Qlik NPrinting when we need to export to Excel.   
 Anyway, I beleave that we want to minimize that situation.  
 
+
+# Release note
+Decenber 26th,2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one. 
+
+
+# etc.
 I'll continue to revise this document when I have time.  
 Plan: Conditional alerts for measures will be available.  
 Arranging dimensions verticaly will be available. Although I've understood that dealing with a hypercube consisting of two dimensions is very very tough, I would try someday.     
