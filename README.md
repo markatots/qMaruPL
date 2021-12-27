@@ -122,11 +122,8 @@ If you want to see the original names of the measures, remember, even though you
   
 Go to "Table Overall" accordion property.    
 Turn "Use Measure Groups" switch on.   
-![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147489827-c633ec58-d870-4d85-8242-cbeb9ad3b1b5.png)  
-
-   
 Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.   
-![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/147091687-173c2589-f056-41ae-bbfc-8e1740325f44.png)   
+![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147489827-c633ec58-d870-4d85-8242-cbeb9ad3b1b5.png)  
    
 Find "BackGroudColor1" in the "1.===★number(1-4) of measures1★=======" section.   
 Enter "darkred" instead of the default value "mediumblue".    
