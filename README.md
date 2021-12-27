@@ -70,7 +70,7 @@ Let's make this.
 ![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147092377-e27cf084-6082-476e-b011-0682df09bc2a.png)  
     
 Create a new sheet and put a qMaruPL on it.  
-Add measures, M01, M02, M02/M01, M03, M04, and M04/M03 to qMaruPL. You could imagine two sets of a budget, an actual, and the ratio.   
+Add measures, [M01], [M02], [M02/M01], [M03], [M04], and [M04/M03] to qMaruPL. The order is quite important to take advantage of aMaruPL. You could imagine two sets of a budget, an actual, and the ratio. The sample data of this tutorial hasn't any business meaning, though.  
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
   
 Go to "Table Overall" accordion property.  
@@ -79,8 +79,8 @@ Find "■Row Break Col(From 1-5)". And enter "3".
 Measures get in 3 columns. The width is too wide. Let's reduce the width and narrow it down.  
   
 Go to "Header for Measure text, width, color" accordion property.  
-Find "Width(px) if 0 then hidden", and enter 80.   
-Find "Total Col Width(px)" and enter 60.  
+Find "Meas Name Width(px) if 0 then hidden", and enter 80.   
+Find "Meas Value Width(px) 'Total' Col " and enter 60.  
   
 Go to "Lv-1 Groups" accordion property.  
 Find "Col Width(px) if 0 then hidden", and enter 80.  
@@ -89,45 +89,52 @@ Go to "Lv-2 Groups" accordion property.
 Find "Col Width(px) if 0 then hidden", and enter 0. It means the very left column becomes invisible. This function is useful. Also the other columns can be deleted by using width=0.  
 ![image_tutrial2_3](https://user-images.githubusercontent.com/95951577/146523743-3aef5097-58c9-47ef-9c48-3c15e3ce925e.png)  
 
-  Add dimension "Dim1" to qMaruPL. You could imagine departments or years. You can also specify the dimension's sort order if you want to do so.  
-![image_tutrial2_4](https://user-images.githubusercontent.com/95951577/146524735-a3ecc835-5b51-4d79-8daa-b378cfc1c172.png)  
-  
+ Add dimension "Dim1" to qMaruPL. You could imagine departments or years. You can also specify the dimension's sort order if you want to do so.  
+![image_tutrial2_4](https://user-images.githubusercontent.com/95951577/147488549-ae828d22-5d16-4f40-8d70-7c7b0d957bb4.png)  
+
 Go to the "Table Overall" accordion property again.  
 Set "On" as "Repeat Measure Name in dimension cols" switch.  
-![image_tutrial2_5](https://user-images.githubusercontent.com/95951577/146525124-31a431bf-8828-4502-b0f9-769b72341887.png)  
-Actually when "Repeat Measure Name in dimension cols" is "On", the table become very wide. But for now, I just wanted to explain the function.  
+![image_tutrial2_5](https://user-images.githubusercontent.com/95951577/147488681-eafabe61-ef4d-4d8b-ab90-81b55ed599e6.png)  
+ 
+Actually if "Repeat Measure Name in dimension cols" is "On", the table become very wide. But for now, I just wanted to explain the function. If the 'Meas Name Width' property is 0, the column won't appear, anyway.
 Turn the switch off.  
 Now, I don't want to use the measure labels in this tutorial.  
   
 Go to "Header for Measure text, width, color" accordion property again.  
-Find "Width(px) if 0 then hidden", and enter 0.   
-![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/146531048-6175f467-3c7a-4cf5-aaa5-f4548c3b26ce.png)   
-Find "Header Text Total 1st", and enter "Budget".  
-Find "Header Text Total 2nd", and enter "Actual".  
-Find "Header Text Total 3rd", and enter "Ratio".  
-![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/146531535-2f3d6efe-6b87-408d-be87-77835b30472a.png)   
-  
+Find "Meas Name Width(px) if 0 then hidden", and enter 0. Then the measure name column desappeared.  
+![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/147489077-26061814-c6cc-4301-a1ee-f8d8bc3ee4cf.png)  
+
+Find "Header Text Total 1st", and enter "Budget" instead of the default value 'Total'.  
+Find "Header Text Total 2nd", and enter "Actual" instead of the default value 'Total 2ndCol'.  
+Find "Header Text Total 3rd", and enter "Ratio" instead of the default value 'Total 3rdCol'.  
+![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/147489286-c2e536ae-a0d5-4c3b-ba73-047276924a5e.png)  
+
 Go to "Lv-1 Groups" accordion property.    
 Find "1.===★rowspan1★" field, and enter "1" instead of the default value 99.  
 Find "Lv1 caption 1st row", and enter "Sales" instead of the default value "Lv1 1st".  
 Find "Stand Out Band" switch, and set it on.  
 Find "2.===★rowspan2★" field, and enter "1" instead of the default value 99.  
 Find "Lv1 caption 2nd row" field, and enter "Profit" instead of the default value "Lv1 2nd".  
-![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/146532628-8003d1cc-c235-4a91-b619-9c9f6f691e79.png)  
-If you want to see the original names of the measures, remember, even though you set "Repeat Measure Name in dimension cols" switch on, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at "Width(px) if 0 then hidden" field in "Header for Measure text, width, color" accordion property.      
+Find "Stand Out Band" switch, and set it on.  
+![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/147489701-45ff0991-9d62-4606-b0bd-6b742d9740fa.png)  
+
+If you want to see the original names of the measures, remember, even though you set "Repeat Measure Name in dimension cols" switch on, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at "Meas Name Width(px) if 0 then hidden" field in "Header for Measure text, width, color" accordion property.      
   
 Go to "Table Overall" accordion property.    
 Turn "Use Measure Groups" switch on.   
-![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147091523-1a585ea8-05b5-407d-915c-57a3415c39b0.png)    
+![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147489827-c633ec58-d870-4d85-8242-cbeb9ad3b1b5.png)  
+
    
 Find "1.===★number(1-4) of measures1★=======" field. And enter "2" instead of the default value 1.   
 ![image_tutrial2_10](https://user-images.githubusercontent.com/95951577/147091687-173c2589-f056-41ae-bbfc-8e1740325f44.png)   
    
 Find "BackGroudColor1" in the "1.===★number(1-4) of measures1★=======" section.   
 Enter "darkred" instead of the default value "mediumblue".    
+  
 Find "BackGroudColor2" in the "2.===★number(1-3) of measures2★=======" section.   
 Enter "darkgreen" instead of the default value "mediumblue".  
-![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147092377-e27cf084-6082-476e-b011-0682df09bc2a.png)  
+![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147490159-5673121b-3014-45ef-afaf-b9459c50fdf4.png)   
+
 I changed the specification with regard to color with measure group, December 22th, 2021, so that a header can takes over the color of the measure group header above.  
   
 Thus, you can separate measures into some groups, by ruled lines.      
