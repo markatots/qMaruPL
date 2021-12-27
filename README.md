@@ -137,10 +137,13 @@ I changed the specification with regard to color with measure group, December 22
 Thus, you can separate measures into some groups, by ruled lines.      
 Both of the top header and the left header are drawn regardless of dimensions. You can input the string directly.    
 Instead, you need to prepare a good number of measures as master itmes.  
-This approach is a bit similar to M-OLAP's cube. MDX is good at finacial reports thanks to preset measures.  
-  
-qMaruPL has too many properties to explain.  Looking for a property in the narrow area is really tough even for me.   
 
+qMaruPL can set conditional back ground color, font color, and blink as measures.   
+![image_tutrial2_14](https://user-images.githubusercontent.com/95951577/147491055-1248d892-b214-4b94-82f8-fa2298beef23.png)
+But, in the current version, you need to set all three properties at once. I will correct the behavior.  
+Anyway to manage measure's property took a lot of effort. I had to create two HyperCubes to calcurate the grand total conditional expression. I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
+
+I need to enrich this document because qMaruPL has too many properties to explain.  Looking for a property in the narrow area is really tough.   
 
 Even though qMaruPL supports Excel export, as you know, Qlik Sense API allows us to simply export mere a list of dimensions and measures.  
 So, usually, we also take advantage of Qlik NPrinting when we need to export to Excel.   
