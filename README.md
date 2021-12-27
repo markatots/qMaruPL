@@ -43,11 +43,12 @@ Similarly find "2.===★row span2=======" field. Enter "2".
 Find the "3.===★row span3=======" field. Enter "1".  
 Set "right" as "align" radio button in this "3.===★row span3" section.   
 Set "On" as "has horizontal line" switch in this "3.===★row span3" section.   
-Set "On" as "Stand Out Band" switch in this "3.===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.   
+Set "On" as "Stand Out Band" switch in this "3.===★row span3" section. Maybe the name is not appropriate. I wanted to say that the row is highlighted.
+
 ![image_tutrial_3_simple](https://user-images.githubusercontent.com/95951577/146493323-7c9d0c46-1835-43df-90a3-7ff22a267a97.png)  
   
-Find "4.===★row span4=======" field, and Enter "3".   
-Find "5.===★row span5=======" field. Enter "1".  
+Find "4.===★row span4=======" field, and Enter "3" instead of the default value 99.   
+Find "5.===★row span5=======" field. Enter "1" instead of the default value 99.  
 Set "right" as "align" radio button in the same section "5.===★row span5".     
 Set "On" as "has horizontal line" switch in this "5.===★row span5" section.   
 Set "On" as "Stand Out Band" switch in this "5.===★row span5" section.   
@@ -60,7 +61,7 @@ Find "1.===★Lv2 row span1=======" field. And Enter "6" instead of default valu
 ![image_tutrial_5_simple](https://user-images.githubusercontent.com/95951577/146494043-fe6a10a2-2360-4934-999c-ea90a90912d1.png)  
 
 Add dimention "Dim1" to the extension.  
-![image_tutrial_6_simple](https://user-images.githubusercontent.com/95951577/146494432-d05edfdf-fa25-441a-85fd-f16eb0c2667e.png)  
+![image_tutrial_1_simple](https://user-images.githubusercontent.com/95951577/147487574-ac17dfde-368f-4918-a37a-72b75ee89352.png)  
 Completed!  
   
   
