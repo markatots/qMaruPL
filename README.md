@@ -140,10 +140,17 @@ Thus, you can separate measures into some groups, by ruled lines.
 Both of the top header and the left header are drawn regardless of dimensions. You can input the string directly.    
 Instead, you need to prepare a good number of measures as master itmes.  
 
-qMaruPL can set conditional back ground color, font color, and blink as measures.   
-![image_tutrial2_14](https://user-images.githubusercontent.com/95951577/147491055-1248d892-b214-4b94-82f8-fa2298beef23.png)
-But, in the current version, you need to set all three properties at once. I will correct the behavior.  
-Anyway to manage measure's property took a lot of effort. I had to create two HyperCubes to calcurate the grand total conditional expression. I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
+From December 28th, 2021, qMaruPL can be set conditional back ground color, font color, and blink as measure properties.   
+![image_tutrial2_14](https://user-images.githubusercontent.com/95951577/147491055-1248d892-b214-4b94-82f8-fa2298beef23.png)  
+When you input an expression to a measure, I recommend that you start with an equal sign ='red', ='true', =if([M01]>100,'red','yellow'), and so on.  
+Although you can also omit the equal sign, you still need to enclose the value in apostrophes like 'red', 'true', if([M01]>100,'red','yellow'), and so on.  
+If you want to use master items, they have to be enclosed in square brackets, like [M01].    
+Those are oliginally the specifications of Qlik Sense.   
+You could be advised that you can directly input the color name like aliceblue, lightyellow, without apostrophy as well as equal sign, in place other than measure properties.  
+As you saw in this tutorial 2, you could enter "darkred" and "darkgreen" in qMaruPL properties.   
+
+If you have apps that have already used qMaruPL, you need to set all three properties, conditional back ground color, font color, and blink, at once. Although I want to correct the behavior, it might be inevitable.  
+Anyway to manage to have an extension have measure's property took a lot of effort. I had to create two HyperCubes to calcurate the grand total conditional expression. I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
 
 I need to enrich this document because qMaruPL has too many properties to explain.  Looking for a property in the narrow area is really tough.   
 
