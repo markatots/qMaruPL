@@ -115,7 +115,7 @@ Find ***"Header Text Total 3rd"***, and enter "Ratio" instead of the default val
 Go to ***"Lv-1 Groups"*** accordion property and unfold it.    
 Find ***"1.===★rowspan1★"*** field, and enter "1" instead of the default value 99.  
 Find ***"Lv1 caption 1st row"***, and enter "Sales" instead of the default value "Lv1 1st".  
-Find ***"Stand Out Band" switch, and set it on.  
+Find ***"Stand Out Band"*** switch, and set it on.  
 Find ***"2.===★rowspan2★"*** field, and enter "1" instead of the default value 99.  
 Find ***"Lv1 caption 2nd row"*** field, and enter "Profit" instead of the default value "Lv1 2nd".  
 Find ***"Stand Out Band"*** switch, and set it on.  
