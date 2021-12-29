@@ -70,7 +70,7 @@ Completed!
   
 ## Tutorial 2
 Let's make this.  
-![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147092377-e27cf084-6082-476e-b011-0682df09bc2a.png)  
+![image_tutrial2_14](https://user-images.githubusercontent.com/95951577/147648821-5cf522da-8671-4fdc-917a-ed516f347a5f.png)   
     
 Create a new sheet and put a qMaruPL on it.  
 Add measures, ***[M01]***, ***[M02]***, ***[M02/M01]***, ***[M03]***, ***[M04]***, and ***[M04/M03]*** to qMaruPL. The order is quite important to take advantage of aMaruPL. You could imagine two sets of a budget, an actual, and the ratio. The sample data of this tutorial hasn't any business meaning, though.  
