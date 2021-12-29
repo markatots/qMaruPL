@@ -91,14 +91,14 @@ Find ***"Col Width(px) if 0 then hidden"***, and enter 80.
 Go to ***"Lv-2 Groups"*** accordion property and unfold it.  
 Find ***"Col Width(px) if 0 then hidden"***, and enter 0. It means the very left column becomes invisible. This function is useful. Also the other columns can be removed by using width=0.  
 ![image_tutrial2_3](https://user-images.githubusercontent.com/95951577/146523743-3aef5097-58c9-47ef-9c48-3c15e3ce925e.png)  
-
+  
  Add dimension _"Dim1"_ to qMaruPL. You could imagine departments or years. You can also specify the dimension's sort order if you want to do so.  
 ![image_tutrial2_4](https://user-images.githubusercontent.com/95951577/147488549-ae828d22-5d16-4f40-8d70-7c7b0d957bb4.png)  
-
+  
 Go to the ***"Table Overall"*** accordion property again.  
 Set "On" as ***"Repeat Measure Name in dimension cols"*** switch that is among the best functions of qMaruPL.  
 ![image_tutrial2_5](https://user-images.githubusercontent.com/95951577/147488681-eafabe61-ef4d-4d8b-ab90-81b55ed599e6.png)  
- 
+  
 If ***"Repeat Measure Name in dimension cols"*** is _"On"_, the table become very wide. But for now, I just wanted to explain the function. If ***'Meas Name Width...'*** property is 0, the column won't appear, anyway.
 Turn the switch off.  
 Now, I don't want to use the measure labels (names) in this tutorial.  
@@ -106,12 +106,12 @@ Now, I don't want to use the measure labels (names) in this tutorial.
 Go to ***"Header for Measure text, width, color"*** accordion property again.  
 Find ***"Meas Name Width(px) if 0 then hidden"***, and enter 0. Then the measure name (label) column desappeared.  
 ![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/147489077-26061814-c6cc-4301-a1ee-f8d8bc3ee4cf.png)  
-
+  
 Find ***"Header Text Total 1st"***, and enter "Budget" instead of the default value 'Total'.  
 Find ***"Header Text Total 2nd"***, and enter "Actual" instead of the default value 'Total 2ndCol'.  
 Find ***"Header Text Total 3rd"***, and enter "Ratio" instead of the default value 'Total 3rdCol'.  
 ![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/147489286-c2e536ae-a0d5-4c3b-ba73-047276924a5e.png)  
-
+  
 Go to ***"Lv-1 Groups"*** accordion property and unfold it.    
 Find ***"1.===★rowspan1★"*** field, and enter "1" instead of the default value 99.  
 Find ***"Lv1 caption 1st row"***, and enter "Sales" instead of the default value "Lv1 1st".  
@@ -120,7 +120,7 @@ Find ***"2.===★rowspan2★"*** field, and enter "1" instead of the default val
 Find ***"Lv1 caption 2nd row"*** field, and enter "Profit" instead of the default value "Lv1 2nd".  
 Find ***"Stand Out Band"*** switch, and set it on.  
 ![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/147489701-45ff0991-9d62-4606-b0bd-6b742d9740fa.png)  
-
+  
 If you want to see the original names of the measures, remember, even though you set ***"Repeat Measure Name in dimension cols"*** switch as _"on"_, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at ***"Meas Name Width(px) if 0 then hidden"*** field in ***"Header for Measure text, width, color"*** accordion property.      
   
 Go to ***"Table Overall"*** accordion property and unfold it.    
@@ -134,15 +134,18 @@ Enter "darkred" instead of the default value "mediumblue".
 Find ***"BackGroudColor2"*** in the ***"2.===★number(1-3) of measures2★======="*** section.   
 Enter "darkgreen" instead of the default value "mediumblue".  
 ![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147490159-5673121b-3014-45ef-afaf-b9459c50fdf4.png)   
-
+  
 I changed the specification with regard to color with measure group, December 22th, 2021, so that a header can takes over the color of the measure group header above.  
   
 Thus, you can separate measures into some groups, by ruled lines.      
 Both of the top header and the left header are drawn regardless of dimensions. You can input the string directly.    
 Instead, you need to prepare a good number of measures as master itmes.  
-
-From December 28th, 2021, qMaruPL can be set conditional back ground color, font color, and blink as measure properties.   
-![image_tutrial2_14](https://user-images.githubusercontent.com/95951577/147491055-1248d892-b214-4b94-82f8-fa2298beef23.png)  
+    
+Measures can have some good properties.     
+![image_tutrial2_15](https://user-images.githubusercontent.com/95951577/147649959-986b481c-1bfe-4e0b-aa2b-87619a65a31c.png)   
+    
+From December 28th, 2021, qMaruPL can be set conditional back ground color, font color, and blink as the one of the measure properties.   
+![image_tutrial2_14](https://user-images.githubusercontent.com/95951577/147648821-5cf522da-8671-4fdc-917a-ed516f347a5f.png)   
   
 When you input an expression to a measure, I recommend that you start with an equal sign _='red'_, _='true'_, _=if([M01]>100,'red','yellow')_, and so on.  
 Although you can also omit the equal sign, you still need to enclose the value in apostrophes like _'red'_, _'true'_, _if([M01]>100,'red','yellow')_, and so on.  
@@ -152,19 +155,29 @@ Those are originally the specifications of Qlik Sense.
 You could be advised that you can directly input the color name like _aliceblue_, _lightyellow_, without apostrophies as well as equal sign, in place other than measure properties.  
 As you saw in this tutorial 2, you could enter "darkred" and "darkgreen" in qMaruPL properties.   
 Color codes are displayed here, "https://www.colordic.org/".   
-
+  
 If you have apps that have already used qMaruPL since qMaruPL didn't start to support this function, you need to set all three properties, conditional back ground color, font color, and blink, at once, from the top to the bottom. Or you might see a JSON error message once. Although I want to correct the behavior, it might be inevitable.  
 Anyway to manage to have an extension have measure's property took a lot of my effort. I had to create two HyperCubes to calcurate the grand total conditional expression. I spent a good deal of time on looking into the specifications. So I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
+  
+From December 29th, 2021, qMaruPL can be set navigation sheet id as the one of the measure properties.   
+While hovering on the measure that has the navigation sheet id property, a mouse cursor indicates that the cell can be clicked.  
+The sheet id is here, the part of bold italic.  
+https://qlikserver/sense/app/29ff211c-3be3-4523-a26c-44e09577e69e/sheet/***a4d37a1a-556e-4dfa-bedf-525ca36a4fe2***/state/edit  
+
+
+
+
+## Tips
 
 I need to enrich this document because qMaruPL has too many properties to explain.  Looking for a property in the narrow area is really tough.   
 
 Even though qMaruPL supports Excel export, as you know, Qlik Sense API allows us to simply export mere a list of dimensions and measures.  
-So, usually, we also take advantage of Qlik NPrinting when we need to export to Excel.   
-Anyway, I beleave that we want to minimize that situation.  
+So, usually, we also take advantage of Qlik NPrinting when we need to export to Excel. Anyway, I beleave that we want to minimize that situation.  
+
 
 
 # Release note
-Decenber 28th,2021 - I released measure propertyr . 
+Decenber 29th,2021 - I released four measure properties . 
 Decenber 26th,2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one. 
 
 
