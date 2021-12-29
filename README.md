@@ -158,8 +158,8 @@ Color codes are displayed here, "https://www.colordic.org/".
   
 From December 29th, 2021, qMaruPL can be set navigation sheet id as the one of the measure properties.   
 While hovering on the measure that has the navigation sheet id property, a mouse cursor indicates that the cell can be clicked.  
-The sheet id is here, the part of bold italic.  
-https://qlikserver/sense/app/29ff211c-3be3-4523-a26c-44e09577e69e/sheet/***a4d37a1a-556e-4dfa-bedf-525ca36a4fe2***/state/edit  
+The sheet id is here, the part of bold italic, after ***"sheet/"*** enclosed in "/".  
+"https://qlikserver/sense/app/29ff211c-3be3-4523-a26c-44e09577e69e/sheet/***a4d37a1a-556e-4dfa-bedf-525ca36a4fe2***/state/edit"  
 
 
 
