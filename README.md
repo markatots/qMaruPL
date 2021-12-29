@@ -125,13 +125,13 @@ If you want to see the original names of the measures, remember, even though you
   
 Go to ***"Table Overall"*** accordion property and unfold it.    
 Turn ***"Use Measure Groups"*** switch on.   
-Find ***"1.===★number(1-4) of measures1★======="*** field. And enter "2" instead of the default value 1.   
+Find ***"1.===★Colspan1 (1-4) of measures1★======="*** field. And enter "2" instead of the default value 1.   
 ![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147489827-c633ec58-d870-4d85-8242-cbeb9ad3b1b5.png)  
    
-Find ***"BackGroudColor1"*** field in the ***"1.===★number(1-4) of measures1★======="*** section.   
+Find ***"BackGroudColor1"*** field in the ***"1.===★Colspan1 (1-4) of measures1★======="*** section.   
 Enter "darkred" instead of the default value "mediumblue".    
   
-Find ***"BackGroudColor2"*** in the ***"2.===★number(1-3) of measures2★======="*** section.   
+Find ***"BackGroudColor2"*** in the ***"2.===★Colspan2 (1-3) of measures2★======="*** section.   
 Enter "darkgreen" instead of the default value "mediumblue".  
 ![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147490159-5673121b-3014-45ef-afaf-b9459c50fdf4.png)   
   
