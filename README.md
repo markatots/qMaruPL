@@ -156,9 +156,6 @@ You could be advised that you can directly input the color name like _aliceblue_
 As you saw in this tutorial 2, you could enter "darkred" and "darkgreen" in qMaruPL properties.   
 Color codes are displayed here, "https://www.colordic.org/".   
   
-If you have apps that have already used qMaruPL since qMaruPL didn't start to support this function, you need to set all three properties, conditional back ground color, font color, and blink, at once, from the top to the bottom. Or you might see a JSON error message once. Although I want to correct the behavior, it might be inevitable.  
-Anyway to manage to have an extension have measure's property took a lot of my effort. I had to create two HyperCubes to calcurate the grand total conditional expression. I spent a good deal of time on looking into the specifications. So I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
-  
 From December 29th, 2021, qMaruPL can be set navigation sheet id as the one of the measure properties.   
 While hovering on the measure that has the navigation sheet id property, a mouse cursor indicates that the cell can be clicked.  
 The sheet id is here, the part of bold italic.  
@@ -168,11 +165,24 @@ https://qlikserver/sense/app/29ff211c-3be3-4523-a26c-44e09577e69e/sheet/***a4d37
 
 
 ## Tips
-
-I need to enrich this document because qMaruPL has too many properties to explain.  Looking for a property in the narrow area is really tough.   
-
+  
+I need to enrich this document because qMaruPL has too many properties to explain.  Looking for a property in the narrow area is really tough. I wish Qlik Sense's property panel could've customized.     
+  
 Even though qMaruPL supports Excel export, as you know, Qlik Sense API allows us to simply export mere a list of dimensions and measures.  
 So, usually, we also take advantage of Qlik NPrinting when we need to export to Excel. Anyway, I beleave that we want to minimize that situation.  
+  
+I think you can't belieave that qMaruPL is developed by using AngularJS. 
+qMaruPL generates dynamically an HTML string from the contoller. The HTML string has a lot of buttons.  
+Generally, any onclick events can't be bound between the html template and the controller, though.  
+Multiple same extensions might be usend on the same sheet at once, the template is unaware who I am.  
+getElementById JavaScript function returns only one element, which was found the first time, even though, there are many same elements in the one document model. 
+Therefore, you can't use that function.  
+getElementsByClass and getElementsByTag might return several elements. How can we identify them?    
+The answer is to exploit the cookie. One document has one cookie.   
+This code would help you find a solution with regard to such issues.  
+Further more, managing to have an extension have measure's property took a lot of effort. Finally, I had to create two HyperCubes to calcurate the grand total conditional expression. I spent a good deal of time on looking into the specifications.  
+So I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
+Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is really fun.   
 
 
 
@@ -183,8 +193,7 @@ Decenber 26th,2021 - I fixed a bug that a dimension's header doesn't appear when
 
 # etc.
 I'll continue to revise this document when I have time.  
-Plan: Conditional alerts for measures will be available.  
-Arranging dimensions verticaly will be available. Although I've understood that dealing with a hypercube consisting of two dimensions is very very tough, I would try someday.     
+Plan: Arranging dimensions verticaly will be available. Although I've understood that dealing with a hypercube consisting of two dimensions is very very tough, I would try someday.     
 I'm going to write description in Japanese.     
 
 # Copyright
