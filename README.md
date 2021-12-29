@@ -186,14 +186,14 @@ Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is
 
 
 
-# Release note
+# Release note (There were a great number of bugs so that I can't record them.)
 Decenber 29th,2021 - I released four measure properties .    
 Decenber 26th,2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one. 
 
 
 # etc.
 I'll continue to revise this document when I have time.  
-Plan: Arranging dimensions verticaly will be available. Although I've understood that dealing with a hypercube consisting of two dimensions is very very tough, I would try someday.     
+Plan: Arranging dimensions verticaly will be available. Although I've understood that dealing with a hypercube consisting of two dimensions is very very tough, I would try someday. Sometimes SelectValue() doesn't work, I want to fix it, and it's my priority.    
 I'm going to write description in Japanese.     
 
 # Copyright
