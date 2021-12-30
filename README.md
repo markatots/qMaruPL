@@ -135,7 +135,7 @@ Find ***"BackGroudColor1"*** field in the ***"1.===★Colspan1 (1-4) of measures
 Enter "darkred" instead of the default value "mediumblue".    
   
 Find ***"BackGroudColor2"*** in the ***"2.===★Colspan2 (1-3) of measures2★======="*** section.   
-Enter "darkgreen" instead of the default value "mediumblue". You can also input an expression, but that's a bit comlicated. I wish that they could have been able to be defined as master item's properties.     
+Enter "darkgreen" instead of the default value "mediumblue". You can also input an expression, but that's a bit comlicated.     
 ![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147490159-5673121b-3014-45ef-afaf-b9459c50fdf4.png)   
   
 I changed the specification with regard to color with measure group, December 22th, 2021, so that a header can takes over the color of the measure group header above.  
