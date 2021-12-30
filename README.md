@@ -163,7 +163,7 @@ From December 29th, 2021, qMaruPL can be set navigation sheet id as the one of t
 While hovering on the measure that has the navigation sheet id property, a mouse cursor indicates that the cell can be clicked.  
 The sheet id is here, the part of bold italic, after ***"sheet/"*** enclosed in "/".  
 "ttps://qlikserver/sense/app/29ff211c-3be3-4523-a26c-44e09577e69e/sheet/***a4d37a1a-556e-4dfa-bedf-525ca36a4fe2***/state/edit"  
-You can input a sheet id string directly without an equal sign nor apostrophies. You can also input an expression. i don't know the reason. Anyway, you neet to use an expression when you want to set a back ground color, font color, and a blink for measure's property beside a sheet id.    
+You can input a sheet id string directly without an equal sign nor apostrophies. You can also input an expression. i don't know the reason. Anyway, you neet to use an expression when you want to set a back ground color, font color, and a blink for measure's property besides a sheet id.    
 
 
 
