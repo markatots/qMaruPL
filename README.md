@@ -30,14 +30,14 @@ Anyway, I named the parts of the extension properties as follows.
 I use these names to explain tutorials.  
 
 ## Tutorial 1
-Let's make this.  
+Let's make this. This tutorial would be useful for financial reports.   
 ![image_tutrial_1_simple](https://user-images.githubusercontent.com/95951577/146487971-3fa654ff-8c1a-4a97-b171-c29d7fdb85ad.png)  
 
 Create a new sheet and put a qMaruPL extension on it.  
 Add 10 measures, from _M01_ to _M10_, to qMaruPL. The order of measures are important. qMaruPL arranges measures sequentially.    
 ![image_tutrial_2_simple](https://user-images.githubusercontent.com/95951577/146490833-ba9266c8-df75-43a9-adf4-a90e4ce092b5.png)  
   
-Go to ***"Lv-1 Groups"*** accordion panel.  
+Go to ***"Lv-1 Groups"*** property group panel.  
 In ***"Lv-1 Groups"***, you can set each rowspan. This property is sparated into 17 sections by "===★" sign.   
 You might not be familiar with HTML. The rowspan means several rows are merged in a row. Actually this extension has been developed with _colgroup_ instead of colspan, which was  obsolated.  
 Find ***"1.===★row span1======="*** field. Enter "3" instead of the default value 99. Then "Lv1" column's top 3 cells are merged.  
@@ -57,9 +57,9 @@ Set "On" as ***"Stand Out Band"*** switch in this ***"5.===★row span5"*** sect
 In financial reports, adding subtotal line or total line would be useful.  
 ![image_tutrial_4_simple](https://user-images.githubusercontent.com/95951577/146491640-9dc4f26e-7547-48ef-8efc-50eb20ea372e.png)   
 
-Good. You might want to fold ***"Lv-1 Groups"*** accordion panel. Or you would be confused as there're a lot of properties.   
+Good. You might want to fold ***"Lv-1 Groups"*** property group panel. Or you would be confused as there're a lot of properties.   
   
-Go to **"Lv-2 Groups" accordion panel.** In **"Lv-2 Groups"**, the set of properties is separated into 5 sections by "===★Lv2 ".  
+Go to **"Lv-2 Groups" property group panel.** In **"Lv-2 Groups"**, the set of properties is separated into 5 sections by "===★Lv2 ".  
 Find ***"1.===★Lv2 row span1======="*** field. And Enter "6" instead of default value 99. Then "Lv2" column's top 6 cells are merged.  
 ![image_tutrial_5_simple](https://user-images.githubusercontent.com/95951577/146494043-fe6a10a2-2360-4934-999c-ea90a90912d1.png)  
 
@@ -76,26 +76,26 @@ Create a new sheet and put a qMaruPL on it.
 Add measures, ***[M01]***, ***[M02]***, ***[M02/M01]***, ***[M03]***, ***[M04]***, and ***[M04/M03]*** to qMaruPL. The order is quite important to take advantage of aMaruPL. You could imagine two sets of a budget, an actual, and the ratio. The sample data of this tutorial hasn't any business meaning, though.  
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
   
-Go to ***"Table Overall"*** accordion property.  
+Go to ***"Table Overall"*** property group panel.  
 Find ***"■Row Break Col(From 1-5)"***. And enter "3".  
 ![image_tutrial2_2](https://user-images.githubusercontent.com/95951577/146521789-f3b082e8-62fa-4506-927a-4f17de939682.png)  
 Measures get in 3 columns. The width is too wide. Let's reduce the width and narrow it down.  
   
-Go to ***"Header for Measure text, width, color"*** accordion property and unfold it.  
+Go to ***"Header for Measure text, width, color"*** property group panel and unfold it.  
 Find ***"Width(px) of Meas Lavel if 0 then hidden"***, and enter 80.   
 Find ***"Width(px) of Meas Value 'Total' Col "*** and enter 60.  
   
-Go to ***"Lv-1 Groups"*** accordion property and unfold it.  
+Go to ***"Lv-1 Groups"*** property group panel and unfold it.  
 Find ***"Col Width(px) if 0 then hidden"***, and enter 80.  
   
-Go to ***"Lv-2 Groups"*** accordion property and unfold it.  
+Go to ***"Lv-2 Groups"*** property group panel and unfold it.  
 Find ***"Col Width(px) if 0 then hidden"***, and enter 0. It means the very left column becomes invisible. This function is useful. Also the other columns can be removed by using width=0.  
 ![image_tutrial2_3](https://user-images.githubusercontent.com/95951577/146523743-3aef5097-58c9-47ef-9c48-3c15e3ce925e.png)  
   
  Add dimension _"Dim1"_ to qMaruPL. You could imagine departments or years. You can also specify the dimension's sort order if you want to do so.  
 ![image_tutrial2_4](https://user-images.githubusercontent.com/95951577/147488549-ae828d22-5d16-4f40-8d70-7c7b0d957bb4.png)  
   
-Go to the ***"Table Overall"*** accordion property again.  
+Go to the ***"Table Overall"*** property group panel again.  
 Set "On" as ***"Repeat Measure Name in dimension cols"*** switch that is among the best functions of qMaruPL.  
 ![image_tutrial2_5](https://user-images.githubusercontent.com/95951577/147488681-eafabe61-ef4d-4d8b-ab90-81b55ed599e6.png)  
   
@@ -103,7 +103,7 @@ If ***"Repeat Measure Name in dimension cols"*** is _"On"_, the table become ver
 Turn the switch off.  
 Now, I don't want to use the measure labels (names) in this tutorial.  
   
-Go to ***"Header for Measure text, width, color"*** accordion property again.  
+Go to ***"Header for Measure text, width, color"*** property group panel again.  
 Find ***"Width(px) of Meas Lavel if 0 then hidden"***, and enter 0. Then the measure name (label) column desappeared.  
 ![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/147489077-26061814-c6cc-4301-a1ee-f8d8bc3ee4cf.png)  
   
@@ -112,7 +112,7 @@ Find ***"Header Text Total 2nd"***, and enter "Actual" instead of the default va
 Find ***"Header Text Total 3rd"***, and enter "Ratio" instead of the default value 'Total 3rdCol'.  
 ![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/147489286-c2e536ae-a0d5-4c3b-ba73-047276924a5e.png)  
   
-Go to ***"Lv-1 Groups"*** accordion property and unfold it.    
+Go to ***"Lv-1 Groups"*** property group panel and unfold it.    
 Find ***"1.===★rowspan1★"*** field, and enter "1" instead of the default value 99.  
 Find ***"Lv1 caption 1st row"***, and enter "Sales" instead of the default value "Lv1 1st".  
 Find ***"Stand Out Band"*** switch, and set it on.  
@@ -121,9 +121,9 @@ Find ***"Lv1 caption 2nd row"*** field, and enter "Profit" instead of the defaul
 Find ***"Stand Out Band"*** switch, and set it on.  
 ![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/147489701-45ff0991-9d62-4606-b0bd-6b742d9740fa.png)  
   
-If you want to see the original names of the measures, remember, even though you set ***"Repeat Measure Name in dimension cols"*** switch as _"on"_, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at ***"Meas Name Width(px) if 0 then hidden"*** field in ***"Header for Measure text, width, color"*** accordion property.      
+If you want to see the original names of the measures, remember, even though you set ***"Repeat Measure Name in dimension cols"*** switch as _"on"_, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at ***"Meas Name Width(px) if 0 then hidden"*** field in ***"Header for Measure text, width, color"*** property group panel.      
   
-Go to ***"Table Overall"*** accordion property and unfold it.    
+Go to ***"Table Overall"*** property group panel and unfold it.    
 Turn ***"Use Measure Groups"*** switch on.   
 Find ***"1.===★Colspan1 (1-4) of measures1★======="*** field. And enter "2" instead of the default value 1.   
 ![image_tutrial2_9](https://user-images.githubusercontent.com/95951577/147489827-c633ec58-d870-4d85-8242-cbeb9ad3b1b5.png)  
@@ -189,7 +189,7 @@ Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is
 # Release note 
 Decenber 30th,2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension.    
 Decenber 29th,2021 - I released four measure properties.    
-Decenber 26th,2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one. 
+Decenber 26th,2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one.   
 (There were a great number of bugs so that I can't record them.)
 
 
