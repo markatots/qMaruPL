@@ -107,11 +107,13 @@ Go to ***"Header for Measure text, width, color"*** property group panel again.
 Find ***"Width(px) of Meas Lavel if 0 then hidden"***, and enter 0. Then the measure name (label) column desappeared.  
 ![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/147489077-26061814-c6cc-4301-a1ee-f8d8bc3ee4cf.png)  
   
+You change the caption of each measure value's header so that we can recognise the meaning of each col.   
 Find ***"Header Text Total 1st"***, and enter "Budget" instead of the default value 'Total'.  
 Find ***"Header Text Total 2nd"***, and enter "Actual" instead of the default value 'Total 2ndCol'.  
 Find ***"Header Text Total 3rd"***, and enter "Ratio" instead of the default value 'Total 3rdCol'.  
 ![image_tutrial2_7](https://user-images.githubusercontent.com/95951577/147489286-c2e536ae-a0d5-4c3b-ba73-047276924a5e.png)  
   
+We can't still recognise the meaning of each row. Let's change the Lv-1 group's captions like "Sales" and "Profit".     
 Go to ***"Lv-1 Groups"*** property group panel and unfold it.    
 Find ***"1.===★rowspan1★"*** field, and enter "1" instead of the default value 99.  
 Find ***"Lv1 caption 1st row"***, and enter "Sales" instead of the default value "Lv1 1st".  
@@ -121,8 +123,9 @@ Find ***"Lv1 caption 2nd row"*** field, and enter "Profit" instead of the defaul
 Find ***"Stand Out Band"*** switch, and set it on.  
 ![image_tutrial2_8](https://user-images.githubusercontent.com/95951577/147489701-45ff0991-9d62-4606-b0bd-6b742d9740fa.png)  
   
-If you want to see the original names of the measures, remember, even though you set ***"Repeat Measure Name in dimension cols"*** switch as _"on"_, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at ***"Meas Name Width(px) if 0 then hidden"*** field in ***"Header for Measure text, width, color"*** property group panel.      
+By the way, if you want to see the original names of the measures, remember, even though you set ***"Repeat Measure Name in dimension cols"*** switch as _"on"_, as long as the width of measure labels is set 0, you can't see them. You need to set around 50px as the width at ***"Meas Name Width(px) if 0 then hidden"*** field in ***"Header for Measure text, width, color"*** property group panel.      
   
+I would like to separate cols into ammount and ratio by changing their back ground color.     
 Go to ***"Table Overall"*** property group panel and unfold it.    
 Turn ***"Use Measure Groups"*** switch on.   
 Find ***"1.===★Colspan1 (1-4) of measures1★======="*** field. And enter "2" instead of the default value 1.   
@@ -132,25 +135,25 @@ Find ***"BackGroudColor1"*** field in the ***"1.===★Colspan1 (1-4) of measures
 Enter "darkred" instead of the default value "mediumblue".    
   
 Find ***"BackGroudColor2"*** in the ***"2.===★Colspan2 (1-3) of measures2★======="*** section.   
-Enter "darkgreen" instead of the default value "mediumblue".  
+Enter "darkgreen" instead of the default value "mediumblue". You can also input an expression, but that's a bit comlicated. I wish that they could have been able to be defined as master item's properties.     
 ![image_tutrial2_12](https://user-images.githubusercontent.com/95951577/147490159-5673121b-3014-45ef-afaf-b9459c50fdf4.png)   
   
 I changed the specification with regard to color with measure group, December 22th, 2021, so that a header can takes over the color of the measure group header above.  
   
-Thus, you can separate measures into some groups, by ruled lines.      
+Thus, you can separate measures into some groups, by ruled lines and colors.      
 Both of the top header and the left header are drawn regardless of dimensions. You can input the string directly.    
 Instead, you need to prepare a good number of measures as master itmes.  
     
 Measures can have some good properties.     
 ![image_tutrial2_15](https://user-images.githubusercontent.com/95951577/147649959-986b481c-1bfe-4e0b-aa2b-87619a65a31c.png)   
-    
+  
 From December 28th, 2021, qMaruPL can be set conditional back ground color, font color, and blink as the one of the measure properties.   
 ![image_tutrial2_14](https://user-images.githubusercontent.com/95951577/147648821-5cf522da-8671-4fdc-917a-ed516f347a5f.png)   
   
 When you input an expression to a measure, I recommend that you start with an equal sign _='red'_, _='true'_, _=if([M01]>100,'red','yellow')_, and so on.  
 Although you can also omit the equal sign, you still need to enclose the value in apostrophes like _'red'_, _'true'_, _if([M01]>100,'red','yellow')_, and so on.  
 If you want to use master items in the expression, they have to be enclosed in square brackets, like [M01].    
-Those are originally the specifications of Qlik Sense.   
+Those are originally the specifications of Qlik Sense. Look into the help for more information.   
   
 You could be advised that you can directly input the color name like _aliceblue_, _lightyellow_, without apostrophies as well as equal sign, in place other than measure properties.  
 As you saw in this tutorial 2, you could enter "darkred" and "darkgreen" in qMaruPL properties.   
@@ -160,7 +163,7 @@ From December 29th, 2021, qMaruPL can be set navigation sheet id as the one of t
 While hovering on the measure that has the navigation sheet id property, a mouse cursor indicates that the cell can be clicked.  
 The sheet id is here, the part of bold italic, after ***"sheet/"*** enclosed in "/".  
 "ttps://qlikserver/sense/app/29ff211c-3be3-4523-a26c-44e09577e69e/sheet/***a4d37a1a-556e-4dfa-bedf-525ca36a4fe2***/state/edit"  
-
+You can input a sheet id string directly without an equal sign nor apostrophies. You can also input an expression. i don't know the reason. Anyway, you neet to use an expression when you want to set a back ground color, font color, and a blink for measure's property beside a sheet id.    
 
 
 
