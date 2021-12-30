@@ -82,8 +82,8 @@ Find ***"■Row Break Col(From 1-5)"***. And enter "3".
 Measures get in 3 columns. The width is too wide. Let's reduce the width and narrow it down.  
   
 Go to ***"Header for Measure text, width, color"*** accordion property and unfold it.  
-Find ***"Meas Name Width(px) if 0 then hidden"***, and enter 80.   
-Find ***"Meas Value Width(px) 'Total' Col "*** and enter 60.  
+Find ***"Width(px) of Meas Lavel if 0 then hidden"***, and enter 80.   
+Find ***"Width(px) of Meas Value 'Total' Col "*** and enter 60.  
   
 Go to ***"Lv-1 Groups"*** accordion property and unfold it.  
 Find ***"Col Width(px) if 0 then hidden"***, and enter 80.  
@@ -104,7 +104,7 @@ Turn the switch off.
 Now, I don't want to use the measure labels (names) in this tutorial.  
   
 Go to ***"Header for Measure text, width, color"*** accordion property again.  
-Find ***"Meas Name Width(px) if 0 then hidden"***, and enter 0. Then the measure name (label) column desappeared.  
+Find ***"Width(px) of Meas Lavel if 0 then hidden"***, and enter 0. Then the measure name (label) column desappeared.  
 ![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/147489077-26061814-c6cc-4301-a1ee-f8d8bc3ee4cf.png)  
   
 Find ***"Header Text Total 1st"***, and enter "Budget" instead of the default value 'Total'.  
