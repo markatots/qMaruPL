@@ -4,7 +4,7 @@ qMaruPL
 # qMaruPL.
 
 # Hello
-Hi. I'm Katsuaki Maruno, Otsuka Corporation. I'm studying English now.     
+Hi. I'm Katsuaki Maruno of Otsuka Corporation. I'm studying English now.     
 This qlik extension enables you to make measures easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/147492798-842f7ba8-a0d9-4787-975e-93b4dd5f8132.png)  
