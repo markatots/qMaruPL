@@ -190,11 +190,11 @@ Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is
 
 
 # Release note 
-January 1st, 2021 - qMaruPL have come to be able to select a dimension's value.    
-Decenber 30th, 2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension.    
+// January 1st, 2021 - qMaruPL have come to be able to select a dimension's value.    
+// Decenber 30th, 2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension. I think that's enough.     
 ![image_test1](https://user-images.githubusercontent.com/95951577/147747292-0347c3b4-acf5-495b-b5c8-ca2d82d4caa8.png)  
-Decenber 29th, 2021 - I released four measure properties.    
-Decenber 26th, 2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one.   
+// Decenber 29th, 2021 - I released four measure properties.    
+// Decenber 26th, 2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one.   
 (There were a great number of bugs before then so that I could't record them.)
 
 
