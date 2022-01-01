@@ -183,14 +183,18 @@ Therefore, you can't use that function.
 getElementsByClass and getElementsByTag might return several elements. How can we identify them?    
 The answer is to exploit the cookie. One document has one cookie.   
 This code would help you find a solution with regard to such issues.  
+
 Further more, managing to have an extension have measure's property took a lot of effort. Finally, I had to create two HyperCubes to calcurate the grand total conditional expression. I spent a good deal of time on looking into the specifications.  
+
+The most comprecated thing is SelectValue() function. At first, as long as you use only simple string dimension, it seems easy. But you will encounter many trouble when you create a dimension consisting number elements, a master itme with expression starting from an eaual sign, a master item with drill down. qMaruPL solved those problems.  
+
 So I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
 Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is really fun.   
 
 
 
 # Release note 
-- January 1st, 2021 - qMaruPL have come to be able to select a dimension's value.    
+- January 2nd, 2021 - qMaruPL have come to be able to select a dimension's value.    
 - Decenber 30th, 2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension. I think that's enough.     
 ![image_test1](https://user-images.githubusercontent.com/95951577/147747292-0347c3b4-acf5-495b-b5c8-ca2d82d4caa8.png)  
 - Decenber 29th, 2021 - I released four measure properties.    
