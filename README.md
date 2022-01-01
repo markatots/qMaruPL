@@ -8,8 +8,7 @@ Hi. Happy new year. I'm Katsuaki Maruno of Otsuka Corporation.
 This qlik extension enables you to make measures easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/147492798-842f7ba8-a0d9-4787-975e-93b4dd5f8132.png)  
-
-
+Don’t you think it's easy to see?  
 
 So to speak, qMaruPL helps you classify measures by decorating some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines. I could also call qMaruPL one of the KPI viewers.  
 What's more, the display speed is very fast in spite of the number of measures. A hundred of measures will appeare in a second on your dashboards. I'm sure the display speed is key for successful BI.  
