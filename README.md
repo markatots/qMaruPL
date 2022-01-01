@@ -185,9 +185,9 @@ This code would help you find a solution with regard to such issues.
 
 Further more, managing to have an extension have measure's property took a lot of effort. Finally, I had to create two HyperCubes to calcurate the grand total conditional expression. I spent a good deal of time on looking into the specifications.  
 
-The most comprecated thing is SelectValue() function. At first, as long as you use only simple string dimension, it seems easy. But you will encounter many trouble when you create a dimension consisting number elements, a master itme with expression starting from an eaual sign, a master item with drill down. qMaruPL solved those problems.  
+The most complicated thing is SelectValue() function. At first, as long as you use only simple string dimension, it seems easy. But you will encounter many trouble when you create a dimension consisting number elements, a master itme with expression starting from an eaual sign, a master item with drill down. qMaruPL solved those problems.  
 
-So I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
+So, I believe qMaruPL can be one of the greatest example to conduct Qlik Sense API with AngularJS. 
 Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is really fun.   
 
 
