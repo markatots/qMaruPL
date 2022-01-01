@@ -4,7 +4,7 @@ qMaruPL
 # qMaruPL.
 
 # Hello
-Hi. I'm Katsuaki Maruno of Otsuka Corporation. I'm studying English now.     
+Hi. Happy new year. I'm Katsuaki Maruno of Otsuka Corporation.      
 This qlik extension enables you to make measures easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/147492798-842f7ba8-a0d9-4787-975e-93b4dd5f8132.png)  
@@ -190,11 +190,12 @@ Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is
 
 
 # Release note 
-Decenber 30th,2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension.    
+January 1st, 2021 - qMaruPL have come to be able to select a dimension's value.    
+Decenber 30th, 2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension.    
 ![image_test1](https://user-images.githubusercontent.com/95951577/147747292-0347c3b4-acf5-495b-b5c8-ca2d82d4caa8.png)  
-Decenber 29th,2021 - I released four measure properties.    
-Decenber 26th,2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one.   
-(There were a great number of bugs so that I can't record them.)
+Decenber 29th, 2021 - I released four measure properties.    
+Decenber 26th, 2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one.   
+(There were a great number of bugs before then so that I could't record them.)
 
 
 # etc.
