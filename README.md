@@ -11,7 +11,7 @@ For example, you can make a sheet as below.
 
 
 
-So to speak, qMaruPL helps you classify measures by decorating some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines.  
+So to speak, qMaruPL helps you classify measures by decorating some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel like ruled lines. I could also call qMaruPL one of the KPI viewers.  
 What's more, the display speed is very fast in spite of the number of measures. A hundred of measures will appeare in a second on your dashboards. I'm sure the display speed is key for successful BI.  
 
 # Get started
@@ -78,8 +78,8 @@ Add measures, ***[M01]***, ***[M02]***, ***[M02/M01]***, ***[M03]***, ***[M04]**
   
 Go to ***"Table Overall"*** property group panel.  
 Find ***"■Row Break Col(From 1-5)"***. And enter "3".  
-![image_tutrial2_2](https://user-images.githubusercontent.com/95951577/146521789-f3b082e8-62fa-4506-927a-4f17de939682.png)  
-Measures get in 3 columns. The width is too wide. Let's reduce the width and narrow it down.  
+![image_tutrial2_2b](https://user-images.githubusercontent.com/95951577/147852031-555483dd-dd4e-4769-a6de-ced64b26435f.png)
+Measures get in 3 columns. The width is too wide. Let's reduce the width and narrow it down. The order will be like as the numbers written in red on the image above.   
   
 Go to ***"Header for Measure text, width, color"*** property group panel and unfold it.  
 Find ***"Width(px) of Meas Lavel if 0 then hidden"***, and enter 80.   
