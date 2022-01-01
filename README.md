@@ -204,9 +204,9 @@ Plan: Arranging dimensions verticaly will be available. Although I've understood
 I'm going to write description in Japanese.     
 
 # Author
-Katsuaki Maruno,
-P.E.Jp (Information Engineering,
-M.Sc.
+Katsuaki Maruno,  
+P.E.Jp (Information Engineering),  
+M.Sc.  
 
 # Copyright
 Copyright ©2021-2022 OTSUKA CORPORATION
