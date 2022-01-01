@@ -18,9 +18,9 @@ What's more, the display speed is very fast in spite of the number of measures. 
 Get the zip file: ***"qMaruPL.YYYY.MM.dd.zip"***   
 I recommend that you get the latest one.  
 You can also get "qMaruPL extension_sample.qvf" that is a sample Qlik Sense app using qMaruPL.  
-Import the zip file into Qlik Sense Server via your QMC. Then "qMaruPL" qlik extenstion will be installed in your Qlik Sense environment.  
+Import the zip file into Qlik Sense Server via your QMC. Then "qMaruPL" qlik extenstion will be installed in your Qlik Sense environment. The name might be shown as maruPL according to the environment or QMC's version, though.   
 Note that you don't need to unzip when you import to QMC.  
-You can take the advantage of qMaruPL on both Qlik Sense SaaS and Qlik Sense on-premise.   
+You can take the advantage of qMaruPL on both Qlik Sense SaaS and Qlik Sense on-premise.     
 Of course, qMaruPL can be used with 漢字.     
 
 ## Overall 
@@ -190,21 +190,26 @@ Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is
 
 
 # Release note 
-// January 1st, 2021 - qMaruPL have come to be able to select a dimension's value.    
-// Decenber 30th, 2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension. I think that's enough.     
+- January 1st, 2021 - qMaruPL have come to be able to select a dimension's value.    
+- Decenber 30th, 2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension. I think that's enough.     
 ![image_test1](https://user-images.githubusercontent.com/95951577/147747292-0347c3b4-acf5-495b-b5c8-ca2d82d4caa8.png)  
-// Decenber 29th, 2021 - I released four measure properties.    
-// Decenber 26th, 2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one.   
+- Decenber 29th, 2021 - I released four measure properties.    
+- Decenber 26th, 2021 - I fixed a bug that a dimension's header doesn't appear when the number of factors of a dimension equals one.   
 (There were a great number of bugs before then so that I could't record them.)
 
 
 # etc.
 I'll continue to revise this document when I have time.  
-Plan: Arranging dimensions verticaly will be available. Although I've understood that dealing with a hypercube consisting of two dimensions is very very tough, I would try someday. Sometimes SelectValue() doesn't work, I want to fix it, and it's my priority.    
+Plan: Arranging dimensions verticaly will be available. Although I've understood that dealing with a hypercube consisting of two dimensions is very very tough, I would try someday.     
 I'm going to write description in Japanese.     
 
+# Author
+Katsuaki Maruno,
+P.E.Jp (Information Engineering,
+M.Sc.
+
 # Copyright
-Copyright ©2021 OTSUKA CORPORATION
+Copyright ©2021-2022 OTSUKA CORPORATION
 
 # License
 The source code is licensed MIT. The website content is licensed CC BY 4.0,see LICENSE.
