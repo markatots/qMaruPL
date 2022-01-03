@@ -193,7 +193,8 @@ Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is
 
 
 # Release note 
-- January 2nd, 2021 - qMaruPL have come to be able to select a dimension's value.    
+- January 4th, 2022 - qMaruPL have come to be able to be changed line styles.    
+- January 2nd, 2022 - qMaruPL have come to be able to be selected a dimension's value.    
 - Decenber 30th, 2021 - qMaruPL have come to be able to have 100 measures and 99 elements of a dimension. I think that's enough.     
 ![image_test1](https://user-images.githubusercontent.com/95951577/147747292-0347c3b4-acf5-495b-b5c8-ca2d82d4caa8.png)  
 - Decenber 29th, 2021 - I released four measure properties.    
