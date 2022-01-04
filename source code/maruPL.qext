@@ -1,0 +1,15 @@
+{
+    "name": "qMaruPL",
+    "description": "This can be used for decorating a list of measures by adding some ruled lines and merging cells.",
+    "type": "visualization",
+    "version": "1.3.0",
+    "icon": "extension",
+    "author": "丸野＠大塚商会, Copyright(c) 2021-2022, Otsuka Corporation ",
+    "homepage": "",
+    "keywords": "qlik-sense, visualization",
+    "license": "MIT",
+    "repository": "https://github.com/markatots/qMaruPL",
+    "dependencies": {
+        "qlik-sense": ">=3.0.x"
+    }
+}
