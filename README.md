@@ -76,7 +76,7 @@ Add measures, ***[M01]***, ***[M02]***, ***[M02/M01]***, ***[M03]***, ***[M04]**
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
   
 Go to the ***"Table Overall"*** property group panel.  
-Find the ***"■Row Break Col(From 1-5)"*** field. And enter "3".  
+Find the ***"■Row Break Col(From 1-5)"*** slider. And set to "3" instead of the default value 1.  
 ![image_tutrial2_2b](https://user-images.githubusercontent.com/95951577/147852031-555483dd-dd4e-4769-a6de-ced64b26435f.png)
 Measures get in 3 columns. The width is too wide. Let's reduce the width and narrow it down. The order will be like as the numbers written in red on the image above.   
   
