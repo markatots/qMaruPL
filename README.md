@@ -198,6 +198,7 @@ Totally, AngularJS and Qlik Sense's extensibillity is great. This divelopment is
 
 
 # Release note 
+- January 9th, 2022 - Vertical Dimension was released.  
 - January 8th, 2022 - qMaruPL have come to be able to hide indivisually each of the Lv2, Lv1, and Measure Name column by the "Table Overall" → "◆Hide ..." propery switch, without setting the width as 0. What's more, the "Row Break Cols" can be adjusted by the slider.  
 - January 4th, 2022 - qMaruPL have come to be able to be changed line styles.    
 - January 2nd, 2022 - qMaruPL have come to be able to be selected a dimension's value.    
