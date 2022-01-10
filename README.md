@@ -144,10 +144,15 @@ Both of the top header and the left header are drawn regardless of dimensions. Y
 Instead, you need to prepare a good number of measures as master itmes.  
 
 Go to the ***"Table Overall"*** property group panel again.  
-Set "On" as ***"Vertical Dimension"*** switch.     
+Set "On" as the ***"Vertical Dimension"*** switch.     
 ![image_tutrial2_16](https://user-images.githubusercontent.com/95951577/148680115-4812dc10-c054-4ad0-ba8b-f9dd21e35854.png)  
 You can arrange the dimension vertically so that you might show the chart in narrower width.   
-    
+
+When the ***"Vertical Dimension"*** switch is ON, you can hide header of dimesion by the ***"Repeat Measure Name in dimension"*** switch.  
+![image_tutrial2_17](https://user-images.githubusercontent.com/95951577/148722236-e2eadbfe-d7e6-431a-95f8-d9d6103c0e9d.png)
+
+
+
 Measures can have some good properties.     
 ![image_tutrial2_15](https://user-images.githubusercontent.com/95951577/147649959-986b481c-1bfe-4e0b-aa2b-87619a65a31c.png)   
   
