@@ -87,6 +87,17 @@ define(
 								type: "items",
 								label: "Table Overall",
 								items: {
+									maru73_nAbsoluteMagnification1: {
+										type: "number",
+										component: "slider",
+										label: "◆Magnificate (0x-2x, step 0.1) Table Width and Font size",
+										ref: "settings.nAbsoluteMagnification1",
+										min: 0,
+										max: 2,
+										step: 0.1,
+										defaultValue: 1
+									},
+									
 									maru73_nLineWidthMagnification1: {
 										type: "number",
 										component: "slider",
@@ -127,6 +138,41 @@ define(
 										options: [{value: "none",label: "none"}, {value: "dotted",label: "dotted"}, {value: "solid",label: "solid"}],
 										defaultValue: "dotted"
 									},
+									
+									
+									maru73_bVerticalDimension:{
+										ref: "settings.bVerticalDimension", // ディメンションを縦にする
+										type: "boolean",
+										label: "Vertical Dimension",
+										component: "switch",
+										options: [{value: true,label: "On"}, {value: false,label: "Not on"}],
+										defaultValue: false
+									},
+									
+									maru73_bHideMeasName:{
+										ref: "settings.bHideMeasName", // メジャー名を隠す
+										type: "boolean",
+										label: "◆Hide Measure Name",
+										component: "switch",
+										options: [{value: true,label: "On"}, {value: false,label: "Not on"}],
+										defaultValue: false
+									},
+									maru73_bHideLv1:{
+										ref: "settings.bHideLv1", // Lv1を隠す
+										type: "boolean",
+										label: "◆Hide Lv1 Column",
+										component: "switch",
+										options: [{value: true,label: "On"}, {value: false,label: "Not on"}],
+										defaultValue: false
+									},
+									maru73_bHideLv2:{
+										ref: "settings.bHideLv2", // Lv2を隠す
+										type: "boolean",
+										label: "◆Hide Lv2 Column",
+										component: "switch",
+										options: [{value: true,label: "On"}, {value: false,label: "Not on"}],
+										defaultValue: false
+									},
 									maru73_30:{
 										ref: "settings.sMeasureNameAlign1",
 										type: "string",
@@ -139,15 +185,19 @@ define(
 										ref: "settings.nRowBreak1", // APIで使える名前になる
 										type: "integer",
 										label: "■Row Break Col(From 1 To 5)",
-										defaultValue: "1",
-										min: "1",// これ効かないみたい
-										max: "5",// これ効かないみたい
+										
+										component: "slider",
+										min: 1,
+										max: 5,
+										step: 1,
+										defaultValue: 1
+										
 									},
 									maru73_4:{
 										ref: "settings.bRepeatName",
 										type: "boolean",
 										component: "switch",
-										label: "Repeat Measure Name in dimensions cols.",
+										label: "Repeat Measure Name or header in dimension.",
 										options: [{value: true,label: "On"}, {value: false,label: "Not on"}],
 										defaultValue: false
 									},
@@ -406,7 +456,7 @@ define(
 									},
 									
 									maruh3b:{
-										ref: "settings.sHeaderWidth3", // APIで使える名前になる
+										ref: "settings.sHeaderWidth3", // メジャー値の幅
 										type: "integer",
 										label: "◆Width(px) of Meas Value, 'Total' Col",
 										defaultValue: "130",
