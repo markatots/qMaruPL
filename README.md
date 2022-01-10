@@ -27,7 +27,7 @@ Property names are subject to change because I'm not satisfied with the names al
 Anyway, I named the parts of the extension properties as follows.  
 ![image_description1](https://user-images.githubusercontent.com/95951577/146526354-6970e88a-0934-4ca5-9b3e-7f71ea69a646.png)  
 I use these names to explain tutorials.  
-Basicaly
+Basicaly properies which may affect the width indicates "◆" symbol. Background color is "●", Font color is "〇". Colspan or Rowspan is "===★".   
 
 ## Tutorial 1
 Let's make this. This tutorial would be useful for financial reports.   
