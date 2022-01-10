@@ -71,7 +71,8 @@ Completed!
 ## Tutorial 2
 Let's make this.  
 ![image_tutrial2_14](https://user-images.githubusercontent.com/95951577/147648821-5cf522da-8671-4fdc-917a-ed516f347a5f.png)   
-    
+I found that I mistaken "Actual" and "Budget" in these images, and I'm not willing to correct them. I don't have such time. So, don't mind the values or labels of this tutorial. They are not important. Focus on operations.   
+
 Create a new sheet and put a qMaruPL on it.  
 Add measures, ***[M01]***, ***[M02]***, ***[M02/M01]***, ***[M03]***, ***[M04]***, and ***[M04/M03]*** to qMaruPL. The order is quite important to take advantage of aMaruPL. You could imagine two sets of a budget, an actual, and the ratio. The sample data of this tutorial hasn't any business meaning, though.  
  ![image_tutrial2_1](https://user-images.githubusercontent.com/95951577/146520532-254b35fa-89a2-47cc-88f1-ea02b3ac2f76.png)  
