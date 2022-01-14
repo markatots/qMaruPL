@@ -151,11 +151,11 @@ define(
 									
 									maru73_bHideMeasName:{
 										ref: "settings.bHideMeasName", // メジャー名を隠す
-										type: "boolean",
-										label: "◆Hide Measure Name",
-										component: "switch",
-										options: [{value: true,label: "On"}, {value: false,label: "Not on"}],
-										defaultValue: false
+										type: "string",
+										component: "radiobuttons",
+										label: "◆Hide or Show Measure Name",
+										options: [{value: "true",label: "hide all"}, {value: "false",label: "show all"}, {value: "left",label: "hide except very left"}],
+										defaultValue: "false"
 									},
 									maru73_bHideLv1:{
 										ref: "settings.bHideLv1", // Lv1を隠す

@@ -918,7 +918,11 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		
 		
 		
-		$scope.prop_bHideMeasName = myBoolCast( $scope.layout.settings.bHideMeasName );
+		$scope.prop_sHideMeasName = myBoolCast( $scope.layout.settings.bHideMeasName );// 現在Booleanではなく、文字列でtrue、false、leftに仕様変更。
+		$scope.prop_sHideMeasName = myStringCast( $scope.layout.settings.bHideMeasName , 'false' );
+		if( $scope.prop_sHideMeasName == "true" )
+
+
 		$scope.prop_bHideLv1 = myBoolCast( $scope.layout.settings.bHideLv1  );
 		$scope.prop_bHideLv2 = myBoolCast( $scope.layout.settings.bHideLv2  );
 		
@@ -971,7 +975,7 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 			$scope.prop_nHeaderWidth1 = myIntegerCast(myIntegerCast( $scope.layout.settings.sHeaderWidth1 ,120,0) * $scope.prop_nAbsoluteMagnification1, 0 );
 		}
 
-		if( $scope.prop_bHideMeasName ){
+		if( $scope.prop_sHideMeasName=="true" ){
 			$scope.prop_nHeaderWidth2 = 0;
 		}
 		else{
@@ -1290,14 +1294,20 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 			sHTML += "<td style='text-align:center;  '> </td>";
 		}
 		// ヘッダ列ループ $scope.prop_nRowBreak1
-		if( $scope.prop_nHeaderWidth2 > 0 ){
-			// メジャーのセット
+		if( $scope.prop_nHeaderWidth2 > 0 && ! ( $scope.prop_sHideMeasName=="left" || $scope.prop_sHideMeasName=="true" ) ){
+			// メジャーのセット　ロウブレイク＊２（メジャー名とメジャー値）
 			sHTML += "<td colspan=" + (2 * $scope.prop_nRowBreak1) + " bgcolor=" + $scope.prop_sHeaderBGC1 
 				+ " style='text-align:center; border-left: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-top: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-bottom: 0px solid "+$scope.prop_sLineColorHeader1+"; ' ><p style='font-weight:bold; color:"
 				+ $scope.prop_sHeaderFGC2 + "; font-size:" + $scope.prop_nFontSize4 + "px; '>"+$scope.prop_TopTotalHeaderText+"</p></td>"; 
 		}
+		else if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_sHideMeasName=="left" ) ){
+			// メジャーのセット　先頭除いて、メジャー名を表示しない
+			sHTML += "<td colspan=" + (1 + (1 * $scope.prop_nRowBreak1) ) + " bgcolor=" + $scope.prop_sHeaderBGC1 
+				+ " style='text-align:center; border-left: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-top: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-bottom: 0px solid "+$scope.prop_sLineColorHeader1+"; ' ><p style='font-weight:bold; color:"
+				+ $scope.prop_sHeaderFGC2 + "; font-size:" + $scope.prop_nFontSize4 + "px; '>"+$scope.prop_TopTotalHeaderText+"</p></td>"; 
+		}
 		else{
-			// メジャーのセット
+			// メジャーのセット　まったくメジャー名を表示しない
 			sHTML += "<td colspan=" + (1 * $scope.prop_nRowBreak1) + " bgcolor=" + $scope.prop_sHeaderBGC1 
 				+ " style='text-align:center; border-left: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-top: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-bottom: 0px solid "+$scope.prop_sLineColorHeader1+"; ' ><p style='font-weight:bold; color:"
 				+ $scope.prop_sHeaderFGC2 + "; font-size:" + $scope.prop_nFontSize4 + "px; '>"+$scope.prop_TopTotalHeaderText+"</p></td>"; 
@@ -1330,22 +1340,28 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 		var sColSpan22 = "";
 		if( ! $scope.prop_bVerticalDimension ){
 		
-			if( $scope.prop_nRowBreak1 > 1  ){ // 改行する場合、
-				if( $scope.prop_nHeaderWidth2 > 0 ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
+//			if( $scope.prop_nRowBreak1 > 1  ){ // 改行する場合、
+				if( $scope.prop_nHeaderWidth2 > 0 && ! ( $scope.prop_sHideMeasName=="left" || $scope.prop_sHideMeasName=="true" ) ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
 					sColSpan22 = " colspan=" + ($scope.prop_nRowBreak1 * $scope.prop_nMeasureCols ) + " ";
 				}
-				else{
-					sColSpan22 = " colspan=" + ($scope.prop_nRowBreak1  ) + " ";
-				}// <<< 改行する場合、
-			}
-			else{
-				if( $scope.prop_nHeaderWidth2 > 0 ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
-					sColSpan22 = " colspan=" + ($scope.prop_nMeasureCols ) + " ";
+				else if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_sHideMeasName=="left" ) ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
+					sColSpan22 = " colspan=" + ( $scope.prop_nMeasureCols - 1 + $scope.prop_nRowBreak1  ) + " ";
 				}
 				else{
 					sColSpan22 = " colspan=" + ($scope.prop_nRowBreak1  ) + " ";
 				}// <<< 改行する場合、
-			}
+//			}
+//			else{
+//				if( $scope.prop_nHeaderWidth2 > 0 && ! ( $scope.prop_sHideMeasName=="left" ) ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
+//					sColSpan22 = " colspan=" + ($scope.prop_nMeasureCols ) + " ";
+//				}
+//				if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_sHideMeasName=="left" ) ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
+//					sColSpan22 = " colspan=" + ( 1 + $scope.prop_nRowBreak1  ) + " ";
+//				}
+//				else{
+//					sColSpan22 = " colspan=" + ($scope.prop_nRowBreak1  ) + " ";
+//				}// <<< 改行する場合、
+//			}
 		}
 		else{
 			sColSpan22 = " colspan=1 rowspan=99 ";
@@ -1505,8 +1521,13 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 		
 		
 			// メジャー名
-			if( ( $scope.prop_nHeaderWidth2 > 0 && sMode1 == "grand" ) 
-				|| ( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ) ){
+			if( 
+				(
+					( $scope.prop_nHeaderWidth2 > 0 && sMode1 == "grand" ) 
+					|| ( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ) 
+				)
+				 && ! ( $scope.prop_sHideMeasName=="left" && iMCol1 >= 1 ) 
+			){
 				sHTML += "<td bgcolor=" + $scope.prop_sHeaderBGC1 
 					+ " style='text-align:center; " + sVLineMeasName4 + " border-top:"+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-bottom:"+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+";'>" 
 					+ "<p style='font-weight:bold; color:" 
@@ -1575,8 +1596,6 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 		// M
 		for( var iMCol1=0 , iRunsumColspan=0 ; iMCol1 < $scope.prop_nRowBreak1 && iRunsumColspan < $scope.prop_nRowBreak1 ; iMCol1++ ){
 			var nColspanHead1 = $scope.aryColspan[iMCol1].nColspan;
-			// Colspan メジャー名とメジャー値は一緒くた
-			var nBairitsu = 1;
 
 
 			var sVKindOfLine = " solid ";
@@ -1611,29 +1630,44 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 			}
 
 
+			var nBairitsu = nColspanHead1 * 2;
 			if( sMode1 == "grand" || $scope.prop_bVerticalDimension ){// グランドの場合
-				if( $scope.prop_nHeaderWidth2 > 0 ){
-					nBairitsu = 2 ;
+				if( $scope.prop_nHeaderWidth2 > 0 && ! ( $scope.prop_sHideMeasName=="left" || $scope.prop_sHideMeasName=="true" ) ){
+					nBairitsu = nColspanHead1 * 2;
 				}
-				sHTML += "<td colspan=" + nColspanHead1 * nBairitsu + " bgcolor=" + $scope.aryColspan[iMCol1].sColspanBGC  
+				else if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_sHideMeasName=="left" && iMCol1 == 0 ) ){
+					nBairitsu = ( 1 + nColspanHead1 );
+				}
+				else{
+					nBairitsu = nColspanHead1 ;
+				}
+				sHTML += "<td colspan=" + nBairitsu + " bgcolor=" + $scope.aryColspan[iMCol1].sColspanBGC  
 					+ " style='text-align: " +$scope.aryColspan[iMCol1].sAlign + "; " + sVLineMeasValue4 + " "+$scope.prop_sLineColorHeader1+"; border-top:"+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-bottom:0px solid "+$scope.prop_sLineColorHeader1+";'>" 
 					+ "<p style='font-weight:bold; color:" 
 					+ $scope.prop_sHeaderFGC2 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.aryColspan[iMCol1].sColspanText
 					+ "</p></td>";
 			}
 			else{// ディメンションの場合
-				if( $scope.prop_nHeaderWidth2 > 0 || $scope.prop_bVerticalDimension ){
-					nBairitsu *= $scope.prop_nMeasureCols;
+			
+				if( ( $scope.prop_nHeaderWidth2 > 0 || $scope.prop_bVerticalDimension )&& ! ( $scope.prop_sHideMeasName=="left" || $scope.prop_sHideMeasName=="true" ) ){
+					nBairitsu = nColspanHead1 * $scope.prop_nMeasureCols;
 				}
+				else if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_sHideMeasName=="left" && iMCol1 == 0 ) ){
+					nBairitsu = ( $scope.prop_nMeasureCols - 1 + nColspanHead1 );
+				}
+				else{
+					nBairitsu = nColspanHead1 ;
+				}
+			 
 				if( iMCol1 == 0 ){// ディメンションの切り替えでなおかつ、メジャー項目が隠されている場合は、メジャー値が 2重太線
-					sHTML += "<td colspan=" + nColspanHead1 * nBairitsu + " bgcolor=" + $scope.aryColspan[iMCol1].sColspanBGC 
+					sHTML += "<td colspan=" + nBairitsu + " bgcolor=" + $scope.aryColspan[iMCol1].sColspanBGC 
 						+ " style='text-align:"+$scope.aryColspan[iMCol1].sAlign+"; " + sVLineMeasValue4 + " "+$scope.prop_sLineColorHeader1+"; border-top:"+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-bottom:0px solid "+$scope.prop_sLineColorHeader1+";'>" 
 						+ "<p style='font-weight:bold; color:" 
 						+ $scope.prop_sHeaderFGC2 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.aryColspan[iMCol1].sColspanText
 						+ "</p></td>";
 				}
 				else{
-					sHTML += "<td colspan=" + nColspanHead1 * nBairitsu + " bgcolor=" + $scope.aryColspan[iMCol1].sColspanBGC 
+					sHTML += "<td colspan=" + nBairitsu + " bgcolor=" + $scope.aryColspan[iMCol1].sColspanBGC 
 						+ " style='text-align:"+$scope.aryColspan[iMCol1].sAlign+"; " + sVLineMeasValue4 + " "+$scope.prop_sLineColorHeader1+"; border-top:"+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-bottom:0px solid "+$scope.prop_sLineColorHeader1+";'>" 
 						+ "<p style='font-weight:bold; color:" 
 						+ $scope.prop_sHeaderFGC2 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.aryColspan[iMCol1].sColspanText
@@ -1657,338 +1691,6 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 		return sHTML;
 	}
 
-//	// --------------------------------------------------------------------------------------------
-//	// --------------------------------------------------------------------------------------------
-//	// --------------------------------------------------------------------------------------------
-//	// --------------------------------------------------------------------------------------------
-//	// --------------------------------------------------------------------------------------------
-//	// --------------------------------------------------------------------------------------------
-//	// --------------------------------------------------------------------------------------------
-//	function makeMatrix( sMode1 /*grand dimension */, iDim1 /*ディメンションインデックス*/
-//		, iMeasureIndex1, iRowspanLv1, iRowspanLv2, iCurrentRow1 ,iRangesumRowspanLv1, iRangesumRowspanLv2 
-//	){
-//		var sHTML ="";
-//
-//		var nBorderWidth = 1 * $scope.prop_nLineWidthMagnification1;
-//		var nBorderMiddleWidth = 1 * $scope.prop_nLineWidthMagnification1;
-//
-//		var sBdBottom3="";
-//		if( $scope.prop_sLineHorizon1 == "none" ){// 横罫線
-//			sBdBottom3 = ""; // 横罫線
-//		}
-//		else{
-//			sBdBottom3 = " border-bottom: "+nBorderWidth+"px " + $scope.prop_sLineHorizon1 + " "+$scope.prop_sLineColorGrid1+"; "; // 横罫線
-//		}
-//		
-//		if( G_aryMeasProps.length - iMeasureIndex1 < $scope.prop_nRowBreak1 + 1 ){// 最終行
-//			sBdBottom3 = " border-bottom: "+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; "; // 横罫線
-//		}
-//
-//		if( iCurrentRow1 == G_aryMeasProps.length -1 || iCurrentRow1 == $scope.aryLv1[iRowspanLv1].RangesumRS-1 ){// アンダーラインが絶対に必要
-//			sBdBottom3 = " border-bottom:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; ";
-//		}
-//		if( sMode1 == "grand" || $scope.prop_bVerticalDimension ){// グランドのみ表示
-//			// 大区分
-//			if( iRangesumRowspanLv2 < $scope.aryLv2[iRowspanLv2].RangesumRS ){
-//				if( $scope.prop_nHeaderWidth0 > 0 ){
-//					sHTML += "<td rowspan=" + $scope.aryLv2[iRowspanLv2].Rowspan + " bgcolor=" + $scope.aryLv2[iRowspanLv2].BGC ;
-//					sHTML +=  " style='text-align:" + $scope.aryLv2[iRowspanLv2].Align + "; border-left: "+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; border-top: 0px solid "+$scope.prop_sLineColorGrid1+"; border-right: 0px solid "+$scope.prop_sLineColorGrid1+"; border-bottom: "+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+";" ;
-//					sHTML +=  " vertical-align:"+ $scope.aryLv2[iRowspanLv2].VertiAlign ;
-//					sHTML +=  "; '><p style='" + $scope.prop_styleWritingMode1 + " padding:0px 0px 0px 0px; font-weight:bold; font-size:" ;
-//					sHTML +=  $scope.prop_nFontSize1 + "px; color:"+ $scope.aryLv2[iRowspanLv2].FGC +"' >" ;
-//					sHTML +=  $scope.aryLv2[iRowspanLv2].RowName +"</p></td>" ;
-//				}
-//			}
-//			// 合計科目
-//			// 点滅条件
-//			var sBlink="";
-//			if( $scope.aryLv1[iRowspanLv1].Blink ){
-//				sBlink = " class='blink' ";
-//			}
-//			
-//			if( iRangesumRowspanLv1 < $scope.aryLv1[iRowspanLv1].RangesumRS ){
-//				if( $scope.prop_nHeaderWidth1 > 0 ){
-//					sHTML += "<td "+ sBlink +" rowspan=" + $scope.aryLv1[iRowspanLv1].Rowspan + " bgcolor=" + $scope.aryLv1[iRowspanLv1].BGC ;
-//					sHTML += " style='text-align:" + $scope.aryLv1[iRowspanLv1].Align + "; border-left: "+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; border-top: 0px solid "+$scope.prop_sLineColorGrid1+"; border-bottom: "+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; border-right: 0px solid "+$scope.prop_sLineColorGrid1+"; " ;
-//					sHTML +=  " vertical-align:"+ $scope.aryLv1[iRowspanLv1].VertiAlign ;
-//					sHTML +=  ";'><p style='font-weight:bold; font-size:" + $scope.prop_nFontSize1 + "px; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"' >" ;
-//					sHTML +=  $scope.aryLv1[iRowspanLv1].RowName +"</p></td>";
-//				}
-//			}
-//		} // <<< sMode1
-//
-//
-//
-//		var sSummaryLineMeasNameAlign = $scope.prop_sMeasureNameAlign1; // メジャー値のAlign
-//		var sSummaryLineBorderMeasName,sSummaryLineBorderMeasValue,sMeasureNameFont1,sMeasureValueFont2;
-//		sSummaryLineBorderMeasName="";
-//		sMeasureNameFont1="font-weight:normal; color:black; ";
-//		sMeasureValueFont2="font-weight:normal; color:black; ";
-//		sSummaryLineBorderMeasValue=" text-align: right; ";
-//
-//		// 最終行の場合は下に線
-//		if( iMeasureIndex1 + $scope.prop_nRowBreak1 >= G_aryMeasProps.length ){
-//			sSummaryLineBorderMeasName = " border-bottom:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; ";
-//			sSummaryLineBorderMeasValue = " border-bottom:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; ";
-//		}
-//
-//		if( $scope.aryLv1[iRowspanLv1].Summary ){// 横線
-//			sSummaryLineBorderMeasName = " border-top:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; border-bottom:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; ";
-//			sSummaryLineBorderMeasValue = " border-top:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; border-bottom:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+"; ";
-//		}
-//
-//		if( $scope.aryLv1[iRowspanLv1].StandOut ){// 色帯＋太字
-//			sSummaryLineBorderMeasName += "background-color:" + $scope.aryLv1[iRowspanLv1].BGC + "; ";
-////			sSummaryLineBorderMeasValue += "background-color:" + $scope.aryLv1[iRowspanLv1].BGC + "; ";
-//			sSummaryLineMeasNameAlign = $scope.aryLv1[iRowspanLv1].Align;
-//			sMeasureNameFont1 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
-//			sMeasureValueFont2 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
-//		}
-//
-//
-//
-//		var sVKindOfLine = " solid ";
-//		if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >=2 || $scope.prop_bVerticalDimension ) ){
-//			nBorderMiddleWidth = 1 * $scope.prop_nLineWidthMagnification1;
-//			sVKindOfLine = " double ";
-//		}
-//		else{
-//			nBorderMiddleWidth = 1 * $scope.prop_nLineWidthMagnification1;
-//			sVKindOfLine = " solid ";
-//		}
-//
-//		// 中身列ループ $scope.prop_nRowBreak1
-//		for( var iMCol1=0 ; iMCol1 < $scope.prop_nRowBreak1  ; iMCol1++ ){
-//			if( iMCol1 < $scope.prop_nRowBreak1 && iMeasureIndex1 + iMCol1 < G_aryMeasProps.length ){
-//			
-//				var nInnerMeasureIndex = (iMeasureIndex1 + iMCol1);
-//
-//				var sVLineMeasName4,sVLineMeasValue4;// 縦罫線の種類
-//				if( $scope.prop_sLineV1 == "none" ){// 縦罫線
-//					sVLineMeasName4 = ""; // 縦罫線
-//					sVLineMeasValue4 ="";
-//				}
-//				//
-//				if( sMode1 == "grand" ){
-//					if( $scope.prop_nHeaderWidth2 > 0 ){
-//						sVLineMeasName4 = " border-left: "+nBorderMiddleWidth+"px double "+$scope.prop_sLineColorGrid1+"; "; // 縦罫線
-//						sVLineMeasValue4 = " border-left: "+nBorderWidth+"px " + $scope.prop_sLineV1 + " "+$scope.prop_sLineColorGrid1+"; "; // 
-//					}
-//					else{
-//						sVLineMeasValue4 = " border-left: "+nBorderMiddleWidth+"px double "+$scope.prop_sLineColorGrid1+"; "; // 縦罫線
-//					}
-//				}
-//				else{// dimension
-//					if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ){
-//						sVLineMeasName4 = " border-left: "+nBorderMiddleWidth+"px "+sVKindOfLine+" "+$scope.prop_sLineColorGrid1+"; "; // 縦罫線
-//						sVLineMeasValue4 = " border-left: "+nBorderWidth+"px " + $scope.prop_sLineV1 + " "+$scope.prop_sLineColorGrid1+"; "; // 
-//					}
-//					else{
-//						if( iMCol1==0 ){
-//							sVLineMeasValue4 = " border-left: "+nBorderMiddleWidth+"px "+sVKindOfLine+" "+$scope.prop_sLineColorGrid1+"; "; // 縦罫線
-//						}
-//						else{
-//							sVLineMeasValue4 = " border-left: "+nBorderWidth+"px double "+$scope.prop_sLineColorGrid1+"; "; // 
-//						}
-//					}
-//				}
-//
-//
-//
-//
-//
-//				// メジャーのプロパティによってアラート（フォントの色や背景色を変化させる）
-//
-//
-////$scope.sDEBUG += " iMeasureIndex1=" + iMeasureIndex1 + " <hr> ";
-////$scope.sDEBUG += " iMCol1=" + iMCol1 + " <hr> ";
-//
-//				var sMeasBGColor="";
-//				var sMeasFontColor="";
-//				var sMeasBlink = "";
-////$scope.sDEBUG += " G_aryMeasProps.length " + G_aryMeasProps.length + " <hr> ";
-////$scope.sDEBUG += " sMode1=" + sMode1 + " <hr> ";
-//
-//				if( sMode1 == "grand" ){// グランドの場合
-////$scope.sDEBUG += " grandメジャーの背景色 " + G_aryMeasProps[ iMeasureIndex1+ iMCol1 ].sMeasBGColor + " / "
-////$scope.sDEBUG += " grandメジャーのフォント色 " + G_aryMeasProps[ iMeasureIndex1 + iMCol1 ].sMeasFontColor + " / "
-//
-//					
-//					// それぞれのメジャーのプロパティが存在するかチェック必要。配列なので長さをチェックする。
-//					sMeasBGColor = myColorCast( G_aryMeasProps[ nInnerMeasureIndex ].sMeasBGColor , 'white' );
-////$scope.sDEBUG += "Bg:"+	sMeasBGColor;
-//
-//					sMeasFontColor = myColorCast( G_aryMeasProps[ nInnerMeasureIndex ].sMeasFontColor , 'black' );
-////$scope.sDEBUG += "Font:"+	sMeasFontColor;
-//
-//					if( G_aryMeasProps[ nInnerMeasureIndex ].bBlink ){
-//						sMeasBlink = " class='blink' ";
-//					}
-//
-//				}
-//				else{// ディメンション毎に評価する必要がある場合
-//					// それぞれのメジャーのプロパティが存在するかチェック必要。配列なので長さをチェックする。
-//					sMeasBGColor = myColorCast( G_aryMeasProps[ nInnerMeasureIndex ].aryDimProps[ iDim1 ].sMeasBGColor , 'white' );
-//					sMeasFontColor = myColorCast( G_aryMeasProps[ nInnerMeasureIndex ].aryDimProps[ iDim1 ].sMeasFontColor , 'black' );
-//					if( G_aryMeasProps[ nInnerMeasureIndex ].aryDimProps[ iDim1 ].bBlink ){
-//						sMeasBlink = " class='blink' ";
-//					}
-//				}
-//				
-////$scope.sDEBUG += " sMeasBlink " + sMeasBlink + " <hr> ";
-//				
-//				
-//				var sMeasNameBGColor = "white";
-//				if( ! $scope.aryLv1[iRowspanLv1].StandOut ){// Stand Out Band　でなければ
-//					sMeasureValueFont2 = " font-weight:normal; color:"+ sMeasFontColor +"; ";
-//				}
-//				else{// // Stand Out Bandの場合
-//					if( sMeasBGColor.toLowerCase()=='white' ){// アラートが設定されていないと思われる
-//						sMeasBGColor = $scope.aryLv1[iRowspanLv1].BGC;
-//						sMeasureValueFont2 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
-//					}
-//					else{// アラートが設定されていると思われる
-//						sMeasNameBGColor = $scope.aryLv1[iRowspanLv1].BGC;
-//						sMeasureValueFont2 = " font-weight:bold; color:"+ sMeasFontColor +"; ";
-//					}
-//				}
-//
-//
-//				// Totalメジャー名 
-//				if( ( $scope.prop_nHeaderWidth2 > 0 && sMode1 == "grand" ) 
-//				|| ( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ) ){
-//					sHTML += "<td style='background-color:" + sMeasNameBGColor + "; border-left:"+nBorderMiddleWidth+"px double "+$scope.prop_sLineColorGrid1+"; " 
-//						+ sSummaryLineBorderMeasName + sBdBottom3 +" text-align:"+sSummaryLineMeasNameAlign+"; "
-//						+ "' >";
-//					sHTML += "<p style='" + sMeasureNameFont1 + " font-size:" + $scope.prop_nMeasureLabelFontSize + "px; ' >";
-//					sHTML += $scope.layout.qHyperCube.qMeasureInfo[ nInnerMeasureIndex ].qFallbackTitle;
-//					sHTML += "</p></td>";
-//						
-////$scope.sDEBUG += " ( $scope.layout.qHyperCube.qMeasureInfo[ nInnerMeasureIndex ].qFallbackTitle=" + $scope.layout.qHyperCube.qMeasureInfo[ nInnerMeasureIndex ].qFallbackTitle + " / "; 
-////$scope.sDEBUG += " sMeasureNameFont1=" + sMeasureNameFont1 + " ) "; 
-//
-//					// Totalメジャー値<td>
-//					sHTML += "<td " + sMeasBlink + " style=' text-align: right;  " + sSummaryLineBorderMeasValue + " " + sBdBottom3 + sVLineMeasValue4 
-//						+ " background-color:" + sMeasBGColor + "; ' >";
-//						
-//				}
-//				else if( $scope.prop_nHeaderWidth2 > 0 && sMode1 != "grand" && $scope.prop_nMeasureCols == 1 ){
-//					// Totalメジャー値<td>
-//					sHTML += "<td  " + sMeasBlink + " style=' text-align: right;  " + sSummaryLineBorderMeasValue + " " + sBdBottom3 + sVLineMeasValue4 
-//						+ " background-color:" + sMeasBGColor + "; ' >";
-//						
-//				}
-//				else{
-//					// Totalメジャー値<td>
-//					sHTML += "<td  " + sMeasBlink + " style=' text-align: right;  " + sSummaryLineBorderMeasValue + " " + sBdBottom3 + sVLineMeasValue4 
-//						+ " background-color:" + sMeasBGColor + "; ' >";
-//				}
-//
-//
-//				// Totalメジャー値表示
-//				if( G_bUseButton && G_aryMeasProps[ nInnerMeasureIndex ].sMeasSheetID1 != "" ){// AngularJSで推奨されない動的なボタンを使う。ずっと動くか保証はない
-//				    //  桁が他のセルとずれないようにしないといけない。枠線を表示するのはやめたほうが良い
-//					sHTML += "<button id='maruNavi" + (nInnerMeasureIndex) + "' onclick='innerclickNavi1(" + ($scope.G_sRandomKey) + ", " + (nInnerMeasureIndex) + ")'" 
-//						+ " style='padding: 0px; background: transparent; border: 0 dotted white; border-color: rgba(255,125,212,0.5); cursor: pointer; " + sMeasureValueFont2 + " font-size:" + $scope.prop_nFontSize6 + "px;'>";
-//				}
-//				else{
-//					sHTML += "<p style='" + sMeasureValueFont2 + " font-size:" + $scope.prop_nFontSize6 + "px;'>";
-//				}
-//
-//				// -----------------------------------------------------------------------------------------------
-//				// ハイパーキューブのメジャー値表示
-//				if( sMode1 == "grand" ){// グランド
-//					sHTML += $scope.layout.qHyperCube.qGrandTotalRow[ nInnerMeasureIndex ].qText;
-//				}
-//				else{// ディメンション
-//					sHTML += $scope.layout.qHyperCube.qDataPages[ 0 ].qMatrix[iDim1][nInnerMeasureIndex+1].qText
-//				}
-//				// -----------------------------------------------------------------------------------------------
-//				
-//				
-//				
-//				if( G_bUseButton  && G_aryMeasProps[ nInnerMeasureIndex ].sMeasSheetID1 != "" ){// AngularJsで推奨されない動的なボタンを使う。ずっと動くか保証はない
-//					sHTML += "</button></td>";
-//				}
-//				else{
-//					sHTML += "</p></td>";
-//				}
-//				
-//				
-//			} // <<< if( iMCol1 < $scope.prop_nRowBreak1 && iMeasureIndex1 +
-//			else{// お尻の半端セル
-//				//
-//				if( sMode1 == "grand" ){
-//					if( $scope.prop_nHeaderWidth2 > 0 ){
-//						sVLineMeasName4 = " border-left: "+nBorderMiddleWidth+"px double "+$scope.prop_sLineColorGrid1+"; "; // 縦罫線
-//						sVLineMeasValue4 = " border-left: "+nBorderWidth+"px " + $scope.prop_sLineV1 + " "+$scope.prop_sLineColorGrid1+"; "; // 
-//					}
-//					else{
-//						sVLineMeasValue4 = " border-left: "+nBorderMiddleWidth+"px double "+$scope.prop_sLineColorGrid1+"; "; // 縦罫線
-//					}
-//				}
-//				else{// dimension
-//				
-//					if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ){
-//						sVLineMeasName4 = " border-left: "+nBorderMiddleWidth+"px "+sVKindOfLine+" "+$scope.prop_sLineColorGrid1+"; "; // 縦罫線
-//						sVLineMeasValue4 = " border-left: "+nBorderWidth+"px " + $scope.prop_sLineV1 + " "+$scope.prop_sLineColorGrid1+"; "; // 
-//					}
-//					else{
-//						if( iMCol1==0 ){
-//							sVLineMeasValue4 = " border-left: "+nBorderMiddleWidth+"px "+sVKindOfLine+" "+$scope.prop_sLineColorGrid1+"; "; // 縦罫線
-//						}
-//						else{
-//							sVLineMeasValue4 = " border-left: "+nBorderWidth+"px " + $scope.prop_sLineV1 + " "+$scope.prop_sLineColorGrid1+"; "; // 
-//						}
-//					}
-//				}
-//
-//
-//				// お尻の半端　Totalメジャー名 
-//				if( ( $scope.prop_nHeaderWidth2 > 0 && sMode1 == "grand" ) 
-//					|| ( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ) 
-//				){
-//					sHTML += "<td style='border-left:"+nBorderMiddleWidth+"px "+sVKindOfLine+" "+$scope.prop_sLineColorGrid1+"; " + sSummaryLineBorderMeasName 
-//						+ sBdBottom3 +" text-align:"+sSummaryLineMeasNameAlign+"; "
-//						+ "' ><p style='" + sMeasureNameFont1 + " font-size:" + $scope.prop_nMeasureLabelFontSize + "px; ' > ";
-//					sHTML += "</p></td>";
-//
-//					// Totalメジャー値
-//					sHTML += "<td style=' text-align: right;  " + sSummaryLineBorderMeasValue + " " + sBdBottom3 + sVLineMeasValue4 + sSummaryLineBorderMeasName
-//						+ "' ><p style='" + sMeasureValueFont2 + " font-size:" 
-//						+ $scope.prop_nFontSize6 + "px;'>";
-//				}
-//				else if( $scope.prop_nHeaderWidth2 > 0 && sMode1 != "grand" && $scope.prop_nMeasureCols == 1 ){
-//					// Totalメジャー値
-//					sHTML += "<td style=' text-align: right;  " + sSummaryLineBorderMeasValue + " " + sBdBottom3 + sVLineMeasValue4 
-//						+ "' ><p style='" + sMeasureValueFont2 + " font-size:" 
-//						+ $scope.prop_nFontSize6 + "px;'>";
-//				}
-//				else{
-//					// Totalメジャー値
-//					sHTML += "<td style=' text-align: right;  " + sSummaryLineBorderMeasValue + " " + sBdBottom3 + sVLineMeasValue4 
-//						+ " border-left: "+nBorderMiddleWidth+"px double "+$scope.prop_sLineColorGrid1+"; ' ><p style='" + sMeasureValueFont2 + " font-size:" 
-//						+ $scope.prop_nFontSize6 + "px;'>";
-//				}
-//				sHTML += "</p></td>";
-//			}
-//
-//		}	// <<< for( var iMCol1 
-//
-//		if( sMode1 == "grand" ){// グランドのみ表示
-//			// 真ん中お尻						
-//			sHTML += "<td style='width: 1px; border-left:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+";'><p> </p></td>";
-//		}
-//		else{// ディメンションのみ表示
-//			// 右端お尻						
-//			sHTML += "<td style='width: 1px; border-left:"+nBorderWidth+"px solid "+$scope.prop_sLineColorGrid1+";'><p> </p></td>";
-//		}
-//
-//
-//
-////$scope.sDEBUG += " iMeasureIndex1+$scope.prop_nRowBreak1=" + (iMeasureIndex1 + $scope.prop_nRowBreak1) + " /";						
-//		return sHTML;
-//	}
 
 	// --------------------------------------------------------------------------------------------
 	// --------------------------------------------------------------------------------------------
@@ -2154,8 +1856,12 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 
 
 				// Totalメジャー名 
-				if( ( $scope.prop_nHeaderWidth2 > 0 && sMode1 == "grand" ) 
-					|| ( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ) 
+				if( 
+					(
+						( $scope.prop_nHeaderWidth2 > 0 && sMode1 == "grand" ) 
+						|| ( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ) 
+					)
+					&& ! ( $scope.prop_sHideMeasName=="left" && iMCol1 >= 1 ) 
 				){
 					sHTML += "<td style='background-color:" + sMeasNameBGColor + "; " + sBdLeftMeasName3 
 						+ sBdBottom3 + sAlignMeasName3+"; "
@@ -2215,8 +1921,12 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 			else{// お尻の半端セル
 
 				// お尻の半端　Totalメジャー名 
-				if( ( $scope.prop_nHeaderWidth2 > 0 && sMode1 == "grand" ) 
-					|| ( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ) 
+				if(
+					(
+						( $scope.prop_nHeaderWidth2 > 0 && sMode1 == "grand" ) 
+						|| ( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_nMeasureCols >= 2 || $scope.prop_bVerticalDimension ) ) 
+					)
+					&& ! ( $scope.prop_sHideMeasName=="left" && iMCol1 >= 1 ) 
 				){
 					sHTML += "<td style='background-color:" + sMeasNameBGColor + "; " + sBdLeftMeasName3 
 						+ sBdBottom3 + sAlignMeasName3+"; "
@@ -2225,11 +1935,6 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 					sHTML += "</p></td>";
 
 					// Totalメジャー値<td>
-					sHTML += "<td " + sMeasBlink + " style=' text-align: right; " + sBdBottom3 + sBdLeftMeasValue3 
-						+ " background-color:" + sMeasBGColor + "; ' >";
-				}
-				else if( $scope.prop_nHeaderWidth2 > 0 && sMode1 != "grand" && $scope.prop_nMeasureCols == 1 ){
-					// Totalメジャー値
 					sHTML += "<td " + sMeasBlink + " style=' text-align: right; " + sBdBottom3 + sBdLeftMeasValue3 
 						+ " background-color:" + sMeasBGColor + "; ' >";
 				}
@@ -2307,45 +2012,50 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 					if( $scope.prop_nHeaderWidth1 > 0 ){
 						sHTML += "<col style='text-align:center; width: " + $scope.prop_nHeaderWidth1 + "px; ' >";
 					}
-					if( $scope.prop_nRowBreak1 > 1 ){
+//					if( $scope.prop_nRowBreak1 > 1 ){
+					
 						for( var iMCol1=0 ; iMCol1 < $scope.prop_nRowBreak1 ; iMCol1++ ){
-							if( $scope.prop_nHeaderWidth2 > 0  ){
+							if( $scope.prop_nHeaderWidth2 > 0  
+								&& ! ( $scope.prop_sHideMeasName=="left" && iMCol1 >= 1 ) 
+							){
 								sHTML += "<col style='width: "+$scope.prop_nHeaderWidth2+"px; ' >";
 							}
 							sHTML += "<col style='width: "+$scope.prop_nHeaderWidth3+"px; ' >";
 						}
-					}
-					else{
-						if( $scope.prop_nHeaderWidth2 > 0 ){
-							sHTML += "<col style=' width: " + $scope.prop_nHeaderWidth2 + "px; '>" 
-						}
-						// メジャー値
-						sHTML += "<col style=' width: " + $scope.prop_nHeaderWidth3 + "px; ' >"
-					}
+//					}
+//					else{
+//						if( $scope.prop_nHeaderWidth2 > 0 ){
+//							sHTML += "<col style=' width: " + $scope.prop_nHeaderWidth2 + "px; '>" 
+//						}
+//						// メジャー値
+//						sHTML += "<col style=' width: " + $scope.prop_nHeaderWidth3 + "px; ' >"
+//					}
 					sHTML += "<col style='width: "+($scope.prop_nLineWidthMagnification1*2)+"px; ' >";
 
-					if( $scope.prop_nRowBreak1 > 1 ){// 改行する場合
+//					if( $scope.prop_nRowBreak1 > 1 ){// 改行する場合
 						for( var iDim1=0 ; iDim1 < $scope.aryDim1.length ; iDim1++ ){// ディメンション1のループ
 							for( var iMCol1=0 ; iMCol1 < $scope.prop_nRowBreak1 ; iMCol1++ ){
 								// メジャー名ヘッダ
-								if( $scope.prop_nHeaderWidth2 > 0 && $scope.prop_nMeasureCols >= 2 ){
+								if( $scope.prop_nHeaderWidth2 > 0 && $scope.prop_nMeasureCols >= 2 
+									&& ! ( $scope.prop_sHideMeasName=="left" && iMCol1 >= 1 ) 
+								){
 									sHTML += "<col style='width: "+$scope.prop_nHeaderWidth2+"px; ' >";
 								}
 								sHTML += "<col style='width: "+$scope.prop_nHeaderWidth3+"px; ' >";
 							}
 							sHTML += "<col style='width: "+($scope.prop_nLineWidthMagnification1*2)+"px; ' >";
 						}
-					} // <<< if( $scope.prop_nRowBreak1 > 1 ){// 改行する場合
-					else{
-						for( var iDim1=0 ; iDim1 < $scope.aryDim1.length ; iDim1++ ){// ディメンション1のループ
-							if( $scope.prop_nHeaderWidth2 > 0 && $scope.prop_nMeasureCols >= 2 ){// メジャー名を出す場合
-								sHTML += "<col style='width: "+$scope.prop_nHeaderWidth2+"px; ' >";
-							}
-							// メジャー値
-							sHTML += "<col style='width: "+$scope.prop_nHeaderWidth3+"px; ' >";
-							sHTML += "<col style='width: "+($scope.prop_nLineWidthMagnification1*2)+"px; ' >";
-						}
-					}
+//					} // <<< if( $scope.prop_nRowBreak1 > 1 ){// 改行する場合
+//					else{
+//						for( var iDim1=0 ; iDim1 < $scope.aryDim1.length ; iDim1++ ){// ディメンション1のループ
+//							if( $scope.prop_nHeaderWidth2 > 0 && $scope.prop_nMeasureCols >= 2 ){// メジャー名を出す場合
+//								sHTML += "<col style='width: "+$scope.prop_nHeaderWidth2+"px; ' >";
+//							}
+//							// メジャー値
+//							sHTML += "<col style='width: "+$scope.prop_nHeaderWidth3+"px; ' >";
+//							sHTML += "<col style='width: "+($scope.prop_nLineWidthMagnification1*2)+"px; ' >";
+//						}
+//					}
 				sHTML += "<col>";// dummy
 				sHTML += "</colgroup>";
 
@@ -2484,25 +2194,27 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 							sHTML += "<col style='text-align:center; width: " + $scope.prop_nHeaderWidth1 + "px; ' >";
 							nCols++;
 						}
-						if( $scope.prop_nRowBreak1 > 1 ){
+//						if( $scope.prop_nRowBreak1 > 1 ){
 							for( var iMCol1=0 ; iMCol1 < $scope.prop_nRowBreak1 ; iMCol1++ ){
-								if( $scope.prop_nHeaderWidth2 > 0  ){
+								if( $scope.prop_nHeaderWidth2 > 0  
+									&& ! ( $scope.prop_sHideMeasName=="left" && iMCol1 >= 1 ) 
+								){
 									sHTML += "<col style='width: "+$scope.prop_nHeaderWidth2+"px; ' >";
 									nCols++;
 								}
 								sHTML += "<col style='width: "+$scope.prop_nHeaderWidth3+"px; ' >";
 								nCols++;
 							}
-						}
-						else{
-							if( $scope.prop_nHeaderWidth2 > 0 ){
-								sHTML += "<col style=' width: " + $scope.prop_nHeaderWidth2 + "px; '>" 
-								nCols++;
-							}
-							// メジャー値
-							sHTML += "<col style=' width: " + $scope.prop_nHeaderWidth3 + "px; ' >"
-							nCols++;
-						}
+//						}
+//						else{
+//							if( $scope.prop_nHeaderWidth2 > 0 ){
+//								sHTML += "<col style=' width: " + $scope.prop_nHeaderWidth2 + "px; '>" 
+//								nCols++;
+//							}
+//							// メジャー値
+//							sHTML += "<col style=' width: " + $scope.prop_nHeaderWidth3 + "px; ' >"
+//							nCols++;
+//						}
 						sHTML += "<col style='width: "+($scope.prop_nLineWidthMagnification1*2)+"px; ' >";
 						nCols++;
 
