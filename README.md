@@ -105,7 +105,7 @@ Now, turn the switch off.
 Now, I don't want to use the measure labels (names) in this tutorial.  
   
 Go to the ***"Header for Measure text, width, color"*** property group panel again.  
-Find ***"◆Width(px) of Meas Label if 0 then hidden"***, and enter 0. Then the measure name (label) column disappeared. But now, you can also hide the Measure Name by the ***"Table Overall" → "◆Hide Measure Name"*** property switch, and it's an easier way. 
+Find ***"◆Width(px) of Meas Label if 0 then hidden"***, and enter 0. Then the measure name (label) column disappeared. But now, you can also hide the Measure Name by the ***"Table Overall" → "◆Hide or Show Measure Name"*** property switch, and it's an easier way. 
 ![image_tutrial2_6](https://user-images.githubusercontent.com/95951577/147489077-26061814-c6cc-4301-a1ee-f8d8bc3ee4cf.png)  
   
 You change the caption of each measure value's header so that we can recognise the meaning of each col.   
@@ -205,9 +205,10 @@ Totally, AngularJS and Qlik Sense's extensibility is great. This development is 
 
 
 # Release note 
+- January 14th, 2022 - qMaruPL has come to be able to show only the very left measure name when row break is set. That will help you make financial reports.    
 - January 10th, 2022 - I corrected a good number of typo in this readme.  
 - January 9th, 2022 - Vertical Dimension was released.  
-- January 8th, 2022 - qMaruPL have come to be able to hide individually each of the Lv2, Lv1, and Measure Name column by the "Table Overall" → "◆Hide ..." property switch, without setting the width as 0. What's more, the "Row Break Cols" can be adjusted by the slider.  
+- January 8th, 2022 - qMaruPL has come to be able to hide individually each of the Lv2, Lv1, and Measure Name column by the "Table Overall" → "◆Hide ..." property switch, without setting the width as 0. What's more, the "Row Break Cols" can be adjusted by the slider.  
 - January 4th, 2022 - qMaruPL has come to be able to be changed line styles.    
 - January 2nd, 2022 - qMaruPL has come to be able to be selected a dimension's value.    
 - December 30th, 2021 - qMaruPL has come to be able to have 100 measures and 99 elements of a dimension. I think that's enough.     
