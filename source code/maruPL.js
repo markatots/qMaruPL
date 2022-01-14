@@ -920,13 +920,21 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		
 		$scope.prop_sHideMeasName = myBoolCast( $scope.layout.settings.bHideMeasName );// 現在Booleanではなく、文字列でtrue、false、leftに仕様変更。
 		$scope.prop_sHideMeasName = myStringCast( $scope.layout.settings.bHideMeasName , 'false' );
-		if( $scope.prop_sHideMeasName == "true" )
 
 
 		$scope.prop_bHideLv1 = myBoolCast( $scope.layout.settings.bHideLv1  );
 		$scope.prop_bHideLv2 = myBoolCast( $scope.layout.settings.bHideLv2  );
 		
 
+//var bBackup = G_bDegubMode;
+//G_bDegubMode=true;
+//if(G_bDegubMode)console.log('set1stCubeProps: $scope.layout.settings.bHideLv1 = ' + $scope.layout.settings.bHideLv1 );
+//if(G_bDegubMode)console.log('set1stCubeProps: myBoolCast( $scope.layout.settings.bHideLv1  ) =' + myBoolCast( $scope.layout.settings.bHideLv1  ) );
+//if(G_bDegubMode)console.log('set1stCubeProps: $scope.prop_bHideLv1 = ' + $scope.prop_bHideLv1 );
+//if(G_bDegubMode)console.log('set1stCubeProps: $scope.layout.settings.bHideLv2 = ' + $scope.layout.settings.bHideLv2 );
+//if(G_bDegubMode)console.log('set1stCubeProps: $scope.prop_bHideLv2 = ' + $scope.prop_bHideLv2 );
+//if(G_bDegubMode)console.log('set1stCubeProps: myBoolCast( $scope.layout.settings.bHideLv2  ) =' + myBoolCast( $scope.layout.settings.bHideLv2  ) );
+//G_bDegubMode=bBackup;
 
 
 		// どうもプロパティのデータ型を信用できない・・・
@@ -974,6 +982,14 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		else{
 			$scope.prop_nHeaderWidth1 = myIntegerCast(myIntegerCast( $scope.layout.settings.sHeaderWidth1 ,120,0) * $scope.prop_nAbsoluteMagnification1, 0 );
 		}
+
+//var bBackup = G_bDegubMode;
+//G_bDegubMode=true;
+//if(G_bDegubMode)console.log('set1stCubeProps: $scope.prop_nHeaderWidth1 =' + $scope.prop_nHeaderWidth1 );
+//G_bDegubMode=bBackup;
+
+
+
 
 		if( $scope.prop_sHideMeasName=="true" ){
 			$scope.prop_nHeaderWidth2 = 0;
@@ -1845,12 +1861,14 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 						sMeasNameBGColor = $scope.aryLv1[iRowspanLv1].BGC;
 						sMeasBGColor = $scope.aryLv1[iRowspanLv1].BGC;
 						sMeasureNameFont2 = " font-weight:normal; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
-						sMeasureValueFont2 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
+//						sMeasureValueFont2 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
+						sMeasureValueFont2 = " font-weight:normal; color:"+ sMeasFontColor +"; ";
 					}
 					else{
 						sMeasNameBGColor = $scope.aryLv1[iRowspanLv1].BGC;
 						sMeasureNameFont2 = " font-weight:normal; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
-						sMeasureValueFont2 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
+//						sMeasureValueFont2 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
+						sMeasureValueFont2 = " font-weight:normal; color:"+ sMeasFontColor +"; ";
 					}
 				}
 
