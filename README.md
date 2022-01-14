@@ -189,9 +189,8 @@ Let's make this. This tutorial would be useful for financial reports. But first,
 I’ve  already created financial master items which start with a character “x” so that you can find them easily.   
 Put those measures on qMaruPL like this.  
 ![image_tutrial_3_2](https://user-images.githubusercontent.com/95951577/149470433-73b4ad94-74a0-4d07-8e90-f67f4acbefab.png)
-  
+That’s exhausting.   
 You can adjust the width and the header text of the measure at the ***"◆Width(px) of Meas label if 0 then hidden"*** property group panel.  
-That’s exhausting.  
   
 Find the ***"■Row Break Col(From 1 To 5)"*** slider in ***“Table Overall”*** property panel, and set it to 3.  
 ![image_tutrial_3_2](https://user-images.githubusercontent.com/95951577/149470666-715c990a-b861-4524-a75b-f81617a3b64c.png)  
