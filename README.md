@@ -11,7 +11,8 @@ For example, you can make a sheet as below.
   
 If you are not Japanese, how about this?  
 ![image_tutrial_3_1](https://user-images.githubusercontent.com/95951577/149462911-1af72619-3091-41f2-b4a6-bf115af50fa0.png)   
-Don’t you think it's easy to see?  
+Don’t you think it's easy to see? Although I mistook the currency symbol.
+
 
 So to speak, qMaruPL helps you classify measures by decorating some ruled lines and merged cells. Small and medium-sized businesses in Japan really love such special tables which have excel-like rule lines. I could also call qMaruPL one of the KPI viewers.  
 What's more, the display speed is very fast in spite of the number of measures. A hundred measures will appear in a second on your dashboards. I'm sure the display speed is key for successful BI.  
