@@ -188,25 +188,25 @@ Let's make this. This tutorial would be useful for financial reports. But first,
   
 I’ve  already created financial master items which start with a character “x” so that you can find them easily.   
 Put those measures on qMaruPL like this.  
-![image_tutrial_3_2](https://user-images.githubusercontent.com/95951577/149470433-73b4ad94-74a0-4d07-8e90-f67f4acbefab.png)
+![image_tutrial_3_2](https://user-images.githubusercontent.com/95951577/149470433-73b4ad94-74a0-4d07-8e90-f67f4acbefab.png)   
 That’s exhausting.   
 You can adjust the width and the header text of the measure at the ***"◆Width(px) of Meas label if 0 then hidden"*** property group panel.  
   
 Find the ***"■Row Break Col(From 1 To 5)"*** slider in ***“Table Overall”*** property panel, and set it to 3.  
-![image_tutrial_3_2](https://user-images.githubusercontent.com/95951577/149470666-715c990a-b861-4524-a75b-f81617a3b64c.png)  
+![image_tutrial_3_3](https://user-images.githubusercontent.com/95951577/149473005-a034dd22-58ee-4724-a46c-222bf82169cd.png)  
   
-Write the header texts of Actual, Target, and Rate appropriately at the ***"◆Width(px) of Meas label if 0 then hidden"*** property group panel. If you don't have time, you can skip that.   
+Write the header texts of Actual, Target, and Rate appropriately at the ***"◆Width(px) of Meas label if 0 then hidden"*** property group panel. If you don't have time, you can skip it.   
   
 Turn the ***"horizontal line style"*** radio button in the same property panel to “none”.    
-Turn the ***"◆Hide or Show Measure Name"*** radio button to “hide except very left”.   
+Turn the ***"◆Hide or Show Measure Name"*** radio button to “hide except very left”. Then you can only get the account tile col.   
   
 ![image_tutrial_3_4](https://user-images.githubusercontent.com/95951577/149470864-27944d83-9310-467c-a5c3-4893414d8cac.png)  
   
 We need to make the total rows stand out.  
 Go to the ***"Lv-1 Groups"*** property group panel.  
   
-Find the ***"1.===★row span1======="*** field. Enter "1" instead of the default value 99. 
-Set ***“Align”*** to “left”.  
+Find the ***"1.===★row span1======="*** field. Enter "1" instead of the default value 99.   
+Set ***“Align”*** to “left”.   
 Turn the “Stand Out Band” switch on.    
   
 Find the ***"2.===★row span2======="*** field. Enter "1".    
@@ -230,12 +230,12 @@ Turn the “Stand Out Band” switch on.
 
 ![image_tutrial_3_5](https://user-images.githubusercontent.com/95951577/149471055-17dc1e7c-d8be-495d-9d18-ed37a4a0c3fc.png)  
 
-We don’t need Lv1 and Lv2 columns this time. But If you take care of Ordinary income and Net income, you might need to use Lv1 and Lv2 in order to categorize. 
-Turn on the "◆Hide Lv1 Column" and "◆Hide Lv2 Column" switch in “Table Overall” property panel.  
-![image_tutrial_3_6](https://user-images.githubusercontent.com/95951577/149471571-cf57c101-66b9-4ce7-b02a-548f5441e571.png)  
+We don’t need Lv1 and Lv2 columns this time. But If you take care of Ordinary income and Net income, you might need to use Lv1 and Lv2 in order to categorize.   
+Turn on the "◆Hide Lv1 Column" and "◆Hide Lv2 Column" switch in “Table Overall” property panel.    
+![image_tutrial_3_6](https://user-images.githubusercontent.com/95951577/149471571-cf57c101-66b9-4ce7-b02a-548f5441e571.png)    
   
 Add “xDivision” dimension on qMaruPL.  
-I recommend that the measure be “red” when the actual couldn’t meet the target. And if a user clicks it, it’s favorable that he would be able to navigate to another related sheet.  
+I recommend that the measure be “red” when the actual couldn’t meet the target. And if a user clicks it, it’s favorable that he would be able to navigate to another related sheet. Try if you have time.   
 ![image_tutrial_3_1](https://user-images.githubusercontent.com/95951577/149462911-1af72619-3091-41f2-b4a6-bf115af50fa0.png)     
 Completed!.  
   
