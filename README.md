@@ -231,7 +231,7 @@ Turn the “Stand Out Band” switch on.
 ![image_tutrial_3_5](https://user-images.githubusercontent.com/95951577/149471055-17dc1e7c-d8be-495d-9d18-ed37a4a0c3fc.png)  
 
 We don’t need Lv1 and Lv2 columns this time. But If you take care of Ordinary income and Net income, you might need to use Lv1 and Lv2 in order to categorize.   
-Turn on the "◆Hide Lv1 Column" and "◆Hide Lv2 Column" switch in “Table Overall” property panel.    
+Turn on the **"◆Hide Lv1 Column"*** and ***"◆Hide Lv2 Column"** switch in “Table Overall” property panel.    
 ![image_tutrial_3_6](https://user-images.githubusercontent.com/95951577/149471571-cf57c101-66b9-4ce7-b02a-548f5441e571.png)    
   
 Add “xDivision” dimension on qMaruPL.  
