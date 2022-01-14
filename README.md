@@ -30,7 +30,7 @@ Property names are subject to change because I'm not satisfied with the names al
 Anyway, I named the parts of the extension properties as follows.  
 ![image_description1](https://user-images.githubusercontent.com/95951577/146526354-6970e88a-0934-4ca5-9b3e-7f71ea69a646.png)  
 I use these names to explain tutorials.  
-Basically properties which may affect the width indicates "◆" symbol. Background color is "●", Font color is "〇". Colspan or Rowspan is "===★".   
+Basically properties which may affect the width indicates "◆" symbol. Background color is "●", Font color is "〇". Colspan, Rowspan, or repetitive items are "===★".   
 
 ## Tutorial 1
 Let's make this. This tutorial would be useful for financial reports.   
@@ -181,6 +181,66 @@ You can input a sheet id string directly without an equal sign nor apostrophes. 
 
 
 
+
+## Tutorial 3
+Let's make this. This tutorial would be useful for financial reports. But first, you should pass the tutorial 1 and 2 in advance.  
+![image_tutrial_3_1](https://user-images.githubusercontent.com/95951577/149462911-1af72619-3091-41f2-b4a6-bf115af50fa0.png)   
+  
+I’ve  already created financial master items which start with a character “x” so that you can find them easily.   
+Put those measures on qMaruPL like this.  
+![image_tutrial_3_2](https://user-images.githubusercontent.com/95951577/149470433-73b4ad94-74a0-4d07-8e90-f67f4acbefab.png)
+  
+You can adjust the width and the header text of the measure at the ***"◆Width(px) of Meas label if 0 then hidden"*** property group panel.  
+That’s exhausting.  
+  
+Find the ***"■Row Break Col(From 1 To 5)"*** slider in ***“Table Overall”*** property panel, and set it to 3.  
+![image_tutrial_3_2](https://user-images.githubusercontent.com/95951577/149470666-715c990a-b861-4524-a75b-f81617a3b64c.png)  
+  
+Write the header texts of Actual, Target, and Rate appropriately at the ***"◆Width(px) of Meas label if 0 then hidden"*** property group panel. If you don't have time, you can skip that.   
+  
+Turn the ***"horizontal line style"*** radio button in the same property panel to “none”.    
+Turn the ***"◆Hide or Show Measure Name"*** radio button to “hide except very left”.   
+  
+![image_tutrial_3_4](https://user-images.githubusercontent.com/95951577/149470864-27944d83-9310-467c-a5c3-4893414d8cac.png)  
+  
+We need to make the total rows stand out.  
+Go to the ***"Lv-1 Groups"*** property group panel.  
+  
+Find the ***"1.===★row span1======="*** field. Enter "1" instead of the default value 99. 
+Set ***“Align”*** to “left”.  
+Turn the “Stand Out Band” switch on.    
+  
+Find the ***"2.===★row span2======="*** field. Enter "1".    
+Set ***“Align”*** to “right”.  
+Turn the “has horizontal line” switch on.    
+  
+Find the ***"3.===★row span3======="*** field. Enter "1".  
+Set “Align” to “right”.  
+Turn the “Stand Out Band” switch on.    
+  
+Find the ***"4.===★row span4======="*** field. Enter "4".   
+Set ***“Align”*** to “left”.   
+  
+Find the ***"5.===★row span5======="*** field. Enter "1".  
+Set ***“Align”*** to “right”.  
+Turn the “has horizontal line” switch on.    
+  
+Find the ***"6.===★row span6======="*** field. You can enter any natural number because this is the bottom line.   
+Set ***“Align”*** to “right”.  
+Turn the “Stand Out Band” switch on.    
+
+![image_tutrial_3_5](https://user-images.githubusercontent.com/95951577/149471055-17dc1e7c-d8be-495d-9d18-ed37a4a0c3fc.png)  
+
+We don’t need Lv1 and Lv2 columns this time. But If you take care of Ordinary income and Net income, you might need to use Lv1 and Lv2 in order to categorize. 
+Turn on the "◆Hide Lv1 Column" and "◆Hide Lv2 Column" switch in “Table Overall” property panel.  
+![image_tutrial_3_6](https://user-images.githubusercontent.com/95951577/149471571-cf57c101-66b9-4ce7-b02a-548f5441e571.png)  
+  
+Add “xDivision” dimension on qMaruPL.  
+I recommend that the measure be “red” when the actual couldn’t meet the target. And if a user clicks it, it’s favorable that he would be able to navigate to another related sheet.  
+![image_tutrial_3_1](https://user-images.githubusercontent.com/95951577/149462911-1af72619-3091-41f2-b4a6-bf115af50fa0.png)     
+Completed!.  
+  
+  
 ## Tips
   
 I need to enrich this document because qMaruPL has too many properties to explain.  Looking for a property in a narrow area is really tough. I wish Qlik Sense's property panel could've been customized.     
