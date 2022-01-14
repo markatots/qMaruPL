@@ -8,6 +8,8 @@ Hi. Happy new year. I'm Katsuaki Maruno of Otsuka Corporation.
 This qlik extension enables you to make measures easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/147492798-842f7ba8-a0d9-4787-975e-93b4dd5f8132.png)  
+  
+If you are not Japanese, how about this?  
 ![image_tutrial_3_1](https://user-images.githubusercontent.com/95951577/149462911-1af72619-3091-41f2-b4a6-bf115af50fa0.png)   
 Don’t you think it's easy to see?  
 
