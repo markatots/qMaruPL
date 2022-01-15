@@ -268,6 +268,7 @@ Totally, AngularJS and Qlik Sense's extensibility is great. This development is 
 
 
 # Release note 
+- January 14th, 2022 - qMaruPL has come to be able to copy data to the clipboard.    
 - January 14th, 2022 - qMaruPL has come to be able to show only the very left measure name when row break is set. That will help you make financial reports.    
 - January 10th, 2022 - I corrected a good number of typo in this readme.  
 - January 9th, 2022 - Vertical Dimension was released.  
