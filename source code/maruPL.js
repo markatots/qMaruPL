@@ -255,6 +255,43 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 
 
 	// --------------------------------------------------------------------------------------------
+	// クリップボードボタンの呼び出し
+	$scope.maruClipboard = function(){
+		if(G_bDegubMode)console.log('maruClipboard begin');
+
+		var sRandomKey = myCookieGet( "maruKey" );// クッキーのキーを取得する
+		if( sRandomKey != $scope.G_sRandomKey ){// このスコープのランダムキーと、クッキーのキーが一致したなら、コントローラとテンプレートのペアが一致している
+			// 処理をスキップする
+			if(G_bDegubMode)console.log('maruNavigate一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+		}
+		else{
+			// 処理を続ける		
+			if(G_bDegubMode)console.log('maruNavigate一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+
+			var sTSV="";
+			sTSV = makeHTML2();
+
+			// One of the most useful web site regarding regular syntax.
+			// https://rubular.com/
+			sTSV = sTSV.replace( /<[\/][tT][rR][^<]*>/g , '\n'); // </tr>を改行コードに変える
+			sTSV = sTSV.replace( /<[\/][tT][dD][^<]*>/g , '\t'); // </TD>をカンマに変える
+			sTSV = sTSV.replace( /<[^<]*>/g , '');// すべてのタグを消滅させる
+
+			var e3 = document.getElementsByClassName( "maruTextarea" + $scope.G_sRandomKey );
+			e3[0].innerHTML = sTSV;
+			e3[0].select();　
+			var result = document.execCommand('copy');
+			
+			alert("クリップボードにコピーしました。でもこの機能は仕様変更される予定です。Copied to the clipboard. The specification of this function is supposed to be changed. ");
+
+		} // <<< else
+
+		if(G_bDegubMode)console.log('maruClipboard end');
+		return;
+	}
+
+
+	// --------------------------------------------------------------------------------------------
 	// テンプレテストボタン（ここは、ちゃんと呼ばれる。ただし、シート内に複数のこのエクステンションがあれば、２つの正規のボタンがあって見分けがつかない）
 	$scope.maruTest = function( s1 ){// この引数をng-clickに埋め込むことはできなかった
 
@@ -279,7 +316,11 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 			// 処理を続ける		
 			if(G_bDegubMode)console.log('maruTest一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 
+			// コピー対象のテキストを選択する
+            copyTarget.select();
 
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
 		
 		}
 
@@ -2506,6 +2547,15 @@ if(G_bDegubMode)console.log('addSecondCube end G_bInitOK',G_bInitOK);
 					sHTML += makeHTML2(); 
 
 
+					if( G_bUseButton ){// AngularJSで推奨されない動的なボタンを使う。ずっと動くか保証はない
+						//  ボタンでクリップボードにコピーできるようにする
+						sHTML += "<button id='maruClipboard999' onclick='innerclickClipboard1(" + ($scope.G_sRandomKey) + ")'" 
+							+ " style='width: 150px; padding: 1px; border: 1 dotted white; cursor: pointer; font-weight:bold; color:black ; font-size:1px;'>";
+						sHTML += "Copy TSV to Clipboard (beta)"
+						sHTML += "</button>";
+						sHTML += "<textarea class='" + "maruTextarea" + $scope.G_sRandomKey + "' id='" + "maruTextarea" + $scope.G_sRandomKey + "' " 
+							+ " style='resize: none; height: 1px; width: 1px; isplay: none; '>" + $scope.G_sRandomKey + "</textarea>";
+					}
 
 
 

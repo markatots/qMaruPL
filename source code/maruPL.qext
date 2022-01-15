@@ -2,7 +2,7 @@
     "name": "qMaruPL",
     "description": "This can be used for decorating a list of measures by adding some ruled lines and merging cells.",
     "type": "visualization",
-    "version": "1.3.7",
+    "version": "1.3.9",
     "icon": "extension",
     "author": "丸野＠大塚商会, Copyright(c) 2021-2022, Otsuka Corporation ",
     "homepage": "",

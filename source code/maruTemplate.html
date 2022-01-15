@@ -83,12 +83,37 @@
 
 	}// <<< innerclickSelect1
 
+	// --------------------------------------------------------------------------------------------
+	var sSheetName = "";
+	var innerclickClipboard1 = function( sRandomKey ){
+
+
+		// クッキーにキーを書き込む　document.cookie = "key=value";
+		document.cookie = "maruKey=" + sRandomKey;// クッキーにキーを書き込む
+
+		// バインドされてるクラス名は "lui-button" すごくたくさんあってコンソールで見るのが大変だから絞り込む
+		var aryWhereIsBoundButtons = document.getElementsByClassName(  "lui-button" );
+		for( var i1=0 ; i1 < aryWhereIsBoundButtons.length ; i1++ ){// バインドされたボタンを見つける
+			if( aryWhereIsBoundButtons[i1].id == "maruClipboard" ){
+				var sRet = aryWhereIsBoundButtons[i1].click(); // ボタンは何回でも押す。Angular側でクッキーか何かdocumentで共通グローバルのを見て判断する
+				// ここでBreakしてはいけない。コントローラが処理をしたかどうか知るすべがないので、ループは繰り返す
+			}
+		}
+
+	}// <<< innerclickSelect1
+
+	function exportCSV(){
+		var copy1 = document.getElementById("maruTextarea1");
+		alert( copy1.innerHTML  );	
+	}
+
 </script>
 
 
 </head>
 
 <body>
+
 <table height=1  border=0>
 	<tr>
 		<td colspan=3>
@@ -96,6 +121,12 @@
 		</td>
 	</tr>
 	<tr>
+	<!-- template側のHTMLで、Angularが生成したボタンイベントをコントロールに通知する必殺技 -->
+		<td style="text-align: left;  vertical-align: top; width: 100px; ">
+			<button id="maruClipboard" class="lui-button" ng-click="maruClipboard()" style="border:none; font-size: 1px; color:gray; height:0px;  width:1px; ">
+				<!-- 本番は非表示　バインド済みクリップボーdボタン{{G_sRandomKey}} -->
+			</button>
+		</td>
 	<!-- template側のHTMLで、Angularが生成したボタンイベントをコントロールに通知する必殺技 -->
 		<td height=1>
 			<button id="maruNavigate" class="lui-button" ng-click="maruNavigate()" style="border:none; font-size: 1px; color:gray; height:0px;  width:1px; ">
