@@ -927,12 +927,16 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		oLv1.sColspanBGC = myStringCast( $scope.layout.settings.sColspanBGC5 , "midnightblue" );
 		$scope.aryColspan.push( oLv1 );
 
-		oLv1 = new Object();
-		oLv1.nColspan = 1;
-		oLv1.sColspanText = "dummy";
-		oLv1.sAlign = "center";
-		oLv1.sColspanBGC = "darkgray";
-		$scope.aryColspan.push( oLv1 );
+		for( var i77=6 ; i77 <= 31 ; i77++ ){
+			oLv1 = new Object();
+			oLv1.nColspan = 1;
+			oLv1.sColspanText = "dummy";
+			oLv1.sAlign = "center";
+			oLv1.sColspanBGC = "darkgray";
+			$scope.aryColspan.push( oLv1 );
+		}
+
+
 
 		// colspanの累計値を取得しておく
 		nRageSum1 = 0;
@@ -946,6 +950,9 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		$scope.prop_sLineColorGrid1 = myColorCast( $scope.layout.settings.sLineColorGrid1 , 'black' );
 		$scope.prop_sLineColorHeader1 = myColorCast( $scope.layout.settings.sLineColorHeader1 , 'darkgray' );
 
+
+
+
 		$scope.prop_nAbsoluteMagnification1 = myRealCast( $scope.layout.settings.nAbsoluteMagnification1 , 1.0, 0.0, 2.0 );
 //var bBackup = G_bDegubMode;
 //G_bDegubMode=true;
@@ -956,7 +963,10 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 
 
 		$scope.prop_bVerticalDimension = myBoolCast( $scope.layout.settings.bVerticalDimension );
-		
+
+
+		$scope.prop_bAllowClipboard = myBoolCast( $scope.layout.settings.bAllowClipboard ); // クリップボードにコピーできる
+
 		
 		
 		$scope.prop_sHideMeasName = myBoolCast( $scope.layout.settings.bHideMeasName );// 現在Booleanではなく、文字列でtrue、false、leftに仕様変更。
@@ -1008,7 +1018,7 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 
 
 
-		$scope.prop_nRowBreak1 = myIntegerCast( $scope.layout.settings.nRowBreak1 , 1 , 1 , 5 );
+		$scope.prop_nRowBreak1 = myIntegerCast( $scope.layout.settings.nRowBreak1 , 1 , 1 , 31 );
 
 		if( $scope.prop_bHideLv2 ){
 			$scope.prop_nHeaderWidth0 = 0;
@@ -1059,6 +1069,9 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		$scope.prop_aryTotalHeaderText.push( $scope.layout.settings.sHeaderTextTotal3 );
 		$scope.prop_aryTotalHeaderText.push( $scope.layout.settings.sHeaderTextTotal4 );
 		$scope.prop_aryTotalHeaderText.push( $scope.layout.settings.sHeaderTextTotal5 );
+		for( var i77=6 ; i77 <= 31 ; i77++ ){
+			$scope.prop_aryTotalHeaderText.push( "Header" + String(i77) );
+		}
 
 
 		$scope.prop_bUseColspan;
@@ -1397,7 +1410,6 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 		var sColSpan22 = "";
 		if( ! $scope.prop_bVerticalDimension ){
 		
-//			if( $scope.prop_nRowBreak1 > 1  ){ // 改行する場合、
 				if( $scope.prop_nHeaderWidth2 > 0 && ! ( $scope.prop_sHideMeasName=="left" || $scope.prop_sHideMeasName=="true" ) ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
 					sColSpan22 = " colspan=" + ($scope.prop_nRowBreak1 * $scope.prop_nMeasureCols ) + " ";
 				}
@@ -1407,18 +1419,6 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 				else{
 					sColSpan22 = " colspan=" + ($scope.prop_nRowBreak1  ) + " ";
 				}// <<< 改行する場合、
-//			}
-//			else{
-//				if( $scope.prop_nHeaderWidth2 > 0 && ! ( $scope.prop_sHideMeasName=="left" ) ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
-//					sColSpan22 = " colspan=" + ($scope.prop_nMeasureCols ) + " ";
-//				}
-//				if( $scope.prop_nHeaderWidth2 > 0 && ( $scope.prop_sHideMeasName=="left" ) ){ // かつ、項目び幅が０じゃない場合、のみColSpan変更
-//					sColSpan22 = " colspan=" + ( 1 + $scope.prop_nRowBreak1  ) + " ";
-//				}
-//				else{
-//					sColSpan22 = " colspan=" + ($scope.prop_nRowBreak1  ) + " ";
-//				}// <<< 改行する場合、
-//			}
 		}
 		else{
 			sColSpan22 = " colspan=1 rowspan=99 ";
@@ -1458,17 +1458,21 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 				sVLineMeasValue4 = " border-left: "+nBorderMiddleWidth+"px "+sVKindOfLine+" " +$scope.prop_sLineColorHeader1+ "; "; // 縦罫線
 			}
 		
+			var nWidth444;
 			if( $scope.prop_bVerticalDimension ){
 				sVLineMeasName4 = " border: "+nBorderMiddleWidth+"px solid " +$scope.prop_sLineColorHeader1+ "; "; // 縦罫線
+				nWidth444 = ($scope.prop_nHeaderWidth3  + ($scope.prop_nHeaderWidth2*($scope.prop_nMeasureCols-1)) );
 			}
-
+			else{
+				nWidth444 = ($scope.prop_nHeaderWidth3*$scope.prop_nRowBreak1  + ($scope.prop_nHeaderWidth2*($scope.prop_nMeasureCols-1)) );
+			}
 
 			if( iDim1 == iy1 ){// 読み込むディメンションとスキップするディメンションの判断
 				sHTML += "<td " + sColSpan22 + " bgcolor=" + $scope.prop_sHeaderBGC2 + " style='text-align:center; " + sVLineMeasName4 + "  '>";
 				if( G_bUseButton ){// AngularJSで推奨されない動的なボタンを使う。ずっと動くか保証はない
 				    //  ボタンでディメンションを押せるようにする
 					sHTML += "<button id='maruSelect" + (iDim1) + "' onclick='innerclickSelect1(" + ($scope.G_sRandomKey) + ", " + (iDim1) + ")'" 
-						+ " style='width: " + $scope.prop_nHeaderWidth3 + "px; padding: 0px; background: transparent; border: 0 dotted white; border-color: rgba(255,125,212,0.5); cursor: pointer; font-weight:bold; color:" + $scope.prop_sHeaderFGC2 + "; font-size:" + $scope.prop_nFontSize4 + "px;'>";
+						+ " style='width: " + nWidth444 + "px; padding: 0px; background: transparent; border: 0 dotted white; border-color: rgba(255,125,212,0.5); cursor: pointer; font-weight:bold; color:" + $scope.prop_sHeaderFGC2 + "; font-size:" + $scope.prop_nFontSize4 + "px;'>";
 					sHTML += $scope.aryDim1[iDim1].sElmNameOfDim;
 
 					sHTML += "</button>";
@@ -1595,7 +1599,7 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 			// メジャー値
 			var sMeasureValueHeaderBGC = $scope.prop_sHeaderBGC2; // メジャー値のヘッダーは、Measure Groupの背景色を踏襲する
 			var nCountColspanIdx = 0;// 現在のColspanのインデックスを調べる
-			for( var i45 = 0 ; i45<=iMCol1 && i45<10/*永久ループ防止*/ ; i45++ ){
+			for( var i45 = 0 ; i45<=iMCol1 && i45<=31/*永久ループ防止*/ ; i45++ ){
 				if( i45 >= $scope.aryColspan[nCountColspanIdx].RangesumCS ){
 					nCountColspanIdx ++ ;
 				}
@@ -1809,7 +1813,7 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 		}
 
 		if( $scope.prop_nHeaderWidth2 <= 0 
-			|| ( $scope.prop_nMeasureCols ==1 && sMode1=="dimension" )  
+			|| ( $scope.prop_nMeasureCols ==1 && sMode1=="dimension" && ! $scope.prop_bVerticalDimension )  
 		){
 			sBdLeftMeasValue3 = sBdLeftMeasName3;
 		}
@@ -1925,9 +1929,25 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 					sHTML += "<td style='background-color:" + sMeasNameBGColor + "; " + sBdLeftMeasName3 
 						+ sBdBottom3 + sAlignMeasName3+"; "
 						+ "' >";
-					sHTML += "<p style='" + sMeasureNameFont2 + " font-size:" + $scope.prop_nMeasureLabelFontSize + "px; ' >";
+						
+					if( G_bUseButton && G_aryMeasProps[ nInnerMeasureIndex ].sMeasSheetID1 != "" ){// AngularJSで推奨されない動的なボタンを使う。ずっと動くか保証はない
+						//  桁が他のセルとずれないようにしないといけない。枠線を表示するのはやめたほうが良い
+						sHTML += "<button id='maruNavi2_" + (nInnerMeasureIndex) + "' onclick='innerclickNavi1(" + ($scope.G_sRandomKey) + ", " + (nInnerMeasureIndex) + ")'" 
+							+ " style='padding: 0px; background: transparent; border: 0 dotted white; border-color: rgba(255,125,212,0.5); cursor: pointer; " 
+							+ sMeasureValueFont2 + " font-size:" + $scope.prop_nFontSize6 + "px;'>";
+					}
+					else{
+						sHTML += "<p style='" + sMeasureNameFont2 + " font-size:" + $scope.prop_nMeasureLabelFontSize + "px; ' >";
+					}
+					
 					sHTML += $scope.layout.qHyperCube.qMeasureInfo[ nInnerMeasureIndex ].qFallbackTitle;
-					sHTML += "</p></td>";
+
+					if( G_bUseButton  && G_aryMeasProps[ nInnerMeasureIndex ].sMeasSheetID1 != "" ){// AngularJsで推奨されない動的なボタンを使う。ずっと動くか保証はない
+						sHTML += "</button></td>";
+					}
+					else{
+						sHTML += "</p></td>";
+					}
 
 					// Totalメジャー値<td>
 					sHTML += "<td " + sMeasBlink + " style=' text-align: right; " + sBdBottom3 + sBdLeftMeasValue3 
@@ -2242,7 +2262,7 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 					// td のwidthは廃止されたのでcolgroupで列幅を調整する
 
 					sHTML += "<colgroup>";
-						sHTML += "<col style='width: " + $scope.prop_nHeaderWidth3 + "px;' ><col style='width: 5px;' >";// 縦型ディメンションとお尻の分
+						sHTML += "<col style='width: " + ($scope.prop_nHeaderWidth3 + ($scope.prop_nHeaderWidth2*($scope.prop_nMeasureCols-1)) ) + "px;' ><col style='width: 5px;' >";// 縦型ディメンションとお尻の分
 						nCols++;
 						
 						if( $scope.prop_nHeaderWidth0 > 0 ){
@@ -2548,13 +2568,16 @@ if(G_bDegubMode)console.log('addSecondCube end G_bInitOK',G_bInitOK);
 
 
 					if( G_bUseButton ){// AngularJSで推奨されない動的なボタンを使う。ずっと動くか保証はない
+						if( $scope.prop_bAllowClipboard ){
+						
 						//  ボタンでクリップボードにコピーできるようにする
 						sHTML += "<button id='maruClipboard999' onclick='innerclickClipboard1(" + ($scope.G_sRandomKey) + ")'" 
-							+ " style='width: 150px; padding: 1px; border: 1 dotted white; cursor: pointer; font-weight:bold; color:black ; font-size:1px;'>";
-						sHTML += "Copy TSV to Clipboard (beta)"
+							+ " style='width: 150px; padding: 1px; border: 1 dotted white; background-color: cyan ;  cursor: pointer; font-weight:bold; color:black ; font-size:1px;'>";
+						sHTML += "Copy TSV to Clipboard"
 						sHTML += "</button>";
 						sHTML += "<textarea class='" + "maruTextarea" + $scope.G_sRandomKey + "' id='" + "maruTextarea" + $scope.G_sRandomKey + "' " 
 							+ " style='resize: none; height: 1px; width: 1px; isplay: none; '>" + $scope.G_sRandomKey + "</textarea>";
+						}
 					}
 
 

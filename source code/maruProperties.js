@@ -108,6 +108,15 @@ define(
 										step: 1,
 										defaultValue: 1
 									},
+									maru73_bAllowClipboard:{
+										ref: "settings.bAllowClipboard", // クリップボードにコピーできる
+										type: "boolean",
+										label: "Allow TSV Copy to Clipboard",
+										component: "switch",
+										options: [{value: true,label: "On"}, {value: false,label: "Not on"}],
+										defaultValue: false
+									},
+									
 									maru73_sLineColorHeader1: {
 										ref: "settings.sLineColorHeader1", // 罫線の色（ヘッダ）
 										type: "string",
@@ -184,11 +193,11 @@ define(
 									maru73_3:{
 										ref: "settings.nRowBreak1", // APIで使える名前になる
 										type: "integer",
-										label: "■Row Break Col(From 1 To 5)",
+										label: "■Row Break Col(From 1 To 7)",
 										
 										component: "slider",
 										min: 1,
-										max: 5,
+										max: 7,
 										step: 1,
 										defaultValue: 1
 										
