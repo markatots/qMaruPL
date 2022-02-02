@@ -3,8 +3,8 @@ qMaruPL
 
 # qMaruPL.
 
-# Hello
-Hi. Happy new year. I'm Katsuaki Maruno of Otsuka Corporation.      
+# Hello　
+Hi. I'm Katsuaki Maruno of Otsuka Corporation.      
 This qlik extension enables you to make measures easier to see for non-bi-expert users.  
 For example, you can make a sheet as below.  
 ![image_sampledashboard](https://user-images.githubusercontent.com/95951577/147492798-842f7ba8-a0d9-4787-975e-93b4dd5f8132.png)  
@@ -18,6 +18,17 @@ So to speak, qMaruPL helps you classify measures by decorating some ruled lines 
 What's more, the display speed is very fast in spite of the number of measures. A hundred measures will appear in a second on your dashboards. I'm sure the display speed is key for successful BI.  
 
 # Get started
+こんにちは。大塚商会の丸野です。  
+このエクステンション qMarPL は、***"qMaruPL.YYYY.MM.dd.zip"*** という形式で置いてありますのでダウンロードしてください。  
+それと、"qMaruPL extension_sample＋日付.qvf" というサンプルファイルもあります。下のチュートリアルで使うデータとサンプルが入っていますので参考にしてください。  
+Qlik Sense SaaS版の場合、最初にアップロードするときは、「Management Console＞コンテンツ＞エクステンション」にアップロードしてください。  
+アップロードするときは、ダウンロードしたzipファイルのままアップロードしてください。ソースコードが見たいとかでない限り、解凍する意味はありません。  
+qMarPLエクステンションはバージョンアップして機能追加やバグ修正がされることがあります。最新のエクステンションはここに置きますので、日付の新しいものをダウンロードしてください。  
+更新する場合は、「Management Console＞コンテンツ＞エクステンション」にあるqMaruPLの「…」を押して「編集」でアップロードすれば置き換えられます。  
+ダウンロードしたzipファイルのまま、ファイル名もそのままアップロードすれば上書きされます。    
+Qlik Sense オンプレミス版の場合はQMCのExtensionからになります。  
+特にマニュアルのようなものは作っておりませんが、普通にQlik Senseアプリを作れる方でしたら、下のチュートリアルをやっていただければ十分使えるようになると思います。  
+
 Get the zip file: ***"qMaruPL.YYYY.MM.dd.zip"***   
 I recommend that you get the latest one.  
 You can also get "qMaruPL extension_sample.qvf" , which is a sample Qlik Sense app using qMaruPL.  
