@@ -38,6 +38,7 @@ define( [ "qlik" , 'jquery', 'text!./maruTemplate.html' , 'text!./style.css', '.
 	var G_bUseMeasProp = true;// ハイパーキューブを生成するならtrue。確実にエラーがなくなったので、ずっとtrueでよい。
 	var G_aryMeasProps = [];
 	var secondHyperCube;// セカンドハイパーキューブ
+	var secondHyperCubeID = [];// in onder to destroy
 	var G_bInitOK = false;// 描画の開始制御（表示するデータの中身が準備できているのか）
 	if( G_bInitOK)
 		G_bInitOK = false;
@@ -80,7 +81,6 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 
 			if( G_bUseMeasProp ){
 				// 2ndプロパティを使うものは、すぐに呼べない。
-//				set2ndCubeProps();
 			}
 		
 		}, 1000);
@@ -93,14 +93,68 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 	$scope.component.model.Validated.bind(function(){
 		G_bInitOK = false; // 描画不可
 
-		if(G_bDegubMode)console.log('$scope.component.model.Validation発生'); 
+		if(G_bDegubMode)console.log('■$scope.component.model.Validation >>> start 発生cube再計算が必要な場合に呼ばれるイベント'); 
+
+// キューブを消滅させる
+//if(G_bDegubMode)console.log('addSecondCube middle: > secondHyperCube',secondHyperCube);
+//if(G_bDegubMode)console.log('addSecondCube middle: > secondHyperCubeID',secondHyperCubeID);
+//if( secondHyperCubeID.length>0 ){/
+//	app.destroySessionObject( secondHyperCubeID );
+//	secondHyperCubeID = "";/
+//}
+//if( secondHyperCubeID.length>0 ){
+//	app2.destroySessionObject( secondHyperCubeID );
+//}
+
+if(G_bDegubMode)console.log('Validated middle: > 前secondHyperCubeID.length=', secondHyperCubeID.length );
+for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+	if(G_bDegubMode)console.log('Validated middle: > 前G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+}
+
+	if( secondHyperCubeID.length > 10 ){// 10を超えたら5まで切り詰める
+		for( var i666 = 0 ; i666 < 5 ; i666++ ){
+			if(G_bDegubMode)console.log('Validated middle: > 破壊中G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+			try{
+				qlik.currApp(this).destroySessionObject( secondHyperCubeID[i666] );// キューブを消す
+			}catch(e){
+				if(G_bDegubMode)console.log('Validated middle: > 破壊中例外発生', e );
+			}
+		}
+	}
+
+if(G_bDegubMode)console.log('Validated middle: > 破壊後secondHyperCubeID.length=', secondHyperCubeID.length );
+for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+	if(G_bDegubMode)console.log('Validated middle: > 破壊後G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+}
+
+	if( secondHyperCubeID.length > 10 ){// 10を超えたら5まで切り詰める
+		for( var i666 = 0 ; i666 < 5 ; i666++ ){
+			if(G_bDegubMode)console.log('Validated middle: > shift中G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+			secondHyperCubeID.shift();
+		}
+	}
+
+if(G_bDegubMode)console.log('Validated middle: > shift後secondHyperCubeID.length=', secondHyperCubeID.length );
+for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+	if(G_bDegubMode)console.log('Validated middle: > shift後G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+}
+
+
+	if(G_bDegubMode)console.log('Validated middle: > secondHyperCubeID.length=', secondHyperCubeID.length );
+
+for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+	if(G_bDegubMode)console.log('Validated middle: > G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+}
+
+
 
 		if( G_bUseMeasProp ){
 			addSecondCube( qlik.currApp(this) );// 第2のキューブ生成
 		}
 
 
-	});
+		if(G_bDegubMode)console.log('■$scope.component.model.Validation <<< end 発生cube再計算が必要な場合に呼ばれるイベント'); 
+	});// <<< $scope.component.model.Validated.bind(
 
 
 
@@ -122,16 +176,16 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 		var sRandomKey = myCookieGet( "maruKey" );// クッキーのキーを取得する
 		if( sRandomKey != $scope.G_sRandomKey ){// このスコープのランダムキーと、クッキーのキーが一致したなら、コントローラとテンプレートのペアが一致している
 			// 処理をスキップする
-			if(G_bDegubMode)console.log('maruSelect一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+//			if(G_bDegubMode)console.log('maruSelect一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 		}
 		else{
 			// 処理を続ける		
-			if(G_bDegubMode)console.log('maruSelect一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+//			if(G_bDegubMode)console.log('maruSelect一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 		
 
 			var sButtonNo = myCookieGet( "maruButtonNo" );// クッキーのボタン番号を取得する
 
-			if(G_bDegubMode)console.log('maruSelect inner sButtonNo',sButtonNo);
+//			if(G_bDegubMode)console.log('maruSelect inner sButtonNo',sButtonNo);
 
 
 
@@ -143,14 +197,14 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 			if(G_bDegubMode)console.log('maruSelect inner nDimIdx123', nDimIdx123);
 
 			if( nDimIdx123 >= 0 ){
-				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.qFallbackTitle=', $scope.oDimInfo.qFallbackTitle );
-				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.qGroupFallbackTitles_0=', $scope.oDimInfo.qGroupFallbackTitles_0 );
-				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.qGroupFieldDefs_0=', $scope.oDimInfo.qGroupFieldDefs_0 );
-				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.title=', $scope.oDimInfo.title );
-				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.qTags_0=', $scope.oDimInfo.qTags_0 );
+//				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.qFallbackTitle=', $scope.oDimInfo.qFallbackTitle );
+//				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.qGroupFallbackTitles_0=', $scope.oDimInfo.qGroupFallbackTitles_0 );
+//				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.qGroupFieldDefs_0=', $scope.oDimInfo.qGroupFieldDefs_0 );
+//				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.title=', $scope.oDimInfo.title );
+//				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.oDimInfo.qTags_0=', $scope.oDimInfo.qTags_0 );
 				
-				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.aryDim1[ nDimIdx123 ].sElmNameOfDim=', $scope.aryDim1[ nDimIdx123 ].sElmNameOfDim );
-				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.aryDim1[ nDimIdx123 ].qNum=', $scope.aryDim1[ nDimIdx123 ].qNum );
+//				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.aryDim1[ nDimIdx123 ].sElmNameOfDim=', $scope.aryDim1[ nDimIdx123 ].sElmNameOfDim );
+//				if(G_bDegubMode)console.log('★★★★★★maruSelect: $scope.aryDim1[ nDimIdx123 ].qNum=', $scope.aryDim1[ nDimIdx123 ].qNum );
 				
 				var sElmOfDim444 = $scope.aryDim1[ nDimIdx123 ].sElmNameOfDim;
 				var oqNum444 = $scope.aryDim1[ nDimIdx123 ].qNum;
@@ -160,32 +214,30 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 
 
 				var regexpQlikExpression = new RegExp(/^/); // 正規表現で数値入力チェックする
-//				var sDimName112 = $scope.oDimInfo.qGroupFallbackTitles_0;
 				var sDimName112 = $scope.oDimInfo.qFallbackTitle;
 
 				if( ! ( new RegExp(/^=.*/) ).test( $scope.oDimInfo.qGroupFieldDefs_0 ) ){// ＝サインで始まっていない場合
 					sDimName112 = $scope.oDimInfo.qGroupFieldDefs_0;
-if(G_bDegubMode)console.log('★★★★★★maruSelect: hello3=', sDimName112 );
+//if(G_bDegubMode)console.log('★★★★★★maruSelect: hello3=', sDimName112 );
 				}
 				else{// ＝サインで始まっている場合
-if(G_bDegubMode)console.log('★★★★★★maruSelect: hello2=', sDimName112 );
+//if(G_bDegubMode)console.log('★★★★★★maruSelect: hello2=', sDimName112 );
 					// ＝サイン以外の数式表現がない場合
 					if( ( new RegExp(/^=.*([&+-]|\*|\/|\(|\)).*$/) ).test( $scope.oDimInfo.qGroupFieldDefs_0 ) ){// 数式が組まれている場合
 						sDimName112 = $scope.oDimInfo.qGroupFallbackTitles_0;
-//						sDimName112 = $scope.oDimInfo.qFallbackTitle;
-if(G_bDegubMode)console.log('★★★★★★maruSelect: hello7=', sDimName112 );
+//if(G_bDegubMode)console.log('★★★★★★maruSelect: hello7=', sDimName112 );
 
 					}
 					else{// 数式が組まれていない場合
 						sDimName112 = $scope.oDimInfo.qGroupFieldDefs_0;
 						sDimName112 = sDimName112.replace(/[=]/, '');
-if(G_bDegubMode)console.log('★★★★★★maruSelect: hello1=', sDimName112 );
+//if(G_bDegubMode)console.log('★★★★★★maruSelect: hello1=', sDimName112 );
 					}
 				}
 
-if(G_bDegubMode)console.log('★★★★★★maruSelect: FieldName=', sDimName112 );
+//if(G_bDegubMode)console.log('★★★★★★maruSelect: FieldName=', sDimName112 );
 
-if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).getObjectProperties( $scope.oDimInfo.qLibraryId )=', qlik.currApp(this).getObjectProperties( $scope.oDimInfo.qLibraryId ) );
+//if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).getObjectProperties( $scope.oDimInfo.qLibraryId )=', qlik.currApp(this).getObjectProperties( $scope.oDimInfo.qLibraryId ) );
 
 
 
@@ -195,11 +247,11 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 
 	
 					if( $scope.oDimInfo.qTags_0 == "$numeric" ){//数値型のディメンション（qNum!='NaN'）には、数値で指定する必要がある。インデックスではない。。
-						if(G_bDegubMode)console.log("★★★★★★maruSelect 数値型 " );
+//						if(G_bDegubMode)console.log("★★★★★★maruSelect 数値型 " );
 						qlik.currApp(this).field( sDimName112 ).selectValues( [ Number(oqNum444) ], true, false);//
 					}
 					else{
-						if(G_bDegubMode)console.log("★★★★★★maruSelect 文字型 " );
+//						if(G_bDegubMode)console.log("★★★★★★maruSelect 文字型 " );
 						qlik.currApp(this).field( sDimName112 ).selectValues( [ {qText: sElmOfDim444} ], true, false);//
 						
 					}
@@ -227,21 +279,21 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		var sRandomKey = myCookieGet( "maruKey" );// クッキーのキーを取得する
 		if( sRandomKey != $scope.G_sRandomKey ){// このスコープのランダムキーと、クッキーのキーが一致したなら、コントローラとテンプレートのペアが一致している
 			// 処理をスキップする
-			if(G_bDegubMode)console.log('maruNavigate一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+//			if(G_bDegubMode)console.log('maruNavigate一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 		}
 		else{
 			// 処理を続ける		
-			if(G_bDegubMode)console.log('maruNavigate一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+//			if(G_bDegubMode)console.log('maruNavigate一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 
 			var sButtonNo = myCookieGet( "maruButtonNo" );// クッキーのボタン番号を取得する
-			if(G_bDegubMode)console.log('maruSelect inner sButtonNo',sButtonNo);
+//			if(G_bDegubMode)console.log('maruSelect inner sButtonNo',sButtonNo);
 			
 
 			var nMeasIdx123 = myIntegerCast( sButtonNo , -1 , 0 , G_aryMeasProps.length - 1 );
 
 			if( nMeasIdx123 >= 0 ){
 				var sURL = G_aryMeasProps[ nMeasIdx123 ].sMeasSheetID1;
-				if(G_bDegubMode)console.log('maruNavigate inner sURL', sURL );
+//				if(G_bDegubMode)console.log('maruNavigate inner sURL', sURL );
 
 				qlik.navigation.gotoSheet(sURL);// シートを移動する ここを見よ　https://help.qlik.com/en-US/sense-developer/May2021/Subsystems/APIs/Content/Sense_ClientAPIs/CapabilityAPIs/NavigationAPI/gotoSheet-method.htm
 
@@ -262,11 +314,11 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		var sRandomKey = myCookieGet( "maruKey" );// クッキーのキーを取得する
 		if( sRandomKey != $scope.G_sRandomKey ){// このスコープのランダムキーと、クッキーのキーが一致したなら、コントローラとテンプレートのペアが一致している
 			// 処理をスキップする
-			if(G_bDegubMode)console.log('maruNavigate一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+//			if(G_bDegubMode)console.log('maruNavigate一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 		}
 		else{
 			// 処理を続ける		
-			if(G_bDegubMode)console.log('maruNavigate一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+//			if(G_bDegubMode)console.log('maruNavigate一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 
 			var sTSV="";
 			sTSV = makeHTML2();
@@ -310,11 +362,11 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		var sRandomKey = myCookieGet( "maruKey" );// クッキーのキーを取得する
 		if( sRandomKey != $scope.G_sRandomKey ){// このスコープのランダムキーと、クッキーのキーが一致したなら、コントローラとテンプレートのペアが一致している
 			// 処理をスキップする
-			if(G_bDegubMode)console.log('maruTest一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+//			if(G_bDegubMode)console.log('maruTest一致しない ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 		}
 		else{
 			// 処理を続ける		
-			if(G_bDegubMode)console.log('maruTest一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
+//			if(G_bDegubMode)console.log('maruTest一致した ', "クッキー:" + sRandomKey + ' / $scope.G_sRandomKey : ' + $scope.G_sRandomKey);
 
 			// コピー対象のテキストを選択する
             copyTarget.select();
@@ -345,19 +397,19 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		//document.cookie = "key=value";
 		var cookies1;
 		cookies1 = document.cookie;
-		if(G_bDegubMode)console.log( 'Angular側cookies1読み取り' , cookies1 );
+//		if(G_bDegubMode)console.log( 'Angular側cookies1読み取り' , cookies1 );
 
 		//クッキーの文字列をパーシングする
 		var sCookieAll = cookies1.split(";");
-		if(G_bDegubMode)console.log( 'sCookieAll' , sCookieAll );
+//		if(G_bDegubMode)console.log( 'sCookieAll' , sCookieAll );
 
 		for ( var i1 = 0; i1 < sCookieAll.length; i1++) {
 			var cookie_KeyEqValue = sCookieAll[i1].split("=");
-			if(G_bDegubMode)console.log( 'cookie_KeyEqValue['+i1+']' , cookie_KeyEqValue );
+//			if(G_bDegubMode)console.log( 'cookie_KeyEqValue['+i1+']' , cookie_KeyEqValue );
 			if (cookie_KeyEqValue[0].trim() == sKey ) {// キー名を比較する
 				// 一致したのでそれを拾って終了
 				s1000 = unescape( cookie_KeyEqValue[1] );
-				if(G_bDegubMode)console.log( 'myCookieGet' , s1000 );
+//				if(G_bDegubMode)console.log( 'myCookieGet' , s1000 );
 				break;
 			} 
 		}
@@ -546,7 +598,7 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 		oLv1.Rowspan = myIntegerCast( $scope.layout.settings.sLv1Rowspan5 ,99 , 1 , 999);
 		oLv1.RowName = String( $scope.layout.settings.sLv1RowName5 );
 		oLv1.Align = String( $scope.layout.settings.sLv1Align5 );
-		oLv1.VertiAlign = String( $scope.layout.settings.sLv1VertiAlign2 );
+		oLv1.VertiAlign = String( $scope.layout.settings.sLv1VertiAlign5 );
 		oLv1.BGC = String( $scope.layout.settings.sLv1BGC5 );
 			if( ! sPattern2.test( oLv1.BGC ) ) oLv1.BGC = "#EEEEEE" ;
 		oLv1.FGC = String( $scope.layout.settings.sLv1FGC5 );
@@ -1134,13 +1186,13 @@ if(G_bDegubMode)console.log('★★★★★★maruSelect: qlik.currApp(this).ge
 						$scope.oDimInfo.qLibraryId = $scope.layout.qHyperCube.qDimensionInfo[0].qLibraryId;
 						$scope.oDimInfo.qGroupPos = $scope.layout.qHyperCube.qDimensionInfo[0].qGroupPos;
 						
-if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qFallbackTitle=", $scope.oDimInfo.qFallbackTitle );
-if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupFallbackTitles_0=", $scope.oDimInfo.qGroupFallbackTitles_0 );
-if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupFieldDefs_0=", $scope.oDimInfo.qGroupFieldDefs_0 );
-if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.title=", $scope.oDimInfo.title );
-if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qTags_0=", $scope.oDimInfo.qTags_0 );
-if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qLibraryId=", $scope.oDimInfo.qLibraryId );
-if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scope.oDimInfo.qGroupPos );
+//if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qFallbackTitle=", $scope.oDimInfo.qFallbackTitle );
+//if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupFallbackTitles_0=", $scope.oDimInfo.qGroupFallbackTitles_0 );
+//if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupFieldDefs_0=", $scope.oDimInfo.qGroupFieldDefs_0 );
+//if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.title=", $scope.oDimInfo.title );
+//if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qTags_0=", $scope.oDimInfo.qTags_0 );
+//if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qLibraryId=", $scope.oDimInfo.qLibraryId );
+//if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scope.oDimInfo.qGroupPos );
 
 
 //						$scope.sDimName = myStringCast( $scope.layout.qHyperCube.qDimensionInfo[0].qFallbackTitle , '' );
@@ -1173,7 +1225,7 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 							}
 						}// <<< while( iy1 < $scope.
 					}
-					if(G_bDegubMode)console.log('set2ndCubeProps: aryDim1 after reading dimesion ',$scope.aryDim1);
+//					if(G_bDegubMode)console.log('set2ndCubeProps: aryDim1 after reading dimesion ',$scope.aryDim1);
 
  
 				
@@ -1192,17 +1244,17 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 				
 
 
-				if(G_bDegubMode)console.log("set2ndCubeProps: 全パラメータ>>> ");
-				if(G_bDegubMode)console.log("- G_nMaxMeasureSize=",G_nMaxMeasureSize);
-				if(G_bDegubMode)console.log(" nNumberOfMeasures=",nNumberOfMeasures);
-				if(G_bDegubMode)console.log(" secondHyperCube.qMeasureInfo.length=",secondHyperCube.qMeasureInfo.length);
-				if(G_bDegubMode)console.log(" $scope.layout.qHyperCube.qMeasureInfo.length=",secondHyperCube.qMeasureInfo.length);
-				if(G_bDegubMode)console.log(" $scope.layout.qHyperCube.qSize.qcx=",$scope.layout.qHyperCube.qSize.qcx);
-				if(G_bDegubMode)console.log("- G_nMaxDimensionElementSize=",G_nMaxDimensionElementSize);
-				if(G_bDegubMode)console.log(" $scope.aryDim1.length=",$scope.aryDim1.length);
-				if(G_bDegubMode)console.log(" $scope.layout.qHyperCube.qDimensionInfo.length=", $scope.layout.qHyperCube.qDimensionInfo.length );
-				if(G_bDegubMode)console.log(" $scope.layout.qHyperCube.qSize.qcy=",$scope.layout.qHyperCube.qSize.qcy);
-				if(G_bDegubMode)console.log("set2ndCubeProps: <<<全パラメータ ");
+//				if(G_bDegubMode)console.log("set2ndCubeProps: 全パラメータ>>> ");
+//				if(G_bDegubMode)console.log("- G_nMaxMeasureSize=",G_nMaxMeasureSize);
+//				if(G_bDegubMode)console.log(" nNumberOfMeasures=",nNumberOfMeasures);
+//				if(G_bDegubMode)console.log(" secondHyperCube.qMeasureInfo.length=",secondHyperCube.qMeasureInfo.length);
+//				if(G_bDegubMode)console.log(" $scope.layout.qHyperCube.qMeasureInfo.length=",secondHyperCube.qMeasureInfo.length);
+//				if(G_bDegubMode)console.log(" $scope.layout.qHyperCube.qSize.qcx=",$scope.layout.qHyperCube.qSize.qcx);
+//				if(G_bDegubMode)console.log("- G_nMaxDimensionElementSize=",G_nMaxDimensionElementSize);
+//				if(G_bDegubMode)console.log(" $scope.aryDim1.length=",$scope.aryDim1.length);
+//				if(G_bDegubMode)console.log(" $scope.layout.qHyperCube.qDimensionInfo.length=", $scope.layout.qHyperCube.qDimensionInfo.length );
+//				if(G_bDegubMode)console.log(" $scope.layout.qHyperCube.qSize.qcy=",$scope.layout.qHyperCube.qSize.qcy);
+//				if(G_bDegubMode)console.log("set2ndCubeProps: <<<全パラメータ ");
 
 
 					// --------------------------------------------------------------------------
@@ -1327,7 +1379,7 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 				} // <<< else	
 
 
-				if(G_bDegubMode)console.log('set2ndCubeProps: G_aryMeasProps after reading all dimesions and measures ',$scope.G_aryMeasProps);
+//				if(G_bDegubMode)console.log('set2ndCubeProps: G_aryMeasProps after reading all dimesions and measures ',$scope.G_aryMeasProps);
 
 
 		if(G_bDegubMode)console.log('■<<<■set2ndCubeProps end<<<');
@@ -2445,26 +2497,46 @@ if(G_bDegubMode)console.log("set2ndCubeProps: $scope.oDimInfo.qGroupPos=", $scop
 	// --------------------------------------------------------------------------------------------
 	// この中で$scopeを使ってはいけない	
 	function callbackCreateCube(reply,app2){
-if(G_bDegubMode)console.log('callbackCreateCube begin: G_bInitOK',G_bInitOK);
-if(G_bDegubMode)console.log('callbackCreateCube begin: > layout', $scope.layout); 
+G_bInitOK = false; // 呼ばれたからには描画不可
+if(G_bDegubMode)console.log('▲▲▲▲▲▲callbackCreateCube begin: G_bInitOK',G_bInitOK);
+//if(G_bDegubMode)console.log('callbackCreateCube begin: > layout', $scope.layout); 
 
+var bNewCubeID = 1;
+for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+	if( secondHyperCubeID[i666]==reply.qInfo.qId ){
+		bNewCubeID = 0;
+		break;
+	};
+}
+if( bNewCubeID ){
+	secondHyperCubeID.push( reply.qInfo.qId );// qIDを取得するチャンスは今しかない
+}
+
+
+		// 生成されたキューブを保持する
 		secondHyperCube = reply.qHyperCube;
-		
-//if(G_bDegubMode)console.log('callbackCreateCube middle: > secondHyperCube',secondHyperCube);
+
 
 		set1stCubeProps();
 		set2ndCubeProps();
 
 		G_bInitOK = true;
 
-if(G_bDegubMode)console.log('callbackCreateCube end: G_bInitOK',G_bInitOK);
+if(G_bDegubMode)console.log('▲▲▲▲▲callbackCreateCube end: G_bInitOK',G_bInitOK);
 
 	}
 	// --------------------------------------------------------------------------------------------
 	function addSecondCube( currApp ){
-if(G_bDegubMode)console.log('addSecondCube begin G_bInitOK',G_bInitOK);
+if(G_bDegubMode)console.log('★★★addSecondCube begin G_bInitOK',G_bInitOK);
 		$scope.sCUBEDEBUG = "";// キューブが更新されるたびに初期化されるデバッグ情報
 		$scope.sCubeRuntimeWarning = "";// キューブが更新されるたびに初期化されるデバッグ情報デバッグ中じゃなくても実行時でも表示するメッセージ。例えばデータが多くて表示しきれていない場合など。
+
+
+
+
+
+
+
 
 				////////////////////////////////////////////////////////////////////
 				// ハイパーキューブを追加 /////////////////////////////////////////////
@@ -2534,13 +2606,16 @@ if(G_bDegubMode)console.log('addSecondCube begin G_bInitOK',G_bInitOK);
 				}
 
 
-				currApp.createCube(
+				var xxx1= currApp.createCube(
 					qHyperCubeDef2, callbackCreateCube
 				);
 				// <<< ハイパーキューブを追加 /////////////////////////////////////////////
 				////////////////////////////////////////////////////////////////////
 
-if(G_bDegubMode)console.log('addSecondCube end G_bInitOK',G_bInitOK);
+
+
+
+if(G_bDegubMode)console.log('★★★addSecondCube end G_bInitOK',G_bInitOK);
 
 		return;
 	}
