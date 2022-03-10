@@ -1820,11 +1820,13 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 	function makeMatrix( sMode1 /*grand dimension */, iDim1 /*ディメンションインデックス*/
 		, iMeasureIndex1, iRowspanLv1, iRowspanLv2, iCurrentRow1 ,iRangesumRowspanLv1, iRangesumRowspanLv2 
 	){
+if(G_bDegubMode)console.log('■■■>>> makeMatrix begin G_bInitOK',G_bInitOK);
 		var sHTML ="";
 
 		if( ! G_bInitOK ){// 描画準備が完了していない
 			return sHTML;
 		}
+
 
 
 		var nBorderWidth = 1 * $scope.prop_nLineWidthMagnification1;
@@ -2043,10 +2045,38 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 				// -----------------------------------------------------------------------------------------------
 				// ハイパーキューブのメジャー値表示
 				if( sMode1 == "grand" ){// グランド
-					sHTML += $scope.layout.qHyperCube.qGrandTotalRow[ nInnerMeasureIndex ].qText;
+if(G_bDegubMode)console.log('makeMatrix middle: > grand:$scope.layout.qHyperCube.qGrandTotalRow.length=', $scope.layout.qHyperCube.qGrandTotalRow.length );
+if(G_bDegubMode)console.log('makeMatrix middle: > grand:nInnerMeasureIndex=', nInnerMeasureIndex );
+					if( typeof $scope.layout.qHyperCube.qGrandTotalRow == "undefined" ){
+						return "F5でリフレッシュ";
+					}
+					
+					
+					if( nInnerMeasureIndex < $scope.layout.qHyperCube.qGrandTotalRow.length ){
+						sHTML += $scope.layout.qHyperCube.qGrandTotalRow[ nInnerMeasureIndex ].qText;
+					}
+					else{
+						return "F5でリフレッシュ";
+					}
 				}
 				else{// ディメンション
-					sHTML += $scope.layout.qHyperCube.qDataPages[ 0 ].qMatrix[iDim1][nInnerMeasureIndex+1].qText
+					if( typeof $scope.layout.qHyperCube.qDataPages[ 0 ] == "undefined" ){
+						return "F5でリフレッシュ";
+					}
+					if( typeof $scope.layout.qHyperCube.qDataPages[ 0 ].qMatrix == "undefined" ){
+						return "F5でリフレッシュ";
+					}
+					if( typeof $scope.layout.qHyperCube.qDataPages[ 0 ].qMatrix[iDim1] == "undefined" ){
+						return "F5でリフレッシュ";
+					}
+					
+					if( nInnerMeasureIndex+1 < $scope.layout.qHyperCube.qDataPages[ 0 ].qMatrix[iDim1].length 
+					&& iDim1 < $scope.layout.qHyperCube.qDataPages[ 0 ].qMatrix.length  ){
+						sHTML += $scope.layout.qHyperCube.qDataPages[ 0 ].qMatrix[iDim1][nInnerMeasureIndex+1].qText
+					}
+					else{
+						return "F5でリフレッシュ";
+					}
 				}
 				// -----------------------------------------------------------------------------------------------
 				
@@ -2102,6 +2132,7 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 
 
 //$scope.sDEBUG += " iMeasureIndex1+$scope.prop_nRowBreak1=" + (iMeasureIndex1 + $scope.prop_nRowBreak1) + " /";						
+if(G_bDegubMode)console.log('■■■<<< makeMatrix end G_bInitOK',G_bInitOK);
 		return sHTML;
 	}
 
