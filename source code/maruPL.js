@@ -1113,6 +1113,12 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 		}else{$scope.prop_styleWritingMode1="";}
 
 
+
+$scope.prop_sHeaderText0 = myStringCast($scope.layout.settings.sHeaderText0);
+$scope.prop_sHeaderText1 = myStringCast($scope.layout.settings.sHeaderText1);
+$scope.prop_sHeaderText2 = myStringCast($scope.layout.settings.sHeaderText2);
+
+
 		//
 		$scope.prop_TopTotalHeaderText = $scope.layout.settings.sHeaderTextTopTotal;
 		$scope.prop_aryTotalHeaderText = [];
@@ -1576,14 +1582,14 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 			if( $scope.prop_nHeaderWidth0 > 0 ){
 				sHTML += "<td  bgcolor=" + $scope.prop_sHeaderBGC1 
 					+ " style='text-align:center;  border-left: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+";  border-bottom: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+";  border-top: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; '><p style='font-weight:bold; color:" 
-					+ $scope.prop_sHeaderFGC1 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.layout.settings.sHeaderText0
+					+ $scope.prop_sHeaderFGC1 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.prop_sHeaderText0
 					+ "</p></td>";
 			}
 			// Lv1
 			if( $scope.prop_nHeaderWidth1 > 0 ){
 				sHTML += "<td  bgcolor=" + $scope.prop_sHeaderBGC1 
 					+ " style='text-align:center; border-left:"+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+";  border-bottom: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+";  border-top: "+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; '><p style='font-weight:bold; color:" 
-					+ $scope.prop_sHeaderFGC1 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.layout.settings.sHeaderText1
+					+ $scope.prop_sHeaderFGC1 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.prop_sHeaderText1
 					+ "</p></td>";
 			}
 		}
@@ -1649,7 +1655,7 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 				sHTML += "<td bgcolor=" + $scope.prop_sHeaderBGC1 
 					+ " style='text-align:center; " + sVLineMeasName4 + " border-top:"+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+"; border-bottom:"+nBorderWidth+"px solid "+$scope.prop_sLineColorHeader1+";'>" 
 					+ "<p style='font-weight:bold; color:" 
-					+ $scope.prop_sHeaderFGC1 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.layout.settings.sHeaderText2
+					+ $scope.prop_sHeaderFGC1 + "; font-size:" + $scope.prop_nFontSize5 + "px; '>" + $scope.prop_sHeaderText2
 					+ "</p></td>";
 			}
 
