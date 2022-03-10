@@ -106,13 +106,13 @@ $scope.sSUPERDEBUG += "  $scope.G_sRandomKey =" + ($scope.G_sRandomKey) +" /";
 //	app2.destroySessionObject( secondHyperCubeID );
 //}
 
-if(G_bDegubMode)console.log('Validated middle: > 前secondHyperCubeID.length=', secondHyperCubeID.length );
-for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
-	if(G_bDegubMode)console.log('Validated middle: > 前G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
-}
+//if(G_bDegubMode)console.log('Validated middle: > 前secondHyperCubeID.length=', secondHyperCubeID.length );
+//for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+//	if(G_bDegubMode)console.log('Validated middle: > 前G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+//}
 
-	if( secondHyperCubeID.length > 10 ){// 10を超えたら5まで切り詰める
-		for( var i666 = 0 ; i666 < 5 ; i666++ ){
+	if( secondHyperCubeID.length >= 2 ){// 10を超えたら5まで切り詰める
+		for( var i666 = 0 ; i666 <= 1 ; i666++ ){
 			if(G_bDegubMode)console.log('Validated middle: > 破壊中G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
 			try{
 				qlik.currApp(this).destroySessionObject( secondHyperCubeID[i666] );// キューブを消す
@@ -122,29 +122,29 @@ for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
 		}
 	}
 
-if(G_bDegubMode)console.log('Validated middle: > 破壊後secondHyperCubeID.length=', secondHyperCubeID.length );
-for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
-	if(G_bDegubMode)console.log('Validated middle: > 破壊後G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
-}
+//if(G_bDegubMode)console.log('Validated middle: > 破壊後secondHyperCubeID.length=', secondHyperCubeID.length );
+//for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+//	if(G_bDegubMode)console.log('Validated middle: > 破壊後G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+//}
 
-	if( secondHyperCubeID.length > 10 ){// 10を超えたら5まで切り詰める
-		for( var i666 = 0 ; i666 < 5 ; i666++ ){
-			if(G_bDegubMode)console.log('Validated middle: > shift中G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+	if( secondHyperCubeID.length >= 2 ){// 10を超えたら5まで切り詰める
+		for( var i666 = 0 ; i666 <= 1 ; i666++ ){
+//			if(G_bDegubMode)console.log('Validated middle: > shift中G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
 			secondHyperCubeID.shift();
 		}
 	}
 
-if(G_bDegubMode)console.log('Validated middle: > shift後secondHyperCubeID.length=', secondHyperCubeID.length );
-for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
-	if(G_bDegubMode)console.log('Validated middle: > shift後G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
-}
+//if(G_bDegubMode)console.log('Validated middle: > shift後secondHyperCubeID.length=', secondHyperCubeID.length );
+//for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+//	if(G_bDegubMode)console.log('Validated middle: > shift後G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+//}
 
 
 	if(G_bDegubMode)console.log('Validated middle: > secondHyperCubeID.length=', secondHyperCubeID.length );
 
-for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
-	if(G_bDegubMode)console.log('Validated middle: > G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
-}
+//for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
+//	if(G_bDegubMode)console.log('Validated middle: > G_sRandomKey:secondHyperCubeID[' + i666 + ']=', $scope.G_sRandomKey + ':' +secondHyperCubeID[i666] );
+//}
 
 
 
@@ -1121,7 +1121,9 @@ for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
 		$scope.prop_aryTotalHeaderText.push( $scope.layout.settings.sHeaderTextTotal3 );
 		$scope.prop_aryTotalHeaderText.push( $scope.layout.settings.sHeaderTextTotal4 );
 		$scope.prop_aryTotalHeaderText.push( $scope.layout.settings.sHeaderTextTotal5 );
-		for( var i77=6 ; i77 <= 31 ; i77++ ){
+		$scope.prop_aryTotalHeaderText.push( $scope.layout.settings.sHeaderTextTotal6 );
+		$scope.prop_aryTotalHeaderText.push( $scope.layout.settings.sHeaderTextTotal7 );
+		for( var i77=8 ; i77 <= 31 ; i77++ ){
 			$scope.prop_aryTotalHeaderText.push( "Header" + String(i77) );
 		}
 
@@ -1562,6 +1564,9 @@ for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
 	function makeMeasureHeader( sMode1 /*grand dimension */, iDim1 /*ディメンションインデックス*/){
 		var sHTML ="";
 
+		if( ! G_bInitOK ){// 描画準備が完了していない
+			return sHTML;
+		}
 
 		var nBorderWidth = 1 * $scope.prop_nLineWidthMagnification1;
 		var nBorderMiddleWidth = 1 * $scope.prop_nLineWidthMagnification1;
@@ -1817,6 +1822,11 @@ for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
 	){
 		var sHTML ="";
 
+		if( ! G_bInitOK ){// 描画準備が完了していない
+			return sHTML;
+		}
+
+
 		var nBorderWidth = 1 * $scope.prop_nLineWidthMagnification1;
 		var nBorderMiddleWidth = 1 * $scope.prop_nLineWidthMagnification1;
 
@@ -1957,15 +1967,15 @@ for( var i666 = 0 ; i666 < secondHyperCubeID.length ; i666++ ){
 					if( sMeasBGColor == 'white' ){
 						sMeasNameBGColor = $scope.aryLv1[iRowspanLv1].BGC;
 						sMeasBGColor = $scope.aryLv1[iRowspanLv1].BGC;
-						sMeasureNameFont2 = " font-weight:normal; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
+						sMeasureNameFont2 = " font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
 //						sMeasureValueFont2 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
-						sMeasureValueFont2 = " font-weight:normal; color:"+ sMeasFontColor +"; ";
+						sMeasureValueFont2 = " font-weight:bold; color:"+ sMeasFontColor +"; ";
 					}
 					else{
 						sMeasNameBGColor = $scope.aryLv1[iRowspanLv1].BGC;
-						sMeasureNameFont2 = " font-weight:normal; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
+						sMeasureNameFont2 = " font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
 //						sMeasureValueFont2 = "font-weight:bold; color:"+ $scope.aryLv1[iRowspanLv1].FGC +"; ";
-						sMeasureValueFont2 = " font-weight:normal; color:"+ sMeasFontColor +"; ";
+						sMeasureValueFont2 = " font-weight:bold; color:"+ sMeasFontColor +"; ";
 					}
 				}
 
@@ -2518,6 +2528,7 @@ if( bNewCubeID ){
 
 
 		set1stCubeProps();
+G_bInitOK = false; // 呼ばれたからには描画不可
 		set2ndCubeProps();
 
 		G_bInitOK = true;
@@ -2534,6 +2545,7 @@ if(G_bDegubMode)console.log('★★★addSecondCube begin G_bInitOK',G_bInitOK);
 
 
 
+G_bInitOK = false; // 呼ばれたからには描画不可
 
 
 

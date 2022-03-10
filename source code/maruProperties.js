@@ -544,6 +544,20 @@ define(
 										defaultValue: "Total 5thCol",
 										expression: "optional"
 									},
+									maruh6f:{
+										ref: "settings.sHeaderTextTotal6", // APIで使える名前になる
+										type: "string",
+										label: "Header Text Total 6th",
+										defaultValue: "Total 6thCol",
+										expression: "optional"
+									},
+									maruh6g:{
+										ref: "settings.sHeaderTextTotal7", // APIで使える名前になる
+										type: "string",
+										label: "Header Text Total 7th",
+										defaultValue: "Total 7thCol",
+										expression: "optional"
+									},
 
 								}
 							},
